@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nėra rodyti skirtų lentelių.",
   "checkConfigutationToSelectLayers": "Eikite į valdiklio parametrų puslapį ir pasirinktie sluoksnius.",
-  "checkLayerListToSelectLayers": "Atributų lentelė sinchronizuojama su matomais žemėlapio sluoksniais. Sluoksniams įjungti / išjungti galite naudoti valdiklį, pvz., Sluoksnių sąrašas.",
-  "rowHeaderColumnTitle": "Norėdami pasirinkti eilutę, laikydami pelę virš eilutės ${layerName}, paspauskite Enter"
+  "checkLayerListToSelectLayers": "Atributų lentelė sinchronizuojama su matomais žemėlapio sluoksniais. Sluoksniams įjungti / išjungti galite naudoti valdiklį, pvz., Sluoksnių sąrašas."
 });

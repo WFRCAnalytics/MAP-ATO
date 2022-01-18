@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Ni na voljo nobenih tabel za prikaz.",
   "checkConfigutationToSelectLayers": "Pojdite na stran z nastavitvami pripomočka, da izberete sloje.",
-  "checkLayerListToSelectLayers": "Atributna tabela je sinhronizirana z vidnimi sloji na karti, lahko uporabite pripomoček, kot je Seznam slojev, da preklopite vklop/izklop slojev.",
-  "rowHeaderColumnTitle": "Vrstica ${layerName}, lebdeča, pritisnite Enter, da izberete lebdeče vrstice"
+  "checkLayerListToSelectLayers": "Atributna tabela je sinhronizirana z vidnimi sloji na karti, lahko uporabite pripomoček, kot je Seznam slojev, da preklopite vklop/izklop slojev."
 });

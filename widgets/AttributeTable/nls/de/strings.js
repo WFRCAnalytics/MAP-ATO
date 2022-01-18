@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Es sind keine Tabellen für die Anzeige verfügbar.",
   "checkConfigutationToSelectLayers": "Wechseln Sie zur Einstellungsseite, um Layer auszuwählen.",
-  "checkLayerListToSelectLayers": "Die Attributtabelle wurde mit den sichtbaren Layern in der Karte synchronisiert. Mit Widgets wie \"Layer-Liste\" können Sie Layer aktivieren oder deaktivieren.",
-  "rowHeaderColumnTitle": "Mauszeiger über ${layerName}-Zeile: Eingabetaste drücken, um die Zeilen auszuwählen, auf die mit der Maus gezeigt wird"
+  "checkLayerListToSelectLayers": "Die Attributtabelle wurde mit den sichtbaren Layern in der Karte synchronisiert. Mit Widgets wie \"Layer-Liste\" können Sie Layer aktivieren oder deaktivieren."
 });

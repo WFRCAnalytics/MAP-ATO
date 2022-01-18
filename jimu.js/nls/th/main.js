@@ -98,15 +98,12 @@ define({
     "tooltipText": "ข้อความแนะนำเครื่องมือ",
     "findAddressOrPlace": "ค้นหาที่อยู่หรือสถานที่",
     "expand": "ขยาย ${value}",
-    "collapse": "ย่อ ${value}",
-    "asc": "เรียงจากน้อยไปมาก",
-    "desc": "เรียงจากมากไปน้อย"
+    "collapse": "ย่อ ${value}"
   },
   "errorCode": "รหัส",
   "errorMessage": "ข้อความ",
   "errorDetail": "รายละเอียด",
   "widgetPlaceholderTooltip": "ทำการตั้งค่า ไปยัง widget และคลิกที่ตัวยืดร่วม",
-  "widgetToolTip": "${widgetLabel} กด Enter เพื่อโฟกัสภายในวิดเจ็ตนี้ ขณะที่โฟกัสภายใน ให้กด Esc เพื่อกลับไปโฟกัสที่วิดเจ็ต",
   "skips": {
     "skips": "ข้ามลิงก์",
     "skipTo": "ข้ามไปยัง ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "แสดงเฉพาะข้อมูลที่ถูกเลือก",
     "ExportToFeatureCollection": "ส่งออกไปยังฟีเจอร์คอลเล็กชัน",
     "ExportToGeoJSON": "ส่งออกเป็น GeoJSON",
-    "ExportToFilegdb": "ส่งออกไปยังไฟล์ฐานข้อมูลภูมิศาสตร์",
-    "ExportToShapefile": "ส่งออกไปยัง shapefile",
     "EditAttributes": "แก้ไขตารางเชิงบรรยาย",
     "AddMarker": "เพิ่มเครื่องหมาย",
     "RemoveMarker": "นำเครื่องหมายออก",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "กูเกิ้ล+",
     "EmbedTips": "ฝังแอปในเว็บไซต์",
     "shareEmailSubject": "แบ่งปันเว็บแอป:",
-    "shareEmailTxt1": "นี่คือเว็บแอพที่แชร์กับคุณโดยใช้ ArcGIS Web AppBuilder",
-    "shareEmailTxt2": "คุณสามารถสร้างและแชร์เว็บแอพของคุณเองได้ โดยใช้ Esri ArcGIS Web AppBuilder",
+    "shareEmailTxt1": "นี่คือเว็บแอปที่คุณแชร์โดยใช้ Web AppBuilder สำหรับ ArcGIS",
+    "shareEmailTxt2": "คุณสามารถสร้างและแบ่งปันเว็บแอปของคุณเองด้วย Web AppBuilder สำหรับ ArcGIS ของ Esri",
     "shareEmailTxt3": "ดูที่ http://www.esri.com/software/web-appbuilder สำหรับรายละเอียดเพิ่มเติม",
     "smallSize": "เล็ก",
     "mediumSize": "กลาง",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "บัญชีของคุณไม่มีสิทธิ์ในการสร้างหรือแก้ไขข้อมูล หรือเว็บแมพนี้ไม่มีชั้นข้อมูลที่สามารถแก้ไขได้",
   "invalidConfiguration": "วิดเจ็ตอย่างใดอย่างหนึ่งไม่ได้กำหนดค่า หรือชั้นข้อมูลที่ใช้ในการกำหนดค่าที่ไม่ได้อยู่ในแผนที่ กรุณาเปิดแอปในโหมดผู้สร้างและกำหนดค่าวิดเจ็ต",
   "essentialAppsLicenseErrorForApp": "บัญชีผู้ใช้ของคุณไม่มีใบอนุญาตในการใช้งานแอปซึ่งไม่ใช่แบบสาธารณะ โปรดขอให้ผู้ดูแลองค์กรของคุณกำหนดประเภทผู้ใช้ที่มีใบอนุญาตแอป Essential หรือแอดออนแอป Essential ให้กับคุณ",
-  "essentialAppsLicenseErrorForBuilder": "บัญชีผู้ใช้ของคุณไม่มีใบอนุญาตในการใช้งาน Web AppBuilder โปรดขอให้ผู้ดูแลองค์กรของคุณกำหนดประเภทผู้ใช้ที่มีใบอนุญาตแอป Essential หรือแอดออนแอป Essential ให้กับคุณ",
-  "setStyle": "ตั้งค่าสไตล์"
+  "essentialAppsLicenseErrorForBuilder": "บัญชีผู้ใช้ของคุณไม่มีใบอนุญาตในการใช้งาน Web AppBuilder โปรดขอให้ผู้ดูแลองค์กรของคุณกำหนดประเภทผู้ใช้ที่มีใบอนุญาตแอป Essential หรือแอดออนแอป Essential ให้กับคุณ"
 });

@@ -201,15 +201,14 @@ define([
         _resetPromptLabel: function(isNoData){
           var noDataLabel = isNoData ? this.nls.noFilterValueTip + ' ' : '';
           if(typeof(this.promptLabel) !== "undefined") {
-            this.promptLabel.innerHTML = jimuUtils.sanitizeHTML(this.partObj.interactiveObj.prompt + ' ' +
-            this.partObj.interactiveObj.hint + noDataLabel);
+            this.promptLabel.innerHTML = this.partObj.interactiveObj.prompt + ' ' +
+            this.partObj.interactiveObj.hint + noDataLabel;
           }
         },
 
         filterExpr: null,
         _resetPageControlNewExpr: function(){
-          // var newExpr = this.getDropdownFilterExpr();
-          var newExpr = this.getDropdownFilterExpr(this.partObj.widgetId);
+          var newExpr = this.getDropdownFilterExpr();
           if(this.filterExpr !== newExpr){
             // console.log('newExpr:' + newExpr);
             this.pageControlForQuery.reset();

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Kohtspikri tekst",
     "findAddressOrPlace": "Otsi aadressi või kohta",
     "expand": "Laienda ${value}",
-    "collapse": "Kitsenda ${value}",
-    "asc": "Kasvav",
-    "desc": "Kahanev"
+    "collapse": "Kitsenda ${value}"
   },
   "errorCode": "Kood",
   "errorMessage": "Sõnum",
   "errorDetail": "Detail",
   "widgetPlaceholderTooltip": "Seadistamiseks valige vidinad ning klikkige vastavat kohatäidet",
-  "widgetToolTip": "${widgetLabel}. Vajutage sisestusklahvi Enter, et viia fookus vidina sisule. Kui fookus on vidina sisul, vajutage paoklahvi Esc, et viia fookus tagasi vidinale.",
   "skips": {
     "skips": "Jäta lingid vahele",
     "skipTo": "Jäta ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Kuva valitud objektid",
     "ExportToFeatureCollection": "Ekspordi objektide kogumisse",
     "ExportToGeoJSON": "Eksport GeoJSON formaati",
-    "ExportToFilegdb": "Eksport faili geoandmebaasi",
-    "ExportToShapefile": "Eksport Shape-faili",
     "EditAttributes": "Muuda atribuute",
     "AddMarker": "Lisa tähis",
     "RemoveMarker": "Eemalda tähis",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Manusta see rakendus veebisaidile",
     "shareEmailSubject": "Ühiskasutusse antud veebirakendus:",
-    "shareEmailTxt1": "Siin on veebirakendus, mis on antud rakenduse ArcGIS Web AppBuilder abil teile ühiskasutusse.",
-    "shareEmailTxt2": "Esri rakenduse ArcGIS Web AppBuilder abil saate luua oma veebirakenduse ja anda selle ühiskasutusse.",
+    "shareEmailTxt1": "Siin on veebirakendus, mis on antud rakenduse Web AppBuilder for ArcGIS abil Teile ühiskasutusse.",
+    "shareEmailTxt2": "Esri rakenduse Web AppBuilder for ArcGIS abil saate luua oma veebirakenduse ja anda selle ühiskasutusse.",
     "shareEmailTxt3": "Üksikasjalikku teavet leiate veebilehelt http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Väike",
     "mediumSize": "Keskmine",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Teie kontol pole õigust andmeid luua või muuta või see veebikaart ei sisalda muudetavaid kihte.",
   "invalidConfiguration": "Vidin on konfigureerimata või pole konfiguratsioonis sisalduvad kihid enam kaardil. Avage rakendus koosturirežiimis ja konfigureerige vidin uuesti.",
   "essentialAppsLicenseErrorForApp": "Teie kontol puudub litsents töölaua kasutamiseks, mis ei ole avalik. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab olulisi rakendusi või oluliste rakenduse lisalitsentsi.",
-  "essentialAppsLicenseErrorForBuilder": "Teie kontol puudub litsents Web AppBuilderi jaoks. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab olulisi rakendusi või oluliste rakenduse lisalitsentsi.",
-  "setStyle": "Määra laad"
+  "essentialAppsLicenseErrorForBuilder": "Teie kontol puudub litsents Web AppBuilderi jaoks. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab olulisi rakendusi või oluliste rakenduse lisalitsentsi."
 });

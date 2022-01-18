@@ -320,7 +320,7 @@ define([
         }, this.domNode);
         this.titleLabeNode = html.create('span', {
           'class': 'title-label jimu-float-leading',
-          innerHTML: jimuUtils.sanitizeHTML(this.titleLabel) || '&nbsp'
+          innerHTML: this.titleLabel || '&nbsp'
         }, this.titleNode);
         this.closeBtnNode = html.create('div', {
           'class': 'close-btn jimu-icon jimu-icon-close jimu-float-trailing',

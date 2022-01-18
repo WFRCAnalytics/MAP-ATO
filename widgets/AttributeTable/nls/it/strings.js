@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nessuna tabella disponibile per la visualizzazione.",
   "checkConfigutationToSelectLayers": "Accedere alla pagina delle impostazioni del widget per selezionare i layer.",
-  "checkLayerListToSelectLayers": "La Tabella attributi è sincronizzata con i layer visibili nella mappa; è possibile usare widget come Elenco layer per attivare/disattivare i layer.",
-  "rowHeaderColumnTitle": "Riga ${layerName}, attivata al passaggio del mouse, premere Invio per selezionare le righe attivate al passaggio del mouse"
+  "checkLayerListToSelectLayers": "La Tabella attributi è sincronizzata con i layer visibili nella mappa; è possibile usare widget come Elenco layer per attivare/disattivare i layer."
 });

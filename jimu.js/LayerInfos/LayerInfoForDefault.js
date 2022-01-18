@@ -510,11 +510,11 @@ LabelClass, PopupTemplate, Legend, Graphic, Point, Query, RelationshipQuery, Que
             }, legendInfo.legendDiv);
             legendInfo.labelDiv = domConstruct.create("div", {
               "class": "legend-label jimu-float-leading",
-              "innerHTML": jimuUtils.sanitizeHTML(legendInfo.label) || " "
+              "innerHTML": legendInfo.label || " "
             }, legendInfo.legendDiv);
 
             if(legendInfo.symbol.type === "textsymbol") {
-              domAttr.set(legendInfo.symbolDiv, "innerHTML", jimuUtils.sanitizeHTML(legendInfo.symbol.text));
+              domAttr.set(legendInfo.symbolDiv, "innerHTML", legendInfo.symbol.text);
             } else {
               var mySurface = gfx.createSurface(legendInfo.symbolDiv, 50, 50);
               var descriptors = jsonUtils.getShapeDescriptors(legendInfo.symbol);
@@ -738,21 +738,24 @@ LabelClass, PopupTemplate, Legend, Graphic, Point, Query, RelationshipQuery, Que
           def.resolve(relatedTableInfoArray);
         } else {
           this._getLayerInfosObj().traversalAll(lang.hitch(this, function(layerInfo) {
+            var relatedUrlIndex = -1;
             if(relatedUrls.length === 0) {
               // all were found
               return true;
             } else {
               array.forEach(relatedUrls, function(relatedUrl, index) {
                 if(lang.getObject("layerObject.url", false, layerInfo) &&
-                   relatedUrl &&
                    (portalUrlUtils.removeProtocol(relatedUrl.toString().toLowerCase()).replace(/\/+/g, '/') ===
                    portalUrlUtils.removeProtocol(
                                  layerInfo.layerObject.url.toString().toLowerCase()).replace(/\/+/g, '/'))
                 ) {
                   relatedTableInfoArray.push(layerInfo);
-                  relatedUrls[index] = '';
+                  relatedUrlIndex = index;
                 }
               }, this);
+              if(relatedUrlIndex >= 0) {
+                relatedUrls.splice(relatedUrlIndex, 1);
+              }
               return false;
             }
           }));

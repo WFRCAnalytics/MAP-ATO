@@ -41,7 +41,6 @@ define([
     _unreachableLayersTitleOfWebmap: null,
     _objectId: null,
     _layerInfoFactory: null,
-    _previousLayerOrder: null,
 
     constructor: function(map, webmapItemData) {
       this._objectId = Math.random();
@@ -51,7 +50,6 @@ define([
       this._tables = webmapItemData.tables;
       this._layerInfoFactory = new LayerInfoFactory(map, this);
       this.map = map;
-      this._previousLayerOrder = [].concat(this.map.layerIds, this.map.graphicsLayerIds);
       this._initLayerInfos();
       this._initBasemapLayerInfos();
       this._initTablesInfos();
@@ -386,7 +384,7 @@ define([
         this._markFirstOrLastNode();
         topic.publish('layerInfos/layerReorder');
         */
-        //topic.publish('layerInfos/layerReorder', index, steps, 'moveup');
+        topic.publish('layerInfos/layerReorder', index, steps, 'moveup');
       }
       return beChangedLayerInfo;
     },
@@ -430,7 +428,7 @@ define([
         this._markFirstOrLastNode();
         topic.publish('layerInfos/layerReorder');
         */
-        //topic.publish('layerInfos/layerReorder', index, steps, 'movedown');
+        topic.publish('layerInfos/layerReorder', index, steps, 'movedown');
       }
       return beChangedLayerInfo;
     },
@@ -1047,11 +1045,11 @@ define([
       handleAdd = on(this.map, "layer-add-result", lang.hitch(this, this._onLayersChange, clazz.ADDED));
       handleRemove = on(this.map, "layer-remove", lang.hitch(this, this._onLayersChange, clazz.REMOVED));
 
+      //this.own(on(this.map, "layers-add-result", lang.hitch(this, this._onLayersChange)));
+      //handleRemoves = on(this.map, "layers-removed", lang.hitch(this, this._onLayersChange));
 
-      handleReorder = on(this.map, "layer-reorder", lang.hitch(this, this._onLayerReorder));
-
-      //handleReorder = topic.subscribe('layerInfos/layerReorder',
-      //  lang.hitch(this, this._onLayerReorder));
+      handleReorder = topic.subscribe('layerInfos/layerReorder',
+        lang.hitch(this, this._onLayerReorder));
 
       handleIsShowInMapChanged = topic.subscribe('layerInfos/layerInfo/isShowInMapChanged',
         lang.hitch(this, this._onShowInMapChanged));
@@ -1188,24 +1186,10 @@ define([
       this._emitEventForEveryLayerInfo('filterChanged', changedLayerInfos, parameterObj);
     },
 
-    _onLayerReorder: function(/*beMovedLayerInfoIndex, steps,  moveUpOrDown*/) {
-      //// doesn't call update(), manual reorder layerInfosArrar.
-      //var beMovedLayerInfo = this._reorderLayerInfosArray(beMovedLayerInfoIndex, steps, moveUpOrDown);
-      //this._emitEvent('layerInfosReorder', beMovedLayerInfo, clazz.REORDERED, beMovedLayerInfo);
-
-      var currentLayerOrder = [].concat(this.map.layerIds, this.map.graphicsLayerIds);
-      var isOrderChanged = array.some(currentLayerOrder, lang.hitch(this, function(layerId, index) {
-        if(layerId === this._previousLayerOrder[index]) {
-          return false;
-        } else {
-          return true;
-        }
-      }));
-      if((currentLayerOrder.length === this._previousLayerOrder.length) && isOrderChanged) {
-        this.update();
-        this._emitEvent('layerInfosReorder', null, clazz.REORDERED);
-      }
-      this._previousLayerOrder = currentLayerOrder;
+    _onLayerReorder: function(beMovedLayerInfoIndex, steps,  moveUpOrDown) {
+      // doesn't call update(), manual reorder layerInfosArrar.
+      var beMovedLayerInfo = this._reorderLayerInfosArray(beMovedLayerInfoIndex, steps, moveUpOrDown);
+      this._emitEvent('layerInfosReorder', beMovedLayerInfo, clazz.REORDERED, beMovedLayerInfo);
     },
 
     _onRendererChanged: function(changedLayerInfos) {

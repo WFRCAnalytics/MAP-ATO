@@ -76,7 +76,7 @@ define([
 				html.removeAttr(this.domNode, 'tabindex');
 			}
 
-			// step 1:
+			// step 1: 
 			//
 			if(this.switchBtn) {
 				this.own(
@@ -134,26 +134,26 @@ define([
 				html.setAttr(activeControlButton.closeNode, 'tabindex', 0);
 			};
 
-			// step 1:
+			// step 1: 
 			// monkey patch the StackController in the tabContainer
 			//
 			var oldOnkeyDownMethod = tabContainer.tablist.onkeydown;
 
 			// override the "adjacent" method in dijit/layout/StackController
 			var __stackAdjacent = function(forward, context){
-				if(!context.isLeftToRight() &&
+				if(!context.isLeftToRight() && 
 					(!context.tabPosition || /top|bottom/.test(context.tabPosition))
 					) {
 					forward = !forward;
 				}
 				var children = context.getChildren();
 				var idx = array.indexOf(children, context.pane2button(
-					self._focusedTab ?
-					self._focusedTab.page && self._focusedTab.page.id :
+					self._focusedTab ? 
+					self._focusedTab.page && self._focusedTab.page.id : 
 						context._currentChild.id)),
 					current = children[idx];
 				var child;
-
+				
 				do{
 					idx = (idx + (forward ? 1 : children.length - 1)) % children.length;
 					child = children[idx];
@@ -233,7 +233,7 @@ define([
 							self.__escape2WidgetSwitch(e);
 						}
 						e.stopPropagation();
-						e.preventDefault();
+						e.preventDefault();	
 						break;
 					case keys.TAB:
 						if(self.isLoading()) {
@@ -249,7 +249,7 @@ define([
 				if(forward !== null) {
 					self._focusedTab = __stackAdjacent(forward, this);
 					focus.focus(self._focusedTab.focusNode);
-
+					
 					e.stopPropagation();
 					e.preventDefault();
 				}
@@ -262,7 +262,7 @@ define([
 			// step 2:
 			// make first tab as the first focusable node in widget
 			//
-			if(tabContainer.hasChildren()) {
+			if(tabContainer.hasChildren()) {	
 				array.forEach(tabContainer.getChildren(), lang.hitch(this, function(tab) {
 					if(!tab.controlButton.checked) {
 						html.setAttr(tab.controlButton.focusNode, 'aria-selected', 'false');
@@ -278,23 +278,23 @@ define([
 				jimuUtils.initFirstFocusNode(this.domNode, firstTabChild.focusNode);
 				if(firstTabChild.closeNode) {
 					_activeCloseButtonTabIndex(firstTabChild);
-				}
-				if(this._isOnlyTable() &&
+				}		
+				if(this._isOnlyTable() && 
 					 (this.appConfig.theme.name ==='LaunchpadTheme' ||
-						this.appConfig.theme.name ==='BillboardTheme')) { // TODO: have a better check?
-					focus.focus(firstTabChild.focusNode);
+					  this.appConfig.theme.name ==='BillboardTheme')) { // TODO: have a better check?
+					focus.focus(firstTabChild);
 				}
 			}
 
 			// step 3:
 			// attach event handlers
-			//
+			// 
 
 			this.own(
 				aspect.after(tabContainer, 'selectChild', function() {
 					var controlButton = lang.getObject(
-						'controlButton',
-						false,
+						'controlButton', 
+						false, 
 						this.selectedChildWidget);
 					if(controlButton) {
 						jimuUtils.initFirstFocusNode(self.domNode, controlButton.focusNode);
@@ -302,7 +302,7 @@ define([
 							_activeCloseButtonTabIndex(controlButton);
 						}
 					}
-
+					
 					self._focusedTab = controlButton;
 				}),
 				// reset _focusedTab when tablist loses focus
@@ -318,7 +318,7 @@ define([
 				// 			this.__escape2WidgetSwitch(e);
 				// 		}
 				// 		e.stopPropagation();
-				// 		e.preventDefault();
+				// 		e.preventDefault();	
 				// 	}
 				// }))
 			);
@@ -330,7 +330,7 @@ define([
 			}
 			// step 1:
 			// override the default on left / right arrow click navigation
-			//
+			// 
 			lang.mixin(toolbar, {
 				_onLeftArrow: function() {/* null */},
 				_onRightArrow: function() {/* null */}
@@ -353,7 +353,7 @@ define([
 						}
 						e.shiftKey ? toolbar.focusPrev() : toolbar.focusNext();
 						e.stopPropagation();
-						e.preventDefault();
+						e.preventDefault();	
 					} else if(e.keyCode === keys.ESCAPE) {
 						this.__escape2ActiveTab(e);
 					}
@@ -380,11 +380,11 @@ define([
 					menuNode = grid.hiderMenuNode;
 
 			// step 1:
-			// set last focus node to the column hider button in the active grid
+			// set last focus node to the column hider button in the active grid 
 			// as the last focusable node in the widget
 			//
 			jimuUtils.initLastFocusNode(this.domNode, toggleNode);
-
+			
 			// step 2:
 			// attach keyboard handlers
 			//
@@ -410,7 +410,7 @@ define([
 								grid._toggleColumnHiderMenu(e);
 							}
 							e.stopPropagation();
-							e.preventDefault();
+							e.preventDefault();	
 						}
 					}))
 				);
@@ -419,8 +419,8 @@ define([
 
 			if(this._focusedTab && this._focusedTab.checked && context) {
 				html.setAttr(
-					this._focusedTab.focusNode,
-					'aria-labelledby',
+					this._focusedTab.focusNode, 
+					'aria-labelledby', 
 					this._focusedTab.focusNode.id + ' ' + this.id + '_' + context.id + '_footer'
 				);
 			}
@@ -439,8 +439,8 @@ define([
 
 			if(this.closeable && this._isOnlyTable()) {
 				if(this.widgetManager) {
-					var oncreenIcons = this._layoutManager &&
-					this._layoutManager.layoutManager &&
+					var oncreenIcons = this._layoutManager && 
+					this._layoutManager.layoutManager &&  
 					this._layoutManager.layoutManager.onScreenWidgetIcons;
 					var widgetonScreenIcon;
 					array.some(oncreenIcons, lang.hitch(this, function(iconObj) {
@@ -452,7 +452,7 @@ define([
 					if(widgetonScreenIcon) {
 						widgetonScreenIcon.domNode.focus();
 					} else {
-						this.widgetManager.closeWidget(this); // close widget to focus the icon
+						this.widgetManager.closeWidget(this); // close widget to focus the icon 
 					}
 				}
 			}
@@ -489,16 +489,10 @@ define([
 					jimuUtils.initLastFocusNode(menuNode, lastChild.querySelector('input'));
 
 					if(firstChildCheck) {
-						firstChildCheck.focus();
+						firstChildCheck.focus(); 										
 					}
 				}
 			}
-		},
-
-		__focusOnActiveTab: function(){
-			setTimeout(lang.hitch(this, function(){
-				jimuUtils.focusFirstFocusNode(this.domNode);
-			}),600);
 		}
 
 	});

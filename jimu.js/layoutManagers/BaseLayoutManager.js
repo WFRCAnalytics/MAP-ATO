@@ -388,12 +388,6 @@ function(declare, lang, array, html, _WidgetBase, Deferred, all, jimuUtils,
       this._loadControllerWidget(appConfig, controllerId, openedIds, windowState);
     },
 
-     _doPostLoad: function(){
-      //load somethings that may be used later.
-      //let it load behind the stage.
-      require(['dynamic-modules/postload']);
-    },
-
     _destroyControllerWidget: function(controllerWidget){
       //destory all panels controlled by the controller.
       //we can't destroy the opened only, because some panels are closed but the

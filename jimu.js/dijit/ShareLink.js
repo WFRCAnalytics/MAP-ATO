@@ -31,7 +31,6 @@ define(['dojo/_base/declare',
     "jimu/shareUtils",
     'dojo/_base/config',
     "dojo/cookie",
-    //"jimu/Query",
     'dojo/text!./templates/ShareLink.html',
     "dojo/string",
     "dijit/form/Select",
@@ -39,9 +38,8 @@ define(['dojo/_base/declare',
     "dojo/dom-attr",
     'dojo/Deferred',
     'esri/request',
-    //'esri/tasks/query',
-    //'esri/tasks/QueryTask',
-    'jimu/dijit/FilterParameters',
+    'esri/tasks/query',
+    'esri/tasks/QueryTask',
     'esri/symbols/jsonUtils',
     'esri/InfoTemplate',
     'jimu/LayerInfos/LayerInfos',
@@ -58,9 +56,9 @@ define(['dojo/_base/declare',
     "dijit/form/ValidationTextBox"
   ],
   function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, lang, array, dojoClass, html,
-           on, keys, Tooltip, topic, dojoQuery, jimuUtils, shareUtils, dojoConfig, dojoCookie,// jimuQuery,
+           on, keys, Tooltip, topic, dojoQuery, jimuUtils, shareUtils, dojoConfig, dojoCookie,
            template, dojoString, Select, NumberTextBox, domAttr, Deferred,
-           esriRequest, /*EsriQuery,*/ FilterParameters, symbolJsonUtils, InfoTemplate, LayerInfos,
+           esriRequest, EsriQuery, QueryTask, symbolJsonUtils, InfoTemplate, LayerInfos,
            PictureMarkerSymbol, Graphic, GraphicsLayer, FeaturelayerChooserFromMap, LayerChooserFromMapWithDropbox) {
     var so = declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
       templateString: template,
@@ -93,8 +91,6 @@ define(['dojo/_base/declare',
         this.nls.WKID = window.jimuNls.common.wkid || "wkid";
         this.nls.popupTitle = window.jimuNls.shareLink.popupTitle || "Pop-up title";
         this.nls.zoomLevel = window.jimuNls.shareLink.zoomLevel || "Zoom level";
-        this.nls.asc = window.jimuNls.common.asc;
-        this.nls.desc = window.jimuNls.common.desc;
 
         this.share.shareEmailSubject = this.nls.shareEmailSubject + " " + "${appTitle} ";
         this.share.shareTwitterTxt = this.nls.shareEmailSubject + "${appTitle}\n";
@@ -117,12 +113,6 @@ define(['dojo/_base/declare',
         this._isSharedToPublic = options.isSharedToPublic;
         this._isShowFindLocation = options.isShowFindLocation;
         this._config = options.config;
-
-        // this._queryState = {
-        //   jimuQuery: null,
-        //   querying: false,
-        //   fields: ""
-        // };
       },
       startup: function() {
         this.baseHrefUrl = shareUtils.getBaseHrefUrl(this._portalUrl);
@@ -531,13 +521,6 @@ define(['dojo/_base/declare',
         this.layerChooserFromMapWithDropbox.placeAt(this.queryFeature_layer);
         this.own(on(this.layerChooserFromMapWithDropbox, 'selection-change',
           lang.hitch(this, this._updateQueryFeature_Layer)));
-        //query filter
-        this.queryFeature_valueFilter.filterParams = new FilterParameters();
-        this.queryFeature_valueFilter.filterParams.placeAt(this.queryFeature_valueFilter);
-        this.own(on(this.queryFeature_valueFilter.filterParams, 'change', lang.hitch(this, function (/*expr*/) {
-          this._updateUrlByQueryFeatures();
-          this.updateUrl();
-        })));
 
         //addMarker
         if (typeof this.map.spatialReference !== "undefined" &&
@@ -600,9 +583,8 @@ define(['dojo/_base/declare',
 
         //this.own(on(this.queryFeature_layer, "change", lang.hitch(this, this._updateQueryFeature_Field)));
         this.own(on(this.queryFeature_field, "change", lang.hitch(this, this._updateQueryFeature_Value)));
-        //this.own(on(this.queryFeature_value, "change", lang.hitch(this, this.updateUrl)));
-        //this.own(on(this.queryFeature_value.dropDown, 'open', lang.hitch(this, this.dropDownOpen)));// dropdown load data as pages
-        //this.own(on(this.queryFeature_sortBtn, "click", lang.hitch(this, this._updateQueryFeature_Sort)));
+        this.own(on(this.queryFeature_value, "change", lang.hitch(this, this.updateUrl)));
+
         this.own(on(this.mobileLayout, inputsChangeEvent, lang.hitch(this, this.updateUrl)));
         this.own(on(this.authtoken, inputsChangeEvent, lang.hitch(this, this.updateUrl)));
 
@@ -831,7 +813,7 @@ define(['dojo/_base/declare',
       _updateUrlByQueryFeatures: function() {
         var layer = this._getIdFromLayerChoose() || "";
         var field = this.queryFeature_field.get("value");
-        var value = this._getQueryFeatureFilterValue();
+        var value = this.queryFeature_value.get("value");
         //if (layer) {
         this.resultUrl = shareUtils.addQueryParamToUrl(this.baseHrefUrl, "query", layer, true);
         if (field) {
@@ -861,7 +843,7 @@ define(['dojo/_base/declare',
         array.forEach(fields, lang.hitch(this, function(field) {
           if (["esriFieldTypeString", "esriFieldTypeOID", "esriFieldTypeSmallInteger", "esriFieldTypeInteger",
               "esriFieldTypeSingle", "esriFieldTypeDouble"].indexOf(field.type) > -1) {
-            var opt = {label: field.name, value: field.name, type: field.type};
+            var opt = {label: field.name, value: field.name};
             options.push(opt);
           }
         }));
@@ -874,48 +856,15 @@ define(['dojo/_base/declare',
       _updateQueryFeature_Value: function() {
         var queryFields = [];
         var field = this.queryFeature_field.get("value");
-        //this.queryFeature_value.removeOption(this.queryFeature_value.getOptions());
-        if ("" === field) {
-          return;
-        }
-        //queryFields.push(field);
-        var options = this.queryFeature_field.options;
-        for (var i = 0, len = options.length; i < len; i++) {
-          var opt = options[i];
-          if (opt.selected) {
-            queryFields.push(opt);
-          }
-        }
-
-        this._query(queryFields);
-        // this._query(queryFields, this._getSortFromBtn(field), this._getUrlFromLayerChoose(), this.map).then(lang.hitch(this, function(response) {
-        //   var options = [];
-        //   options = this._getQueryedValues(field, response);
-        //   this.queryFeature_value.removeOption(this.queryFeature_value.getOptions());
-        //   this.queryFeature_value.addOption(options);
-        //   this._updateUrlByQueryFeatures();
-        //   this.updateUrl();
-        // }));
-      },
-      _updateQueryFeature_Sort: function () {
-        if(dojoClass.contains(this.queryFeature_sortBtn, 'ASC')){
-          html.setAttr(this.queryFeature_sortBtn, 'title', this.nls.desc);
-        } else {
-          html.setAttr(this.queryFeature_sortBtn, 'title', this.nls.asc);
-        }
-
-        dojoClass.toggle(this.queryFeature_sortBtn, "DESC");
-        dojoClass.toggle(this.queryFeature_sortBtn, "ASC");
-
-        this._updateQueryFeature_Value();
-      },
-
-      _getSortFromBtn: function (field) {
-        var sortStr = field;
-        if (dojoClass.contains(this.queryFeature_sortBtn, "DESC")) {
-          sortStr += " DESC";
-        }//default is ASC
-        return [sortStr];
+        queryFields.push(field);
+        this._query(queryFields, this._getUrlFromLayerChoose(), this.map).then(lang.hitch(this, function(response) {
+          var options = [];
+          options = this._getQueryedValues(field, response);
+          this.queryFeature_value.removeOption(this.queryFeature_value.getOptions());
+          this.queryFeature_value.addOption(options);
+          this._updateUrlByQueryFeatures();
+          this.updateUrl();
+        }));
       },
       _getIdFromLayerChoose: function() {
         var id = null;
@@ -1244,15 +1193,15 @@ define(['dojo/_base/declare',
       _getWkid: function() {
         return this.addMarker_spatialReference.get("value") || "";
       },
-      // _query: function(outFields, sort, url, map) {
-      //   var queryParams = new EsriQuery();
-      //   queryParams.where = "1=1";
-      //   queryParams.outSpatialReference = map.spatialReference;
-      //   queryParams.outFields = outFields;
-      //   queryParams.orderByFields = sort;
-      //   var queryTask = new QueryTask(url);
-      //   return queryTask.execute(queryParams);
-      // },
+
+      _query: function(outFields, url, map) {
+        var queryParams = new EsriQuery();
+        queryParams.where = "1=1";
+        queryParams.outSpatialReference = map.spatialReference;
+        queryParams.outFields = outFields;
+        var queryTask = new QueryTask(url);
+        return queryTask.execute(queryParams);
+      },
       _getQueryedValues: function(outField, response) {
         var features = response.features;
         var options = [];
@@ -1401,140 +1350,6 @@ define(['dojo/_base/declare',
         if(this.setLayerVisibility.checked){
           this.updateUrl();
         }
-      },
-
-      //query by pages
-      _query: function (outFields) {
-        //this._queryState.fields = field;
-        // var queryParams = new EsriQuery();
-        // queryParams.where = "1=1";
-        // queryParams.outSpatialReference = this.map.spatialReference;
-        // queryParams.outFields = outFields;
-        // queryParams.orderByFields = this._getSortFromBtn(field);
-        // this._queryState.jimuQuery = new jimuQuery({
-        //   url: this._getUrlFromLayerChoose(),
-        //   query: queryParams,
-        //   pageSize: 2000
-        // });
-        if (!outFields || !outFields[0]) {
-          return;
-        }
-
-        var field = outFields[0],
-          shortType = this._getFieldShortType(field),
-          item = this.layerChooserFromMapWithDropbox.getSelectedItem();
-        var filterObj = {
-          layerId: item.layerInfo.id,
-          url: item.url,
-          name: item.name,
-          filter: {
-            logicalOperator: "AND",
-            parts: [{
-              fieldObj: { name: field.value, label: field.label, dateFormat: "", shortType: shortType, type: field.type },
-              operator: shortType + "OperatorIs", //date | number | string
-              valueObj: { isValid: true, type: "unique", value: null },
-              interactiveObj: { prompt: "...", hint: "", cascade: "none" }
-            }],
-            expr: "",
-            displaySQL: ""
-          },
-          icon: null,
-          enableMapFilter: true
-        };
-        var layerInfo = this.layerInfosObj.getLayerInfoById(filterObj.layerId);
-        if (layerInfo) {
-          layerInfo.getLayerObject().then(lang.hitch(this, function (layerObject) {
-            var layerId = filterObj.layerId;
-            var partsObj = lang.clone(filterObj.filter);
-            partsObj.wId = this.id + '_' + layerObject.id + '_' + html.getAttr(this.queryFeature_valueFilter, 'data-index');
-            /*var buildDef = */this.queryFeature_valueFilter.filterParams.build(filterObj.url, layerObject, partsObj, layerId, this.id);
-            this.queryFeature_valueFilter.expr = this.queryFeature_valueFilter.filterParams.getFilterExpr();
-          }));
-        }
-
-        //update link, waiting for the value update
-        this._updateUrlByQueryFeatures();
-        this.updateUrl();
-      },
-      // _queryNextPage: function () {
-      //   //this._queryState.jimuQuery.getCurrentPageIndex();
-      //   if (!this._queryState.querying && (this._queryState.jimuQuery && this._queryState.jimuQuery.queryNextPage)) {
-      //     this._queryState.querying = true;
-
-      //     this._queryState.jimuQuery.queryNextPage().then(lang.hitch(this, function (response) {
-      //       //this.queryFeature_value.closeDropDown();
-      //       this._queryState.querying = false;
-
-      //       var options = [];
-      //       options = this._getQueryedValues(this._queryState.fields, response);
-      //       //this.queryFeature_value.removeOption(this.queryFeature_value.getOptions());
-      //       this.queryFeature_value.addOption(options);
-
-      //       this.queryFeature_value.reset()
-
-      //       this._updateUrlByQueryFeatures();
-      //       this.updateUrl();
-      //       //this.queryFeature_value.openDropDown();
-      //     }))
-      //   }
-      // },
-      // _queryCount: function () {
-      //   this._queryState.jimuQuery.getFeatureCount().then(lang.hitch(this, function (response) {
-      //     console.log("query Count==> " + response);
-      //   }));
-      // },
-      // _queryAll: function () {
-      //   this._queryState.jimuQuery.getAllFeatures().then(lang.hitch(this, function (response) {
-      //     this._queryState.querying = false;
-
-      //     var options = [];//
-      //     options = this._getQueryedValues(this._queryState.fields, response);
-      //     this.queryFeature_value.removeOption(this.queryFeature_value.getOptions());
-      //     this.queryFeature_value.addOption(options);
-
-      //     this._updateUrlByQueryFeatures();
-      //     this.updateUrl();
-      //   }))
-      // },
-      // dropDownOpen: function () {
-      //   if (this.queryFeature_value.dropDown.domNode.parentElement) {
-      //     // if (this._queryHanlder) {
-      //     //   this._queryHanlder.remove();
-      //     // } else {
-      //     //   console.log("==> bind _popupWrapper");
-      //     //   this._queryHanlder = on(this.queryFeature_value.dropDown.domNode.parentElement, 'scroll', lang.hitch(this, this.dropDownScroll));
-      //     // }
-      //     console.log("==> bind _popupWrapper");
-      //     this.own(on(this.queryFeature_value.dropDown.domNode.parentElement, 'scroll', lang.hitch(this, this.dropDownScroll)));
-      //   }
-      // },
-      // dropDownScroll: function (evt) {
-      //   var scrollDiff = 50;
-      //   var target = evt.target;
-      //   var diff = target.scrollHeight - target.clientHeight; //offsetHeight
-      //   if ((diff - target.scrollTop <= scrollDiff) && !this._queryState.querying) {
-      //     this._queryNextPage();
-      //     //console.log("page+");
-      //   }
-      // },
-      _getFieldShortType: function (fieldObj) {
-        var type = fieldObj.type, shortType;
-        if (type === "esriFieldTypeString") {
-          shortType = "string";
-        } else {
-          shortType = "number";
-        }
-        return shortType;
-      },
-      _getQueryFeatureFilterValue: function () {
-        var v = "";
-        if (this.queryFeature_valueFilter.filterParams.partsObj && this.queryFeature_valueFilter.filterParams.getValueProviders()[0].getValueObject()) {
-          v = this.queryFeature_valueFilter.filterParams.getValueProviders()[0].getValueObject().value;
-          if (v.toFixed) {
-            v = v.toString();
-          }
-        }
-        return v;
       }
     });
     return so;

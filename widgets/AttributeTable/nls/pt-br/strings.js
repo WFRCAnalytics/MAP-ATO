@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nenhuma tabela disponível para exibir.",
   "checkConfigutationToSelectLayers": "Vá até a página de configurações do widget para selecionar camadas.",
-  "checkLayerListToSelectLayers": "A Tabela de Atributo é sincronizada com as camadas visíveis no mapa, você pode utilizar o widget como Lista de Camada para ativar/desativar as camadas.",
-  "rowHeaderColumnTitle": "Linha ${layerName}, suspensas, pressione Enter para selecionar as linhas suspensas"
+  "checkLayerListToSelectLayers": "A Tabela de Atributo é sincronizada com as camadas visíveis no mapa, você pode utilizar o widget como Lista de Camada para ativar/desativar as camadas."
 });

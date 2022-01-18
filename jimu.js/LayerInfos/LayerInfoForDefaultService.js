@@ -22,9 +22,8 @@ define([
   'dojo/topic',
   'dojo/dom-construct',
   './LayerInfoForDefault',
-  './LayerObjectFacory',
-  '../utils'
-], function(declare, array, lang, Deferred, topic, domConstruct, LayerInfoForDefault, LayerObjectFacory, jimuUtils) {
+  './LayerObjectFacory'
+], function(declare, array, lang, Deferred, topic, domConstruct, LayerInfoForDefault, LayerObjectFacory) {
   return declare(LayerInfoForDefault, {
     _legendsNode: null,
     //_layerObjectLoadingIndicator: null,
@@ -112,7 +111,7 @@ define([
 
           domConstruct.create("td", {
             "class": "legend-label-td",
-            "innerHTML": jimuUtils.sanitizeHTML(legend.label) || " ",
+            "innerHTML": legend.label || " ",
             "style": "padding-left: 5px"
           }, legendTr);
 

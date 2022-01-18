@@ -98,15 +98,12 @@ define({
     "tooltipText": "Rīka padoma teksts",
     "findAddressOrPlace": "Atrast adresi vai vietu",
     "expand": "Izvērst ${value}",
-    "collapse": "Sakļaut ${value}",
-    "asc": "Augošā secībā",
-    "desc": "Dilstoši"
+    "collapse": "Sakļaut ${value}"
   },
   "errorCode": "Kods",
   "errorMessage": "Ziņojums",
   "errorDetail": "Detalizēta informācija",
   "widgetPlaceholderTooltip": "Lai to iestatītu, pārejiet uz sadaļu Logrīki un noklikšķiniet uz atbilstošā viettura",
-  "widgetToolTip": "${widgetLabel} Nospiediet Enter, lai fokusētos uz šī logrīka iekšpusi. Kad fokuss ir iekšpusē, nospiediet Esc, lai atkal koncentrētos uz logrīku.",
   "skips": {
     "skips": "Izlaist saites",
     "skipTo": "Izlaist līdz ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Rādīt atlasītos elementus",
     "ExportToFeatureCollection": "Eksportēt uz elementu kolekciju",
     "ExportToGeoJSON": "Eksportēt uz GeoJSON",
-    "ExportToFilegdb": "Eksportēt uz faila ģeodatu bāzi",
-    "ExportToShapefile": "Eksportēt kā Shape failu",
     "EditAttributes": "Rediģēt atribūtus",
     "AddMarker": "Pievienot marķieri",
     "RemoveMarker": "Noņemt marķieri",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Iegult šo lietotni tīmekļa vietnē",
     "shareEmailSubject": "Tīmekļa lietojumprogrammas kopīgošana:",
-    "shareEmailTxt1": "Šī tīmekļa lietotne tiek ar jums kopīgota, lietojot ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Varat izveidot un kopīgot savu tīmekļa lietotni, izmantojot Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Šī tīmekļa lietojumprogramma tiek ar jums kopīgota, izmantojot Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Varat izveidot un kopīgot savu tīmekļa lietotni, izmantojot Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Plašāku informāciju skatiet vietnē http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Mazs",
     "mediumSize": "Vidējs",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Jūsu kontam nav atļaujas veidot vai mainīt datus. Vai arī šajā tīmekļa kartē nav neviena rediģējama slāņa.",
   "invalidConfiguration": "Logrīks nav konfigurēts vai konfigurētie slāņi vairs nav kartē. Lūdzu, atveriet programmu veidotāja režīmā un konfigurējiet logrīku atkārtoti.",
   "essentialAppsLicenseErrorForApp": "Jūsu kontam nav licences, lai izmantotu lietotni, kas nav publiska. Pieprasiet savas organizācijas administratoram piešķirt jums lietotāja veidu, kurā iekļauts lietotņu komplekts Essential Apps vai papildinājumlietotņu Essential Apps licence.",
-  "essentialAppsLicenseErrorForBuilder": "Jūsu kontam nav licences, lai lietotu Web AppBuilder. Pieprasiet savas organizācijas administratoram piešķirt jums lietotāja veidu, kurā iekļauts lietotņu komplekts Essential Apps vai papildinājumlietotņu Essential Apps licence.",
-  "setStyle": "Iestatīt stilu"
+  "essentialAppsLicenseErrorForBuilder": "Jūsu kontam nav licences, lai lietotu Web AppBuilder. Pieprasiet savas organizācijas administratoram piešķirt jums lietotāja veidu, kurā iekļauts lietotņu komplekts Essential Apps vai papildinājumlietotņu Essential Apps licence."
 });

@@ -98,15 +98,12 @@ define({
     "tooltipText": "טקסט הסבר לכלי",
     "findAddressOrPlace": "חיפוש כתובת או מקום",
     "expand": "הרחב את ${value}",
-    "collapse": "כווץ את ${value}",
-    "asc": "עולה",
-    "desc": "יורד"
+    "collapse": "כווץ את ${value}"
   },
   "errorCode": "קוד",
   "errorMessage": "הודעה",
   "errorDetail": "פרט",
   "widgetPlaceholderTooltip": "כדי להגדיר זאת, עבור ללשונית:\"ווידג'ט\" ולחץ על מספר המיקום המתאים",
-  "widgetToolTip": "${widgetLabel}. לחץ על Enter כדי להתמקד בתוך וידג'ט זה. כאשר המוקד בפנים, לחץ על Esc להחזיר את המוקד לווידג'ט.",
   "skips": {
     "skips": "דלג על קישורים",
     "skipTo": "דלג אל ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "הצג ישויות נבחרות",
     "ExportToFeatureCollection": "ייצא לאוסף ישויות",
     "ExportToGeoJSON": "ייצא אל GeoJSON",
-    "ExportToFilegdb": "יצא לקובץ geodatabase",
-    "ExportToShapefile": "יצא ל-shapefile",
     "EditAttributes": "ערוך מאפיינים",
     "AddMarker": "הוסף סמן",
     "RemoveMarker": "הסר סמן",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+‎",
     "EmbedTips": "הטמע אפליקציה זו באתר",
     "shareEmailSubject": "שיתוף אפליקציית אינטרנט:",
-    "shareEmailTxt1": "זו אפליקציית אינטרנט שמשותפת איתך באמצעות ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "באפשרותך ליצור אפליקציית אינטרנט משלך ולשתף אותה באמצעות ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "זו אפליקציית אינטרנט שמשותפת איתך באמצעות Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "באפשרותך ליצור אפליקציית אינטרנט משלך ולשתף אותה באמצעות Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "לקבלת פרטים, בקר בכתובת http://www.esri.com/software/web-appbuilder.",
     "smallSize": "קטן",
     "mediumSize": "בינוני",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "לחשבונך אין הרשאה ליצור או לשנות נתונים, או שמפת אינטרנט זו לא מכילה שכבות הניתנות לעריכה.",
   "invalidConfiguration": "תצורת הווידג'ט לא הוגדרה או שהשכבות בתצורה אינן נמצאות עוד במפה. פתח את האפליקציה במצב עריכה והגדר מחדש את תצורת הווידג'ט.",
   "essentialAppsLicenseErrorForApp": "החשבון שלך אינו מורשה להשתמש באפליקציה שאינה ציבורית. בקש ממנהל המערכת בארגון שלך להקצות לך סוג משתמש שכולל את Essential Apps או רישיון הרחבה ל-Essential Apps.",
-  "essentialAppsLicenseErrorForBuilder": "החשבון שלך אינו מורשה עבור Web AppBuilder. בקש ממנהל המערכת בארגון שלך להקצות לך סוג משתמש שכולל את Essential Apps או רישיון הרחבה ל-Essential Apps.",
-  "setStyle": "הגדר סגנון"
+  "essentialAppsLicenseErrorForBuilder": "החשבון שלך אינו מורשה עבור Web AppBuilder. בקש ממנהל המערכת בארגון שלך להקצות לך סוג משתמש שכולל את Essential Apps או רישיון הרחבה ל-Essential Apps."
 });

@@ -222,10 +222,10 @@ define([
     }, jimuConfig);
 
 
-    window.wabVersion = '2.17';
-    // window.productVersion = 'Online 8.2';
-    window.productVersion = 'ArcGIS Web AppBuilder (Developer Edition) 2.17';
-    // window.productVersion = 'Portal for ArcGIS 10.8.1';
+    window.wabVersion = '2.15';
+    // window.productVersion = 'Online 7.4';
+    window.productVersion = 'Web AppBuilder for ArcGIS (Developer Edition) 2.15';
+    // window.productVersion = 'Portal for ArcGIS 10.8';
 
     function initApp() {
       var urlParams, configManager, layoutManager;

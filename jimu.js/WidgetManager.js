@@ -151,10 +151,6 @@ function(declare, lang, array, html, Deferred, topic, Evented, on, Tooltip, aspe
       var uri;
       if(setting.isRemote){
         uri = setting.uri + '.js';
-        setTimeout(function(){
-          def.reject('Not allow.');
-        }, 10);
-        return def;
       }else{
         uri = setting.uri;
       }
@@ -205,10 +201,6 @@ function(declare, lang, array, html, Deferred, topic, Evented, on, Tooltip, aspe
       var url;
       if(info.isRemote){
         url = info.folderUrl + 'manifest.json?f=json';
-        setTimeout(function(){
-          def.reject('Not allow.');
-        }, 10);
-        return def;
       }else{
         url = info.folderUrl + 'manifest.json';
       }

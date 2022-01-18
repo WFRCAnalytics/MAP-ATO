@@ -52,7 +52,6 @@ define([
       OPERATORS: null,
       url: null,
       featureLayerId: null,
-      widgetId: '', //required when runtime mode
 
       //events:
       //change
@@ -277,7 +276,6 @@ define([
       clear: function(){
         this.url = null;
         this.featureLayerId = null;
-        this.widgetId = '';
         var spDoms = query('.jimu-single-filter-parameter', this.tbody);
         array.forEach(spDoms, lang.hitch(this, function(spDom){
           var sp = registry.byNode(spDom);
@@ -291,7 +289,7 @@ define([
       //return a deferred object
       //if resolved, means it build successfully
       //if rejected, means it fail to build
-      build: function(url, layerDefinition, partsObj, featureLayerId, widgetId){
+      build: function(url, layerDefinition, partsObj, featureLayerId){
         var resultDef = new Deferred();
         this.clear();
         this.url = url;
@@ -299,7 +297,6 @@ define([
         this.partsObj = lang.clone(partsObj);
         this.partsObj = this._updatePartsObj(this.partsObj);
         this.featureLayerId = featureLayerId;
-        this.widgetId = widgetId;
         this._setCascadeIndexForPartsObj(this.partsObj);
         var interactiveSPA = this._getAllInteractiveSinglePartArray(this.partsObj);
         var wId = this.partsObj.wId;
@@ -314,7 +311,6 @@ define([
             if(wId){
               singlePart.vpId = wId + '_' + spaIndex;
             }
-            singlePart.widgetId = this.widgetId;
             var tr = html.create('tr', {innerHTML:'<td></td>'}, this.tbody);
             var td = query('td', tr)[0];
             var fieldName = singlePart.fieldObj.name;

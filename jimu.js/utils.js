@@ -340,7 +340,7 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
     for (var i = 0, len = contentImgs.length; i < len; i++) {
       var img = contentImgs[i];
       if ((oldWabLogoIds.indexOf(html.getAttr(img, "id")) > -1) && !html.getAttr(img, "alt")) {
-        html.setAttr(img, "alt", "ArcGIS Web AppBuilder.png");//keep img's alt in English
+        html.setAttr(img, "alt", "Web AppBuilder for ArcGIS.png");//keep img's alt in English
       }
     }
   };
@@ -1968,7 +1968,7 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
   *fractional (Boolean, optional):
   *If false, show no decimal places, overriding places and pattern settings.
   */
-  mo._localizeNumber = function(num, options){
+  mo.localizeNumber = function(num, options){
     var decimalStr = num.toString().split('.')[1] || "",
           decimalLen = decimalStr.length;
     var _pattern = "";
@@ -1981,9 +1981,9 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
     }else {
       _pattern = "#,###,###,##0";
     }
-    var locale = (options && options.locale) || config.locale;
+
     var _options = {
-      locale: locale,
+      locale: config.locale,
       pattern: _pattern
     };
     lang.mixin(_options, options || {});
@@ -1995,30 +1995,6 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
       console.error(err);
       return num.toLocaleString();
     }
-  };
-
-  mo.localizeNumber = function(number, options) {
-    if (!mo.isNumberOrNumberString(number)) {
-      return number;
-    }
-
-    number = Number(number);
-
-    var isNegative = false;
-    if (number < 0) {
-      isNegative = true;
-      number = Math.abs(number);
-    }
-
-    number = mo._localizeNumber(number, options);
-
-    //Under RTL, the browser will automatically flip the minus sign to the opposite position. 
-    //In order to keep the minus sign always on the left, we need to flip it to the right
-    if (isNegative) {
-      number = window.isRTL ? number + '-' : '-' + number;
-    }
-
-    return number;
   };
 
   /*
@@ -2222,8 +2198,8 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
   };
 
   //get valide date time string to save in config
-  mo.getDateTimeStr = function(d, showTime) {
-    format = showTime ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';
+  mo.getDateTimeStr = function(d, format) {
+    format = format ? format : 'YYYY-MM-DD HH:mm:ss';
     var date = moment(d).format(format);
     return date;
   };
@@ -3082,9 +3058,6 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
 
   mo.sanitizeHTML = function(snippet){
     /* global html_sanitize */
-    if (!snippet) {
-      return snippet;
-    }
 
     //https://code.google.com/p/google-caja/wiki/JsHtmlSanitizer
     return html_sanitize(snippet, function(url){
@@ -4691,7 +4664,7 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
       /^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/.test(value);
   };
 
-  //https://devtopia.esri.com/WebGIS/arcgis-webappbuilder/issues/13559#issuecomment-2117722
+  //0.1234 --> 12.34% or %12.34(locale=ar or tr)
   mo.convertNumberToPercentage = function(number, /*optional*/ decimalDigits, digitSeparator) {
     if (!mo.isNumberOrNumberString(number)) {
       return number;
@@ -4712,6 +4685,7 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
 
     var locale = config.locale;
     var percentLeft = locale === 'ar' || locale === 'tr';
+    var isRTL = locale === 'ar' || locale === 'he';
     number = Number(number);
     var isNegative = false;
     if (number < 0) {
@@ -4727,10 +4701,8 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
       number = '%' + number;
     }
 
-    //Under RTL, the browser will automatically flip the minus sign to the opposite position. 
-    //In order to keep the minus sign always on the left, we need to flip it to the right
     if (isNegative) {
-      number = window.isRTL ? number + '-' : '-' + number;
+      number = isRTL ? number + '-' : '-' + number;
     }
 
     return number;
@@ -4907,29 +4879,6 @@ function(lang, array, html, has, config, ioQuery, query, nlt, Deferred, all, on,
       def.reject(null);
     }));
     return def.promise;
-  };
-
-  //for 8.1 ,#16917
-  // nodes : {link, logo, icon}
-  mo.themesHeaderLogoA11y = function (appConfig, tabIndex, nodes) {
-    if (appConfig.logoLink) {
-      html.setAttr(nodes.link, 'href', appConfig.logoLink);
-      html.setAttr(nodes.link, 'tabIndex', tabIndex);
-      html.setAttr(nodes.link, 'target', '_blank');
-      html.setAttr(nodes.logo, 'alt', appConfig.logoLink);
-      html.setStyle(nodes.icon, 'cursor', 'pointer');
-    } else {
-      html.setAttr(nodes.link, 'href', 'javascript:void(0)');
-      html.setAttr(nodes.link, 'tabIndex', -1);
-      html.setAttr(nodes.link, 'target', '');
-      html.removeAttr(nodes.logo, 'alt');
-      html.setAttr(nodes.logo, 'role', 'presentation');
-      html.setStyle(nodes.icon, 'cursor', 'default');
-    }
-
-    if (appConfig.logoAlt) {
-      html.setAttr(nodes.logo, 'alt', appConfig.logoAlt);
-    }
   };
   return mo;
 });

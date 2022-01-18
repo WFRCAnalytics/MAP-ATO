@@ -28,13 +28,12 @@ define(['dojo/_base/declare',
     "dojo/topic",
     'dojo/text!./templates/ShareOptions.html',
     'jimu/shareUtils',
-    'jimu/utils',
     "dijit/form/Textarea",
     "dijit/form/CheckBox",
     "dijit/layout/BorderContainer"
   ],
   function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, lang, esriLang, array, domStyle,
-           on, dom, query, topic, template, shareUtils, jimuUtils) {
+           on, dom, query, topic, template, shareUtils) {
     /*global dijit*/
 
     var so = declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
@@ -185,7 +184,7 @@ define(['dojo/_base/declare',
       },
 
       checkForAccount: function(shareType) {
-        dom.byId("share-account-check-label").innerHTML = jimuUtils.sanitizeHTML(this.shareInfo.organization.name);
+        dom.byId("share-account-check-label").innerHTML = this.shareInfo.organization.name;
         // hide org sharing if privilege denied
         if (this.shareInfo._isCustomRole && !this.shareInfo._roleCanShareToOrg &&
           !this.shareInfo._roleCanShareOthersItemsToOrg) {
@@ -407,7 +406,7 @@ define(['dojo/_base/declare',
 
         // it's too early to use the input element here
         this.own(on(dom.byId("share-groups-list"), "click", lang.hitch(this, this.checkGroup)));
-        dom.byId("share-groups-list").innerHTML = jimuUtils.sanitizeHTML(html);
+        dom.byId("share-groups-list").innerHTML = html;
 
         if (this.shareInfo.organization) {
           var sharedToAccountCounter = 0;
@@ -576,7 +575,7 @@ define(['dojo/_base/declare',
 
         // it's too early to use the input element here
         this.own(on(dom.byId("share-groups-list"), "click", lang.hitch(this, this.checkGroup)));
-        dom.byId("share-groups-list").innerHTML = jimuUtils.sanitizeHTML(html);
+        dom.byId("share-groups-list").innerHTML = html;
 
         if (this.shareInfo.organization && this.shareInfo.userRole &&
           (!this.shareInfo._isCustomRole || this.shareInfo._roleCanShareToOrg ||
@@ -773,7 +772,7 @@ define(['dojo/_base/declare',
 
         // it's too early to use the input element here
         this.own(on(dom.byId("share-groups-list"), "click", lang.hitch(this, this.checkGroup)));
-        dom.byId("share-groups-list").innerHTML = jimuUtils.sanitizeHTML(html);
+        dom.byId("share-groups-list").innerHTML = html;
 
         if (hasOne) {
           dijit.byId("share-groups-check").set("checked", true);

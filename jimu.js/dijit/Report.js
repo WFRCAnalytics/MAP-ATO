@@ -34,10 +34,7 @@ define([
   'dojo/on',
   'esri/tasks/PrintParameters',
   'esri/tasks/PrintTemplate',
-  'esri/tasks/PrintTask',
-  'dijit/focus',
-  'dojo/query',
-  'dojo/dom-attr'
+  'esri/tasks/PrintTask'
 ], function (
   declare,
   BaseWidget,
@@ -56,10 +53,7 @@ define([
   on,
   PrintParameters,
   PrintTemplate,
-  PrintTask,
-  focusUtil,
-  query,
-  domAttr
+  PrintTask
 ) {
   return declare([BaseWidget, Evented], {
     baseClass: 'jimu-report',
@@ -222,7 +216,7 @@ define([
             Date: ""
           }]
         };
-        printTemplate.preserveScale = true;
+        printTemplate.preserveScale = false;
         printTemplate.showAttribution = true;
         printTemplate.format = "jpg";
       }
@@ -305,8 +299,6 @@ define([
               this._setReportData(printData);
               //Set foot notes
               this._setFootNotes();
-              //Set accessibility
-              this._setAccessibility();
               //after writing the content close the document
               this._printWindow.document.close();
             }));
@@ -418,7 +410,6 @@ define([
       if (reportLogoNode && this.reportLogo) {
         domClass.remove(reportLogoNode, "esriCTHidden");
         reportLogoNode.src = this.reportLogo;
-        domAttr.set(reportLogoNode, 'alt', this.nls.image);
         reportHeader = dom.byId("reportHeader");
         reportMain = dom.byId("reportMain");
         printTitle = dom.byId("printTitleDiv");
@@ -455,7 +446,6 @@ define([
       if (reportTitleDiv && reportTitle) {
         reportTitleDiv.value = reportTitle;
       }
-      domAttr.set(reportTitleDiv, 'aria-label', this.nls.title);
     },
 
     /**
@@ -473,10 +463,7 @@ define([
       textArea = domConstruct.create("textarea", {
         "class": "esriCTReportNotes",
         "placeholder": this.nls.notesHint,
-        "rows": 5,
-        "tabindex": "0",
-        "role": "textbox",
-        "aria-label": this.nls.notesHint
+        "rows": 5
       }, node);
       //create paragraph for entering notes
       notesParagraph = domConstruct.create("p", {
@@ -556,8 +543,7 @@ define([
             domClass.remove(parentNode, "esriCTReportMapWait");
             mapImg = domConstruct.create("img", {
               "src": printResult.url,
-              "class": "esriCTReportMapImg",
-              "aria-label": this.nls.mapArea
+              "class": "esriCTReportMapImg"
             }, parentNode);
             //if orientation is landscape add landscapeMap class
             if (this.reportLayout.orientation.Type === PageUtils.Orientation.Landscape.Type) {
@@ -684,68 +670,6 @@ define([
           domConstruct.create("td", { "innerHTML": formattedRowValue }, tableRow);
         }));
       }));
-    },
-
-    /**
-     * This function is used to set the accessibility.
-     */
-    _setAccessibility: function () {
-      this._setFirstFocusNode();
-      this._setLastFocusNode();
-      this._focusFirstNodeOfReport();
-    },
-
-    /**
-     * This function is used to set the first focus node
-     */
-    _setFirstFocusNode: function () {
-      var reportTitleDiv = dom.byId("reportTitle");
-      if (reportTitleDiv !== '' && reportTitleDiv !== null && reportTitleDiv !== undefined) {
-        jimuUtils.initFirstFocusNode(this._printWindow.document, reportTitleDiv);
-      }
-    },
-
-    /**
-     * This function is used to set the last focus node
-     */
-    _setLastFocusNode: function () {
-      var reportNotesArr = query('.esriCTReportNotes', this._printWindow.document);
-      if (reportNotesArr !== '' && reportNotesArr !== null && reportNotesArr !== undefined) {
-        if (reportNotesArr.length > 0) {
-          var reportNotes = reportNotesArr[0];
-          jimuUtils.initLastFocusNode(this._printWindow.document, reportNotes);
-          return;
-        }
-      }
-      var dateInputArr = query('.esriCTLocaleDateInputTitle', this._printWindow.document);
-      if (dateInputArr !== '' && dateInputArr !== null && dateInputArr !== undefined) {
-        if (dateInputArr.length > 0) {
-          var dateInput = dateInputArr[0];
-          jimuUtils.initLastFocusNode(this._printWindow.document, dateInput);
-          return;
-        }
-      }
-      var aoiInputArr = query('.esriCTAOIInputArea', this._printWindow.document);
-      if (aoiInputArr !== '' && aoiInputArr !== null && aoiInputArr !== undefined) {
-        if (aoiInputArr.length > 0) {
-          var aoiInput = aoiInputArr[0];
-          jimuUtils.initLastFocusNode(this._printWindow.document, aoiInput);
-          return;
-        }
-      }
-    },
-
-    /**
-     * This function is used to set the focus on the first node
-     */
-    _focusFirstNodeOfReport: function () {
-      var reportTitleDiv = dom.byId("reportTitle");
-      if (reportTitleDiv !== '' && reportTitleDiv !== null && reportTitleDiv !== undefined) {
-        if (focusUtil.curNode) {
-          focusUtil.curNode.blur();
-        }
-        focusUtil.focus(reportTitleDiv);
-      }
     }
   });
 });

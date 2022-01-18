@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "沒有可顯示的表格。",
   "checkConfigutationToSelectLayers": "請移至 widget 設定頁面以選擇圖層。",
-  "checkLayerListToSelectLayers": "屬性表會與地圖中的可見圖層同步，您可以使用「圖層清單」之類的 widget 來開啟/關閉圖層。",
-  "rowHeaderColumnTitle": "懸停在列 ${layerName} 上，按 Enter 選擇懸停的列"
+  "checkLayerListToSelectLayers": "屬性表會與地圖中的可見圖層同步，您可以使用「圖層清單」之類的 widget 來開啟/關閉圖層。"
 });

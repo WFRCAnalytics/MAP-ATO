@@ -24,7 +24,6 @@ define([
   'dojo/Deferred',
   'dojo/promise/all',
   'dojo/request/xhr',
-  'dojo/request/script',
   './utils',
   './WidgetManager',
   './shared/utils',
@@ -39,7 +38,7 @@ define([
   'esri/arcgis/utils'
 ],
 function (declare, lang, array, html, dojoConfig, cookie,
-  Deferred, all, xhr, dojoScript, jimuUtils, WidgetManager, sharedUtils, tokenUtils,
+  Deferred, all, xhr, jimuUtils, WidgetManager, sharedUtils, tokenUtils,
   portalUtils, appConfigResourceUtils, portalUrlUtils, AppStateManager, IdentityManager, esriConfig, esriUrlUtils,
   arcgisUtils) {
   var instance = null, clazz;
@@ -588,10 +587,6 @@ function (declare, lang, array, html, dojoConfig, cookie,
         }else{
           appConfig.theme.sharedTheme.isPortalSupport = false;
         }
-      } else {
-        if(!this.portalSelf.portalProperties || !this.portalSelf.portalProperties.sharedTheme){
-          appConfig.theme.sharedTheme.isPortalSupport = false;
-        }
       }
 
       if(appConfig.theme.sharedTheme.useHeader){
@@ -906,8 +901,6 @@ function (declare, lang, array, html, dojoConfig, cookie,
       var portal = portalUtils.getPortal(portalUrl);
       var sharingUrl = portalUrlUtils.getSharingUrl(portalUrl);
       var defSignIn;
-      var tokenUrl = portalUrl + "/sharing/generateToken?f=json";
-      var httpsTokenUrl = portalUrlUtils.setHttpsProtocol(tokenUrl);
 
       if(window.appInfo.isRunInPortal){
         // if(window !== window.top){
@@ -931,30 +924,7 @@ function (declare, lang, array, html, dojoConfig, cookie,
 
         //we don't register oauth info for app run in portal.
         defSignIn = IdentityManager.checkSignInStatus(sharingUrl);
-        defSignIn.promise.then(lang.hitch(this, function(credential){
-          if(!credential.token){
-            dojoScript.get(httpsTokenUrl, {
-              jsonp: 'callback'
-            }).then(lang.hitch(this, function(response){
-              if(response && response.token){
-                // add token to credential for WebTier Portal
-                credential.token = response.token;
-                if(!credential.expires){
-                  credential.expires = response.expires;
-                }
-                def.resolve();
-              } else {
-                def.resolve();
-              }
-            }), lang.hitch(this, function(err){
-              //network error
-              console.error(err);
-              def.resolve();
-            }));
-          } else {
-            def.resolve();
-          }
-        }), lang.hitch(this, function() {
+        defSignIn.promise.always(lang.hitch(this, function(){
           def.resolve();
         }));
       }else{

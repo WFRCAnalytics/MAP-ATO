@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tekst til værktøjstip",
     "findAddressOrPlace": "Find adresse eller sted",
     "expand": "Vis ${value}",
-    "collapse": "Skjul ${value}",
-    "asc": "Stigende",
-    "desc": "Faldende"
+    "collapse": "Skjul ${value}"
   },
   "errorCode": "Kode",
   "errorMessage": "Meddelelse",
   "errorDetail": "Detalje",
   "widgetPlaceholderTooltip": "Gå til Widgets. og klik på den tilhørende pladsholder, for at oprette den",
-  "widgetToolTip": "${widgetLabel}. Tryk på Enter for at fokusere inde i denne widget. Når fokus er inde i, kan du trykke på Esc for at fokusere på widget'en igen.",
   "skips": {
     "skips": "Tilsidesæt links",
     "skipTo": "Fortsæt til ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Vis udvalgte objekter",
     "ExportToFeatureCollection": "Eksportér til objektsamling",
     "ExportToGeoJSON": "Eksportér til GeoJSON",
-    "ExportToFilegdb": "Eksport til filgeodatabase",
-    "ExportToShapefile": "Eksporter til shapefil",
     "EditAttributes": "Redigér attributter",
     "AddMarker": "Tilføj en markør",
     "RemoveMarker": "Fjern markør",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Indlejr denne app i et websted",
     "shareEmailSubject": "Deller webapplikation:",
-    "shareEmailTxt1": "Her er en webapplikation, der deles med dig ved hjælp af ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Du kan oprette og dele din egen webapplikation med Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Her er en webapplikation, der deles med dig ved hjælp af Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Du kan oprette og dele din egen webapplikation med Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Besøg http://www.esri.com/software/web-appbuilder for at få yderligere oplysninger.",
     "smallSize": "Lille",
     "mediumSize": "Mellem",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Din konto har ikke rettigheder til at oprette eller redigere data, eller også indeholder webkortet ikke nogen redigérbare lag.",
   "invalidConfiguration": "Widget'en er enten ikke konfigureret, eller lagene i konfigurationen findes ikke længere i kortet. Åbn app'en i builder-tilstand, og omkonfigurér widget'en.",
   "essentialAppsLicenseErrorForApp": "Din konto har ikke licens til at bruge en app, der ikke er offentlig. Bed din organisationsadministrator om at knytte dig til en brugertype, der omfatter Essential Apps eller en add-on Essential Apps-licens.",
-  "essentialAppsLicenseErrorForBuilder": "Din konto har ikke licens til Web AppBuilder. Bed din organisationsadministrator om at knytte dig til en brugertype, der omfatter Essential Apps eller en add-on Essential Apps-licens.",
-  "setStyle": "Angiv typografi"
+  "essentialAppsLicenseErrorForBuilder": "Din konto har ikke licens til Web AppBuilder. Bed din organisationsadministrator om at knytte dig til en brugertype, der omfatter Essential Apps eller en add-on Essential Apps-licens."
 });

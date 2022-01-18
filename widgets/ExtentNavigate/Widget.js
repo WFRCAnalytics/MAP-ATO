@@ -44,6 +44,7 @@ define([
 
       postCreate: function(){
         this.inherited(arguments);
+        html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
         this.navToolbar = new Navigation(this.map);
         this.own(on(this.navToolbar, 'extent-history-change', lang.hitch(this, this._onExtentHistoryChange)));
         this.btnPrevious.title = this.nls.previousExtent;

@@ -91,6 +91,7 @@ define([
 
       postCreate: function() {
         this.inherited(arguments);
+        html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
 
         utils.loadStyleLink("dgrid", apiUrl + "dgrid/css/dgrid.css");
         this._loadInfoDef = null;
@@ -128,7 +129,6 @@ define([
         this._createUtilitiesUI();
 
         this._resourceManager = new _ResourceManager({
-          widgetId: this.id,
           map: this.map,
           nls: this.nls,
           parent: this
@@ -994,7 +994,6 @@ define([
         }
         if(isActive) {
           this.tabContainer.selectChild(page); // goto tabChanged
-          this.__focusOnActiveTab();
         }
         if(this.layerTabPages.length === 1) {
           this._toggleNoTableMessage(false);

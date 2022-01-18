@@ -23,11 +23,10 @@ define([
   'dojo/_base/declare',
   'dijit/_WidgetBase',
   'dijit/_TemplatedMixin',
-  'jimu/FilterManager',
   'jimu/utils',
   'esri/lang'
 ],
-  function(on, Evented, lang, html, array, declare, _WidgetBase, _TemplatedMixin, FilterManager, jimuUtils, esriLang) {
+  function(on, Evented, lang, html, array, declare, _WidgetBase, _TemplatedMixin, jimuUtils, esriLang) {
 
     return declare([_WidgetBase, _TemplatedMixin, Evented], {
       baseClass: 'jimu-filter-value-provider',
@@ -116,12 +115,6 @@ define([
             }));
           }
         }
-      },
-
-      postCreate: function(){
-        this.inherited(arguments);
-        //get filter manager instance
-        this.filterManager = FilterManager.getInstance();
       },
 
       getDijits: function(){
@@ -278,17 +271,14 @@ define([
         return expr;
       },
 
-      //used for ListValueProvider, advancedLisValueProvider. 
-      //For runtime, honor layer's filters configured by webmap & other widgets)
-      getDropdownFilterExpr: function(excludeWidgetId){
+      //used for ListValueProvider
+      getDropdownFilterExpr: function(){
         var expr = "1=1";
-        var expr1 = this.layerInfo && this.runtime && excludeWidgetId ?
-          this.filterManager.getFilterExp(this.layerInfo.id, excludeWidgetId) :
-          this._getWebMapFilterExpr();
+        var expr1 = this._getWebMapFilterExpr();
         if(this.cascade === "all" || this.cascade === "previous"){
           var expr2 = this.getCascadeFilterExpr();
-          expr = expr1 ? "(" + expr1 + ") AND (" + expr2 + ")" : "(" + expr2 + ")";
-        }else if(expr1){
+          expr = "(" + expr1 + ") AND (" + expr2 + ")";
+        }else{
           expr = expr1;
         }
         return expr;

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Text plovoucího popisku",
     "findAddressOrPlace": "Najít adresu nebo místo",
     "expand": "Rozbalit ${value}",
-    "collapse": "Zabalit ${value}",
-    "asc": "Vzestupně",
-    "desc": "Sestupně"
+    "collapse": "Zabalit ${value}"
   },
   "errorCode": "Kód",
   "errorMessage": "Zpráva",
   "errorDetail": "Podrobnosti",
   "widgetPlaceholderTooltip": "Chcete-li nastavit widget, vyberte jej z nabídky.",
-  "widgetToolTip": "${widgetLabel}. Stiskněte klávesu Enter pro zaměření uvnitř tohoto widgetu. Je-li zaměření uvnitř, stisknutím klávesy Esc se zaměříte zpátky na widget.",
   "skips": {
     "skips": "Přeskočit odkazy",
     "skipTo": "Přeskočit na ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Zobrazit vybrané prvky",
     "ExportToFeatureCollection": "Exportovat do kolekce prvků",
     "ExportToGeoJSON": "Exportovat do GeoJSON",
-    "ExportToFilegdb": "Exportovat do souborové geodatabáze",
-    "ExportToShapefile": "Exportovat do shapefile",
     "EditAttributes": "Editovat atributy",
     "AddMarker": "Přidat značku",
     "RemoveMarker": "Odstranit značku",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Vložení aplikace do webových stránek.",
     "shareEmailSubject": "Sdílení webové aplikace:",
-    "shareEmailTxt1": "Zde je webová aplikace, která s vámi byla sdílena pomocí ArcGIS Web Builder.",
-    "shareEmailTxt2": "Aplikaci ArcGIS Web AppBuilder od společnosti Esri můžete použít k vytváření a sdílení vlastních webových aplikací.",
+    "shareEmailTxt1": "Zde je webová aplikace, která s vámi byla sdílena pomocí aplikace Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Aplikaci Esri Web AppBuilder for ArcGIS můžete použít k vytváření a sdílení vlastních webových aplikací.",
     "shareEmailTxt3": "Podrobné informace naleznete na webových stránkách http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Malý",
     "mediumSize": "Střední",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Váš účet nemá oprávnění vytvářet či upravovat data nebo tato webová mapa neobsahuje žádné editovatelné vrstvy.",
   "invalidConfiguration": "Widget není nakonfigurován nebo se vrstvy v konfiguraci již nenacházejí v mapě. Spusťte aplikaci v režimu tvorby a upravte konfiguraci widgetu.",
   "essentialAppsLicenseErrorForApp": "Váš účet nevlastní licenci k používání aplikace, která není veřejná. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou základní aplikace nebo doplňková licence základních aplikací.",
-  "essentialAppsLicenseErrorForBuilder": "Váš účet nevlastní licenci Web AppBuilder. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou základní aplikace nebo doplňková licence základních aplikací.",
-  "setStyle": "Nastavit styl"
+  "essentialAppsLicenseErrorForBuilder": "Váš účet nevlastní licenci Web AppBuilder. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou základní aplikace nebo doplňková licence základních aplikací."
 });

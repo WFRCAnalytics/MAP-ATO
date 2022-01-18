@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Ingen tabeller tilgjengelig for visning.",
   "checkConfigutationToSelectLayers": "Gå til siden for miniprograminnstillinger for å velge lag.",
-  "checkLayerListToSelectLayers": "Attributtabellen er synkronisert med synlige lag i kartet; du kan bruke et miniprogram som Lagliste for å aktivere/deaktivere lag.",
-  "rowHeaderColumnTitle": "Rad ${layerName}, hovered, trykk på Enter for å velge hover-radene"
+  "checkLayerListToSelectLayers": "Attributtabellen er synkronisert med synlige lag i kartet; du kan bruke et miniprogram som Lagliste for å aktivere/deaktivere lag."
 });

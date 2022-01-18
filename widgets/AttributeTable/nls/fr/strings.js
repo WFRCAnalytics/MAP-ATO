@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Aucune table à afficher.",
   "checkConfigutationToSelectLayers": "Accédez à la page des paramètres des widgets pour sélectionner des couches.",
-  "checkLayerListToSelectLayers": "Le widget Table attributaire est synchronisé avec les couches visibles sur la carte. Vous pouvez utiliser un widget tel que Liste des couches pour activer/désactiver des couches.",
-  "rowHeaderColumnTitle": "Ligne ${layerName}, survolée, appuyez sur la touche Entrée pour sélectionner les lignes survolées"
+  "checkLayerListToSelectLayers": "Le widget Table attributaire est synchronisé avec les couches visibles sur la carte. Vous pouvez utiliser un widget tel que Liste des couches pour activer/désactiver des couches."
 });

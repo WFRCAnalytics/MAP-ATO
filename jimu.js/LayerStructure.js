@@ -308,7 +308,7 @@ define([
     },
 
     _onLayerReordered: function(layerInfo, changedType) {
-      var changedNodes = layerInfo ? [layerInfo._adaptor] : [];
+      var changedNodes = [layerInfo._adaptor];
       var changedRootNodes = changedNodes;
       var eventObject = {
         type: changedType,

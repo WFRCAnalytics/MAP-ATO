@@ -592,7 +592,7 @@ define([
       return option;
     },
 
-    settingDataZoom: function(option, config, position, prevRatio) {
+    settingDataZoom: function(option, config, position) {
       if (!this.isAxisChart(config)) {
         return option;
       }
@@ -606,11 +606,11 @@ define([
         return option;
       }
 
-      option = this._settingDataZoom(config, option, position, prevRatio);
+      option = this._settingDataZoom(config, option, position);
       return option;
     },
 
-    _settingDataZoom: function(config, option, position, prevRatio) {
+    _settingDataZoom: function(config, option, position) {
       if (!this.chart) {
         return option;
       }
@@ -623,7 +623,7 @@ define([
       //Number of lateral elements
       var number = config.stack ? dataNumber : dataNumber * seriesLength;
       if (!number || !width) {
-        option.dataZoom = [];
+        option.dataZoom = dataZoom;
         return option;
       }
       //the width of each column
@@ -641,20 +641,12 @@ define([
       }
 
       var showDataZoom = width / number < oneColumnWidth;
-      var dataZoomMode = (config.dataZoomOption && config.dataZoomOption.mode) || 'AUTO';
-      var start = 0, end = 100;
-      if(!prevRatio){
-        if(dataZoomMode === 'AUTO'){
-          start = 0;
-          end = width / (number * oneColumnWidth);
-          end = parseFloat(end * 100, 10).toFixed(3);
-          end = end > 100 ? 100 : end;
-          end = end === 0 ? 0.01 : end;
-        }
-      }else {
-        start = Number(prevRatio[0]);
-        end = Number(prevRatio[1]);
-      }
+
+      var ratio = width / (number * oneColumnWidth);
+      ratio = parseFloat(ratio * 100, 10).toFixed(3);
+      ratio = ratio > 100 ? 100 : ratio;
+      ratio = ratio === 0 ? 0.01 : ratio;
+
       var dataZoom = [];
 
       var axisIndex = config.type === 'bar' ? 'yAxisIndex' : 'xAxisIndex';
@@ -662,11 +654,11 @@ define([
       dataZoom = config.dataZoom.map(lang.hitch(this, function(item) {
         var zoomOption = {
           type: item,
+          start: 0,
           show: showDataZoom
         };
         zoomOption[axisIndex] = [0];
-        zoomOption.start = start;
-        zoomOption.end = end;
+        zoomOption.end = ratio;
         zoomOption.showDataShadow = false;
         zoomOption.realtime = false;
         return zoomOption;
@@ -1086,13 +1078,11 @@ define([
           }
         }
       }
-      
-      //Keep LTR for chart x-axis: https://devtopia.esri.com/WebGIS/arcgis-webappbuilder/issues/17321
-      
-      // if (window.isRTL) {
-      //   xAxisOption.inverse = true;
-      //   yAxisOption.position = 'right';
-      // }
+      //setting axis RTL
+      if (window.isRTL) {
+        xAxisOption.inverse = true;
+        yAxisOption.position = 'right';
+      }
 
       option.xAxis = xAxisOption;
       option.yAxis = yAxisOption;

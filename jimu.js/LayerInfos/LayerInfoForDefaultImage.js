@@ -23,9 +23,8 @@ define([
   'dojo/promise/all',
   'dojo/aspect',
   'esri/request',
-  './LayerInfoForDefault',
-  '../utils'
-], function(declare, domConstruct, array, lang, Deferred, all, aspect, esriRequest, LayerInfoForDefault, jimuUtils) {
+  './LayerInfoForDefault'
+], function(declare, domConstruct, array, lang, Deferred, all, aspect, esriRequest, LayerInfoForDefault) {
   var clazz = declare(LayerInfoForDefault, {
     constructor: function() {
       this._addImageServiceLayerType();
@@ -90,7 +89,7 @@ define([
 
               domConstruct.create("div", {
                 "class": "legend-label jimu-float-leading",
-                "innerHTML": jimuUtils.sanitizeHTML(legend.label) || " "
+                "innerHTML": legend.label || " "
               }, legendDiv);
             }, this);
           }, this);

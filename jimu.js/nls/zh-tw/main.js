@@ -98,15 +98,12 @@ define({
     "tooltipText": "工具提示文字",
     "findAddressOrPlace": "尋找位址或地點",
     "expand": "展開 ${value}",
-    "collapse": "收合 ${value}",
-    "asc": "遞增",
-    "desc": "降冪"
+    "collapse": "收合 ${value}"
   },
   "errorCode": "代碼",
   "errorMessage": "訊息",
   "errorDetail": "詳細資訊",
   "widgetPlaceholderTooltip": "要進行設置，請轉到 widget 並按一下相應占位符",
-  "widgetToolTip": "${widgetLabel}。 按下 Enter 以聚焦於此 widget 的內部。 當焦點位於內部時，按下 Esc 可重新聚焦於 widget。",
   "skips": {
     "skips": "略過連結",
     "skipTo": "跳至 ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "顯示所選圖徵",
     "ExportToFeatureCollection": "匯出至圖徵集合",
     "ExportToGeoJSON": "匯出至 GeoJSON",
-    "ExportToFilegdb": "匯出至檔案地理資料庫",
-    "ExportToShapefile": "匯出至 shapefile",
     "EditAttributes": "編輯屬性",
     "AddMarker": "新增標記",
     "RemoveMarker": "移除標記",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "將此應用程式嵌入到網站中",
     "shareEmailSubject": "正在分享 Web 應用程式:",
-    "shareEmailTxt1": "這裡是使用 ArcGIS Web AppBuilder 與您分享的 Web 應用程式。",
-    "shareEmailTxt2": "您可以使用 Esri ArcGIS Web AppBuilder 來建立和分享您自己的 Web 應用程式。",
+    "shareEmailTxt1": "這裡是使用 Web AppBuilder for ArcGIS 與您分享的 Web 應用程式。",
+    "shareEmailTxt2": "您可以使用 Esri Web AppBuilder for ArcGIS 來建立和分享您自己的 Web 應用程式。",
     "shareEmailTxt3": "如需詳細資訊，請造訪 http://www.esri.com/software/Web-AppBuilder。",
     "smallSize": "小",
     "mediumSize": "中",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "您的帳號沒有建立或修改資料的權限。或此 Web 地圖不含任何可編輯圖層。",
   "invalidConfiguration": "未配置 widget，或配置中的圖層已從地圖中消失。請在建構器模式中開啟應用程式，並重新配置 widget。",
   "essentialAppsLicenseErrorForApp": "您的帳號沒有使用非公開應用程式的權限。 請聯繫您的組織管理員，請其將包含基礎應用程式或附加元件基礎應用程式授權的使用者類型指派給您。",
-  "essentialAppsLicenseErrorForBuilder": "您的帳號沒有 Web AppBuilder 授權。 請聯繫您的組織管理員，請其將包含基礎應用程式或附加元件基礎應用程式授權的使用者類型指派給您。",
-  "setStyle": "設定樣式"
+  "essentialAppsLicenseErrorForBuilder": "您的帳號沒有 Web AppBuilder 授權。 請聯繫您的組織管理員，請其將包含基礎應用程式或附加元件基礎應用程式授權的使用者類型指派給您。"
 });

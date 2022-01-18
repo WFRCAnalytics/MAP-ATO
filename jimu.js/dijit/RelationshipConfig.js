@@ -21,11 +21,10 @@ define(['dojo/_base/declare',
   'dojo/text!./templates/RelationshipConfig.html',
   'dojo/dom-construct',
   'dojo/_base/lang',
-  'dojo/_base/array',
-  '../utils'
+  'dojo/_base/array'
 ],
 function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
-  template, domConstruct, lang, array, jimuUtils) {
+  template, domConstruct, lang, array) {
   return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
     _def:null,
     declaredClass: 'jimu.dijit.RelationshipConfig',
@@ -74,7 +73,7 @@ function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin,
       this.title = val;
       domConstruct.empty(this.titleLabel);
       domConstruct.create('div', {
-        innerHTML: jimuUtils.sanitizeHTML(val)
+        innerHTML: val
       }, this.titleLabel);
     },
 

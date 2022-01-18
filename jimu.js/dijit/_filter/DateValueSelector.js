@@ -231,7 +231,8 @@ define([
         if(virtualDate === 'custom'){
           date = this.dateTimeObj.date;
           if(date){
-            result.value = jimuUtils.getDateTimeStr(date, true);//save a full date time format
+            // result.value = date.toDateString();//ymd
+            result.value = jimuUtils.getDateTimeStr(date);//save a full date time format
           }else{
             result.value = null;
           }
@@ -242,7 +243,8 @@ define([
           date = filterUtils.getRealDateByVirtualDate(virtualDate);
           result.virtualDate = virtualDate;
           if(date){
-            result.value = jimuUtils.getDateTimeStr(date);
+            // result.value = date.toDateString();
+            result.value = jimuUtils.getDateTimeStr(date, 'YYYY-MM-DD');
           }else{
             result = null;
           }

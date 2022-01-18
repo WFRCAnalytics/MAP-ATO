@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Der er ingen tabeller at vise.",
   "checkConfigutationToSelectLayers": "Gå til siden for widget-indstillinger for at vælge lag.",
-  "checkLayerListToSelectLayers": "Attribut-tabellen er synkroniseret med de synlige lag i kortet. Du kan bruge widgets som Lagliste til at vise/skjule lag.",
-  "rowHeaderColumnTitle": "Række ${layerName}, hold musen over, tryk på Enter for at vælge de rækker, du holder musen over."
+  "checkLayerListToSelectLayers": "Attribut-tabellen er synkroniseret med de synlige lag i kortet. Du kan bruge widgets som Lagliste til at vise/skjule lag."
 });

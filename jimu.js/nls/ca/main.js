@@ -98,15 +98,12 @@ define({
     "tooltipText": "Text d'informació sobre eines",
     "findAddressOrPlace": "Cerca una adreça o un lloc",
     "expand": "Expandeix ${value}",
-    "collapse": "Redueix ${value}",
-    "asc": "Ascendent",
-    "desc": "Descendent"
+    "collapse": "Redueix ${value}"
   },
   "errorCode": "Codi",
   "errorMessage": "Missatge",
   "errorDetail": "Detall",
   "widgetPlaceholderTooltip": "Per configurar-ho, aneu a Widgets i feu clic al marcador de posició corresponent.",
-  "widgetToolTip": "${widgetLabel}. Premeu Retorn per situar l'enfocament a dins d'aquest widget. Quan l'enfocament sigui a dins, premeu Esc per tornar a situar l'enfocament al widget.",
   "skips": {
     "skips": "Omet els enllaços",
     "skipTo": "Ves a ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Mostra les entitats seleccionades",
     "ExportToFeatureCollection": "Exporta a una col·lecció d'entitats",
     "ExportToGeoJSON": "Exporta a un fitxer GeoJSON",
-    "ExportToFilegdb": "Exporta-ho a una geobase de dades de fitxers",
-    "ExportToShapefile": "Exporta-ho a shapefile",
     "EditAttributes": "Edita els atributs",
     "AddMarker": "Afegeix un marcador",
     "RemoveMarker": "Elimina el marcador",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Integra aquesta aplicació en un lloc web",
     "shareEmailSubject": "S'està compartint l'aplicació web:",
-    "shareEmailTxt1": "Aquesta aplicació web s'ha compartit amb vós mitjançant l'ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Podeu crear i compartir la vostra pròpia aplicació web amb l'Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Aquesta aplicació web s'ha compartit amb vós mitjançant el Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Podeu crear i compartir la vostra pròpia aplicació web amb l'Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Visiteu http://www.esri.com/software/web-appbuilder per obtenir més informació.",
     "smallSize": "Petit",
     "mediumSize": "Mitjà",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "El vostre compte no té permís per crear ni modificar dades. O bé, aquest mapa web no conté cap capa editable.",
   "invalidConfiguration": "El widget no està configurat o les capes de la configuració ja no es troben al mapa. Obriu l'aplicació en el mode del builder i torneu a configurar el widget.",
   "essentialAppsLicenseErrorForApp": "El vostre compte no té llicència per utilitzar una aplicació que no sigui pública. Demaneu a l'administrador de l'organització que us assigni un tipus d'usuari que inclogui les aplicacions bàsiques o una llicència d'aplicacions bàsiques de complement.",
-  "essentialAppsLicenseErrorForBuilder": "El vostre compte no té llicència per al Web AppBuilder. Demaneu a l'administrador de l'organització que us assigni un tipus d'usuari que inclogui les aplicacions bàsiques o una llicència d'aplicacions bàsiques de complement.",
-  "setStyle": "Defineix l'estil"
+  "essentialAppsLicenseErrorForBuilder": "El vostre compte no té llicència per al Web AppBuilder. Demaneu a l'administrador de l'organització que us assigni un tipus d'usuari que inclogui les aplicacions bàsiques o una llicència d'aplicacions bàsiques de complement."
 });

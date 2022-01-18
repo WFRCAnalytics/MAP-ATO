@@ -98,15 +98,12 @@ define({
     "tooltipText": "Quickinfo-Text",
     "findAddressOrPlace": "Adresse oder Ort suchen",
     "expand": "${value} einblenden",
-    "collapse": "${value} ausblenden",
-    "asc": "Aufsteigend",
-    "desc": "Absteigend"
+    "collapse": "${value} ausblenden"
   },
   "errorCode": "Code",
   "errorMessage": "Meldung",
   "errorDetail": "Detail",
   "widgetPlaceholderTooltip": "Zum Einrichten zu Widgets wechseln und auf den entsprechenden Platzhalter klicken",
-  "widgetToolTip": "${widgetLabel}. Drücken Sie die Eingabetaste, um zu den Elementen innerhalb des Widgets zu navigieren. Drücken Sie die Esc-Taste, um zurück auf die Ebene des Widgets zu navigieren.",
   "skips": {
     "skips": "Links überspringen",
     "skipTo": "Zu ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Ausgewählte Features anzeigen",
     "ExportToFeatureCollection": "In Feature-Sammlung exportieren",
     "ExportToGeoJSON": "In GeoJSON exportieren",
-    "ExportToFilegdb": "In File-Geodatabase exportieren",
-    "ExportToShapefile": "In Shapefile exportieren",
     "EditAttributes": "Attribute bearbeiten",
     "AddMarker": "Marker hinzufügen",
     "RemoveMarker": "Marker entfernen",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Diese App in eine Website einbetten",
     "shareEmailSubject": "Freigeben der Web-App:",
-    "shareEmailTxt1": "Im Folgenden finden Sie eine Web-App, die mit ArcGIS Web AppBuilder für Sie freigegeben wurde.",
-    "shareEmailTxt2": "Mit Esri ArcGIS Web AppBuilder können Sie eine eigene Web-App erstellen und freigeben.",
+    "shareEmailTxt1": "Im Folgenden finden Sie eine Web-App, die mit Web AppBuilder for ArcGIS für Sie freigegeben wurde.",
+    "shareEmailTxt2": "Sie können Ihre eigene Web-App mit Esri Web AppBuilder for ArcGIS erstellen und freigeben.",
     "shareEmailTxt3": "Weitere Informationen finden Sie unter \"http://www.esri.com/software/web-appbuilder\".",
     "smallSize": "Klein",
     "mediumSize": "Mittel",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Ihrem Konto sind keine Berechtigungen zum Erstellen oder Ändern von Daten zugewiesen. Oder diese Webkarte enthält keine editierbaren Layer.",
   "invalidConfiguration": "Das Widget wurde nicht konfiguriert oder die Layer in der Konfiguration sind nicht mehr in der Karte enthalten. Öffnen Sie die App im Builder-Modus, und konfigurieren Sie das Widget neu.",
   "essentialAppsLicenseErrorForApp": "Ihr Konto ist nicht für die Verwendung einer nicht öffentlichen App lizenziert. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Essential Apps oder eine Add-On-Lizenz für Essential Apps zuzuweisen.",
-  "essentialAppsLicenseErrorForBuilder": "Ihr Konto ist nicht für Web AppBuilder lizenziert. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Essential Apps oder eine Add-On-Lizenz für Essential Apps zuzuweisen.",
-  "setStyle": "Style festlegen"
+  "essentialAppsLicenseErrorForBuilder": "Ihr Konto ist nicht für Web AppBuilder lizenziert. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Essential Apps oder eine Add-On-Lizenz für Essential Apps zuzuweisen."
 });

@@ -98,15 +98,12 @@ define({
     "tooltipText": "نص تلميحات الأداة",
     "findAddressOrPlace": "العثور على عنوان أو مكان",
     "expand": "توسيع ${value}",
-    "collapse": "طي ${value}",
-    "asc": "تصاعدي",
-    "desc": "تنازليًا"
+    "collapse": "طي ${value}"
   },
   "errorCode": "كود",
   "errorMessage": "رسالة",
   "errorDetail": "تفاصيل",
   "widgetPlaceholderTooltip": "لتعينها، انتقل إلى عناصر واجهة الاستخدام وانقر على العناصر المتطابقة",
-  "widgetToolTip": "${widgetLabel}. اضغط على Enter للتركيز داخل عنصر واجهة المستخدم هذا. عند التركيز بالداخل، اضغط على Esc للتركيز مرة أخرة على عنصر واجهة المستخدم.",
   "skips": {
     "skips": "تخطي الروابط",
     "skipTo": "تجاوز إلى ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "عرض المعالم المُحددة",
     "ExportToFeatureCollection": "تصدير إلى مجموعة المعالم",
     "ExportToGeoJSON": "التصدير إلى GeoJSON",
-    "ExportToFilegdb": "تصدير إلى قاعدة بيانات جغرافية لملف",
-    "ExportToShapefile": "تصدير إلى ملف شكل",
     "EditAttributes": "تحرير البيانات الجدولية",
     "AddMarker": "إضافة علامة",
     "RemoveMarker": "إزالة علامة",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "تضمين هذا التطبيق في موقع ويب",
     "shareEmailSubject": "مشاركة تطبيق الويب:",
-    "shareEmailTxt1": "يوجد هنا تطبيق ويب تمت مشاركته معك باستخدام ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "يمكنك إنشاء تطبيق الويب الخاص بك ومشاركته مع Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "هنا يوجد تطبيق ويب تم مشاركته معك باستخدام Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "يمكنك إنشاء تطبيق الويب الخاص بك ومشاركته مع Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "تفضل بزيارة http://www.esri.com/software/web-appbuilder للتفاصيل.",
     "smallSize": "صغير",
     "mediumSize": "متوسط",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "لا يتضمن حسابك الإذن لإنشاء أو تعديل البيانات. أو أن خريطة الويب الحالية لا تتصمن أي طبقات قابلة للتعديل.",
   "invalidConfiguration": "لم يتم تكوين عنصر واجهة المستخدم أو أن الطبقات التي توجد في التكوين لم تُعد موجودة في الخريطة. يرجى فتح التطبيق في وضع المُنشئ وإعادة تكوين عنصر واجهة المستخدم.",
   "essentialAppsLicenseErrorForApp": "حسابك غير مرخص لاستخدام تطبيق غير عام. رجاءً اطلب من مسئولي المؤسسة تعيينك كنوع مستخدم يتضمن التطبيقات الأساسية أو ترخيص التطبيقات الأساسية المضافة.",
-  "essentialAppsLicenseErrorForBuilder": "حسابك غير مرخص لـ Web AppBuilder. رجاءً اطلب من مسئولي المؤسسة تعيينك كنوع مستخدم يتضمن التطبيقات الأساسية أو ترخيص التطبيقات الأساسية المضافة.",
-  "setStyle": "تعيين نمط"
+  "essentialAppsLicenseErrorForBuilder": "حسابك غير مرخص لـ Web AppBuilder. رجاءً اطلب من مسئولي المؤسسة تعيينك كنوع مستخدم يتضمن التطبيقات الأساسية أو ترخيص التطبيقات الأساسية المضافة."
 });

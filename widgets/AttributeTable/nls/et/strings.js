@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Puuduvad tabelid, mida kuvada.",
   "checkConfigutationToSelectLayers": "Kihtide valimiseks minge vidina seadete lehele.",
-  "checkLayerListToSelectLayers": "Atribuuditabel sünkroniseeritakse kaardil nähtavate kihtidega. Kihtide sisse- või väljalülitamiseks saate kasutada näiteks kihiloendi vidinat.",
-  "rowHeaderColumnTitle": "Rida ${layerName}, hõljutatud, hõljutatud ridade valimiseks vajutage sisestusklahvi Enter"
+  "checkLayerListToSelectLayers": "Atribuuditabel sünkroniseeritakse kaardil nähtavate kihtidega. Kihtide sisse- või väljalülitamiseks saate kasutada näiteks kihiloendi vidinat."
 });

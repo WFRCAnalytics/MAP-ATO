@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Inga tabeller finns att visa.",
   "checkConfigutationToSelectLayers": "Gå till widgetens inställningssida för att välja lager.",
-  "checkLayerListToSelectLayers": "Attributtabellen synkroniseras med synliga lager i kartan. Du kan använda en widget som exempelvis Lagerlista för att växla lager av/på.",
-  "rowHeaderColumnTitle": "Rad ${layerName}, hovrad, tryck på retur för att välja de hovrade raderna"
+  "checkLayerListToSelectLayers": "Attributtabellen synkroniseras med synliga lager i kartan. Du kan använda en widget som exempelvis Lagerlista för att växla lager av/på."
 });

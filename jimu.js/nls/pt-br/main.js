@@ -98,15 +98,12 @@ define({
     "tooltipText": "Texto de dica da ferramenta",
     "findAddressOrPlace": "Encontrar endereço ou lugar",
     "expand": "Expandir ${value}",
-    "collapse": "Recolher ${value}",
-    "asc": "Crescente",
-    "desc": "Descendente"
+    "collapse": "Recolher ${value}"
   },
   "errorCode": "Código",
   "errorMessage": "Mensagem",
   "errorDetail": "Detalhe",
   "widgetPlaceholderTooltip": "Para configurar, siga até Widgets e clique no console correspondente",
-  "widgetToolTip": "${widgetLabel}. Pressione Enter para focar dentro deste widget. Quando o foco estiver dentro, pressione Esc para focar novamente no widget.",
   "skips": {
     "skips": "Ignorar Links",
     "skipTo": "Pular para ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Mostrar feições selecionadas",
     "ExportToFeatureCollection": "Exportar para coleção de feição",
     "ExportToGeoJSON": "Exportar para GeoJSON",
-    "ExportToFilegdb": "Exportar para arquivo geodatabase",
-    "ExportToShapefile": "Exportar para shapefile",
     "EditAttributes": "Editar atributos",
     "AddMarker": "Adicionar um marcador",
     "RemoveMarker": "Remover marcador",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Embutir este aplicativo em um site da web",
     "shareEmailSubject": "Compartilhando aplicativo da web:",
-    "shareEmailTxt1": "Aqui está um aplicativo da web compartilhado com você utilizando o ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Você pode criar e compartilhar seu próprio aplicativo da web com Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Aqui está um aplicativo da web compartilhado com você utilizando Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Você pode criar e compartilhar seu próprio aplicativo da web com Web AppBuilder for ArcGIS da Esri.",
     "shareEmailTxt3": "Visite http://www.esri.com/software/web-appbuilder para detalhes.",
     "smallSize": "Pequeno",
     "mediumSize": "Médio",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Sua conta não tem permissão para criar ou modificar dados. Ou este mapa da web não contém camadas editáveis.",
   "invalidConfiguration": "O Widget não está configurado ou as camadas na configuração não estão mais no mapa.  Abra o aplicativo no modo do construtor e configure novamente o widget.",
   "essentialAppsLicenseErrorForApp": "Sua conta não está licenciada para utilizar um aplicativo que não seja público. Solicite ao administrador da sua organização que lhe atribua um tipo de usuário que inclua os Aplicativos Fundamentais ou uma licença complementar dos Aplicativos Fundamentais.",
-  "essentialAppsLicenseErrorForBuilder": "Sua conta não é licenciada para Web AppBuilder. Solicite ao administrador da sua organização que lhe atribua um tipo de usuário que inclua os Aplicativos Fundamentais ou uma licença complementar dos Aplicativos Fundamentais.",
-  "setStyle": "Definir estilo"
+  "essentialAppsLicenseErrorForBuilder": "Sua conta não é licenciada para Web AppBuilder. Solicite ao administrador da sua organização que lhe atribua um tipo de usuário que inclua os Aplicativos Fundamentais ou uma licença complementar dos Aplicativos Fundamentais."
 });

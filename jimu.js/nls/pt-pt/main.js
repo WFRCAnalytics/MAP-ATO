@@ -98,15 +98,12 @@ define({
     "tooltipText": "Texto da Dica de Ferramenta",
     "findAddressOrPlace": "Encontrar um endereço ou local",
     "expand": "Expandir ${value}",
-    "collapse": "Fechar ${value}",
-    "asc": "Ascendente",
-    "desc": "Decrescente"
+    "collapse": "Fechar ${value}"
   },
   "errorCode": "Código",
   "errorMessage": "Mensagem",
   "errorDetail": "Detalhe",
   "widgetPlaceholderTooltip": "Para configurar, vá a Widgets e clique no placehorlder correspondente",
-  "widgetToolTip": "${widgetLabel}. Pressione Enter para focar no interior do widget. Quando o foco está no interior, pressione Esc para focar novamente no widget.",
   "skips": {
     "skips": "Ignorar Ligações",
     "skipTo": "Avançar para ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Exibir elementos selecionados",
     "ExportToFeatureCollection": "Exportar para coleção de elementos",
     "ExportToGeoJSON": "Exportar para GeoJSON",
-    "ExportToFilegdb": "Exportar para file geodatabase",
-    "ExportToShapefile": "Exportar para shapefile",
     "EditAttributes": "Editar atributos",
     "AddMarker": "Adicionar um marcador",
     "RemoveMarker": "Remover marcador",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Incorporar este mapa num site web",
     "shareEmailSubject": "Incorporar esta aplicação num site web",
-    "shareEmailTxt1": "Aqui está uma aplicação web partilhada consigo utilizando o ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Pode criar e partilhar a sua própria aplicação web com o Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Aqui está uma aplicação web partilhada consigo utilizando o Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Pode criar e partilhar a sua própria aplicação com o Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Visite http://www.esri.com/software/web-appbuilder para obter detalhes.",
     "smallSize": "Pequeno",
     "mediumSize": "Média",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "A sua conta não possui permissão para criar ou modificar dados. Ou este mapa web não contém quaisquer camadas editáveis.",
   "invalidConfiguration": "O widget não se encontra configurado ou as camadas da configuração já não se encontram no mapa.  Por favor, abra a aplicação no modo de builder e reconfigure o widget.",
   "essentialAppsLicenseErrorForApp": "A sua conta não está licenciada para usar uma aplicação não pública. Peça ao administrador da sua organização para lhe atribuir um tipo de utilizador que inclua a licença para aplicações essenciais ou aplicações essenciais complementares.",
-  "essentialAppsLicenseErrorForBuilder": "A sua conta não está licenciada para o Web AppBuilder. Peça ao administrador da sua organização para lhe atribuir um tipo de utilizador que inclua a licença para aplicações essenciais ou aplicações essenciais complementares.",
-  "setStyle": "Definir estilo"
+  "essentialAppsLicenseErrorForBuilder": "A sua conta não está licenciada para o Web AppBuilder. Peça ao administrador da sua organização para lhe atribuir um tipo de utilizador que inclua a licença para aplicações essenciais ou aplicações essenciais complementares."
 });

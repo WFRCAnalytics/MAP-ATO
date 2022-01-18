@@ -98,15 +98,12 @@ define({
     "tooltipText": "Texte de l’info-bulle",
     "findAddressOrPlace": "Rechercher une adresse ou un lieu",
     "expand": "Développer ${value}",
-    "collapse": "Réduire ${value}",
-    "asc": "Croissant",
-    "desc": "Décroissant"
+    "collapse": "Réduire ${value}"
   },
   "errorCode": "Code",
   "errorMessage": "Message",
   "errorDetail": "Détail",
   "widgetPlaceholderTooltip": "Pour le configurer, accédez à Widgets et cliquez sur l’espace réservé correspondant",
-  "widgetToolTip": "${widgetLabel}. Appuyez sur Entrée pour placer le focus à l’intérieur de ce widget. Lorsque le focus est placé à l’intérieur du widget, appuyez sur Échap pour annuler ce focus.",
   "skips": {
     "skips": "Ignorer les liens",
     "skipTo": "Passer à ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Afficher les entités sélectionnées",
     "ExportToFeatureCollection": "Exporter vers une collection d'entités",
     "ExportToGeoJSON": "Exporter vers GeoJSON",
-    "ExportToFilegdb": "Exporter vers une géodatabase fichier",
-    "ExportToShapefile": "Exporter vers un shapefile",
     "EditAttributes": "Modifier des attributs",
     "AddMarker": "Ajouter un symbole ponctuel",
     "RemoveMarker": "Supprimer un symbole ponctuel",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Incorporer cette application dans un site Web",
     "shareEmailSubject": "Partage de l'application Web :",
-    "shareEmailTxt1": "Voici une application Web partagée avec vous à l’aide d’ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Vous pouvez créer et partager votre propre application Web avec ArcGIS Web AppBuilder d’Esri.",
+    "shareEmailTxt1": "Voici une application Web partagée avec vous à l'aide de Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Vous pouvez créer et partager votre propre application Web avec Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Consultez http://www.esri.com/software/web-appbuilder pour en savoir plus.",
     "smallSize": "Petit",
     "mediumSize": "Moyen",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Votre compte ne dispose pas des autorisations de création ou de modification des données ou cette page web ne contient aucune couche modifiable.",
   "invalidConfiguration": "Le widget n'est pas configuré ou les couches de la configuration ne figurent plus sur la carte. Ouvrez l'application en mode de générateur et reconfigurez le widget.",
   "essentialAppsLicenseErrorForApp": "La licence de votre compte ne permet pas d’utiliser une application non publique. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut une licence Essential Apps ou une licence Essential Apps additionnelle.",
-  "essentialAppsLicenseErrorForBuilder": "La licence de votre compte ne permet pas d'utiliser Web AppBuilder. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut une licence Essential Apps ou une licence Essential Apps additionnelle.",
-  "setStyle": "Définir le style"
+  "essentialAppsLicenseErrorForBuilder": "La licence de votre compte ne permet pas d'utiliser Web AppBuilder. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut une licence Essential Apps ou une licence Essential Apps additionnelle."
 });

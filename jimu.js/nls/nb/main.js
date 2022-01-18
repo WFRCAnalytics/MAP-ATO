@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tekst for verktøytips",
     "findAddressOrPlace": "Finn adresse eller sted",
     "expand": "Vis ${value}",
-    "collapse": "Skjul ${value}",
-    "asc": "Stigende",
-    "desc": "Synkende"
+    "collapse": "Skjul ${value}"
   },
   "errorCode": "Kode",
   "errorMessage": "Melding",
   "errorDetail": "Detaljer",
   "widgetPlaceholderTooltip": "For å konfigurere går du til Miniprogrammer og klikker på tilsvarende plassholder",
-  "widgetToolTip": "${widgetLabel}. Trykk på Enter for å fokusere inni miniprogrammet. Når fokus er inni, trykker du på Esc for å fokusere på miniprogrammet igjen.",
   "skips": {
     "skips": "Hopp over koblinger",
     "skipTo": "Hopp til ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Vis valgte geoobjekter",
     "ExportToFeatureCollection": "Eksporter til geoobjektssamling",
     "ExportToGeoJSON": "Eksporter til GeoJSON",
-    "ExportToFilegdb": "Eksporter til filgeodatabase",
-    "ExportToShapefile": "Eksporter til shapefil",
     "EditAttributes": "Rediger attributter",
     "AddMarker": "Legg til en markør",
     "RemoveMarker": "Fjern markør",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Bygg inn denne appen på et webområde",
     "shareEmailSubject": "Deler webapp:",
-    "shareEmailTxt1": "Her er en webapp som er delt med deg ved hjelp av ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Du kan opprette og dele din egen webapp med Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Her er en webapp som er delt med deg ved hjelp av Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Du kan opprette og dele din egen webapp med Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Du finner detaljert informasjon på http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Liten",
     "mediumSize": "Middels",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Kontoen din har ikke tillatelse til å opprette eller endre data, eller det kan hende dette webkartet ikke inneholder lag som kan redigeres.",
   "invalidConfiguration": "Miniprogrammet er ikke konfigurert eller lagene i konfigurasjonen finnes ikke i kartet lenger. Åpne appen i byggemodus, og konfigurer miniprogrammet på nytt.",
   "essentialAppsLicenseErrorForApp": "Kontoen din er ikke lisensiert til å bruke apper som ikke er offentlige. Be administratoren for organisasjonen om å tilordne deg en brukertype som omfatter Essential Apps eller en tilleggslisens for Essential Apps.",
-  "essentialAppsLicenseErrorForBuilder": "Kontoen din er ikke lisensiert for Web AppBuilder. Be administratoren for organisasjonen om å tilordne deg en brukertype som omfatter Essential Apps eller en tilleggslisens for Essential Apps.",
-  "setStyle": "Angi stil"
+  "essentialAppsLicenseErrorForBuilder": "Kontoen din er ikke lisensiert for Web AppBuilder. Be administratoren for organisasjonen om å tilordne deg en brukertype som omfatter Essential Apps eller en tilleggslisens for Essential Apps."
 });

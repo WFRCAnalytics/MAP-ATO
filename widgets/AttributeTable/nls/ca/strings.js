@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "No hi ha taules disponibles per mostrar.",
   "checkConfigutationToSelectLayers": "Aneu a la pàgina de configuració de widgets per seleccionar capes.",
-  "checkLayerListToSelectLayers": "La taula d'atributs està sincronitzada amb les capes visibles del mapa. Podeu utilitzar un widget, com ara Llista de capes, per activar o desactivar capes.",
-  "rowHeaderColumnTitle": "Fila ${layerName}, cursor passat pel damunt, premeu Intro per seleccionar les files en passar-hi el cursor pel damunt."
+  "checkLayerListToSelectLayers": "La taula d'atributs està sincronitzada amb les capes visibles del mapa. Podeu utilitzar un widget, com ara Llista de capes, per activar o desactivar capes."
 });

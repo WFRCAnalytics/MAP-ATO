@@ -74,14 +74,13 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
     valueProviderFactory: null,
     featureLayerId: null,
     layerInfosObj: null,
-    mode: 'desktop',//desktop, mobile
+    mode: 'desktop',//desktop,mobile
 
     //options:
     noFilterTip: '',//optional
     enableAskForValues: false,//optional
     mobileBreakWidth: 600,
     runtime: false, //optional
-    widgetId: '', //requred when runtime is true.
 
     //public methods:
     //build: partsObj or expr -> UI
@@ -118,7 +117,7 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
       this.inherited(arguments);
       this._setDesktopMode();
       if(this.noFilterTip && typeof this.noFilterTip === 'string'){
-        this.noFilterTipSection.innerHTML = jimuUtils.sanitizeHTML(this.noFilterTip);
+        this.noFilterTipSection.innerHTML = this.noFilterTip;
       }
 
       this._bindBtnsEvent();
@@ -227,7 +226,6 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
     options.partsObj or options.expr is required. options.partsObj has priority.
     options.layerDefinition: optional
     options.featureLayerId: optional
-    options.widgetId: required when runtime mode
     */
     build: function(options){
       var def = new Deferred();
@@ -241,9 +239,6 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
         this.isHosted = jimuUtils.isHostedService(this.url);
         this._layerDefinition = options.layerDefinition;
         this.featureLayerId = options.featureLayerId;
-        if(options.widgetId){
-          this.widgetId = options.widgetId;
-        }
 
         if(options.partsObj){
           this.partsObj = this._updatePartsObj(options.partsObj);
@@ -636,7 +631,6 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
 
     _addSingleFilter:function(/*optional*/ part){
       var args = {
-        widgetId: this.widgetId,
         url: this.url,
         layerInfo: this._layerDefinition,
         popupFieldsInfo: this._popupFieldsInfo,
@@ -673,7 +667,6 @@ function(on, a11yclick, Evented, declare, _WidgetBase, _TemplatedMixin, _Widgets
 
     _addFilterSet:function(/*optional*/ partsObj){
       var args = {
-        widgetId: this.widgetId,
         url: this.url,
         layerInfo: this._layerDefinition,
         popupFieldsInfo: this._popupFieldsInfo,

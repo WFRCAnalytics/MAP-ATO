@@ -27,12 +27,11 @@ define([
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
     'jimu/PanelManager',
-    'jimu/WidgetManager',
-    'jimu/utils'
+    'jimu/WidgetManager'
   ],
   function(declare, lang, array, html, on, aspect,
     domConstruct, domGeometry, domClass, _WidgetBase, _TemplatedMixin, PanelManager,
-    WidgetManager, jimuUtils) {
+    WidgetManager) {
     var clazz = declare([_WidgetBase, _TemplatedMixin], {
       baseClass: 'jimu-dnd-mobile-controller',
       templateString: '<div>' +
@@ -58,7 +57,6 @@ define([
         this.panelOnCloseHandlerIds = [];
         this.panels = {};
         this.createWidgetIcons();
-        this.destroyUnusedPanels();
         if (this.toolsCount === 0) {
           html.setStyle(this.domNode, 'display', 'none');
         }
@@ -81,38 +79,6 @@ define([
             }
           }
         })));
-      },
-
-      _isPanelUsed: function(panelId) {
-        var widgetConfig;
-        array.some(this.appConfig.widgetOnScreen.widgets, lang.hitch(this, function(widget) {
-          if (widget.inPanel) {
-            var pid = widget.id + '_panel';
-            if (panelId === pid) {
-              widgetConfig = widget;
-              return true;
-            }
-          }
-        }));
-        return widgetConfig;
-      },
-
-      destroyUnusedPanels: function() {
-        var panelsToRemove = [];
-        var pid;
-        var widgetConfig;
-        for(var i = 0; i < this.panelManager.panels.length; i++){
-          pid = this.panelManager.panels[i].id;
-          widgetConfig = this._isPanelUsed(pid);
-          if (!widgetConfig) {
-            panelsToRemove.push(pid);
-          } else {
-            this.panelManager.panels[i].reloadWidget(widgetConfig);
-          }
-        }
-        array.forEach(panelsToRemove, lang.hitch(this, function(pid) {
-          this.panelManager.destroyPanel(pid);
-        }));
       },
 
       destroyOnScreenWidgets: function() {
@@ -179,7 +145,7 @@ define([
         domConstruct.create('div', {
           'class': 'widget-label jimu-ellipsis column',
           title: widget.label,
-          innerHTML: jimuUtils.sanitizeHTML(widget.label)
+          innerHTML: widget.label
         }, row);
 
         this.own(on(row, 'click', lang.hitch(this, function(event) {

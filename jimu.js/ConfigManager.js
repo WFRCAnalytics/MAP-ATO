@@ -778,7 +778,7 @@ function (declare, lang, array, html, topic, Deferred, on, jimuUtils, WidgetMana
 
       if(newSharedTheme.useLogo && !oldSharedTheme.useLogo){
         if(this.portalSelf.portalProperties && this.portalSelf.portalProperties.sharedTheme){
-          if(this.portalSelf.portalProperties.sharedTheme.logo && this.portalSelf.portalProperties.sharedTheme.logo.small){
+          if(this.portalSelf.portalProperties.sharedTheme.logo.small){
             this.appConfig.logo = this.portalSelf.portalProperties.sharedTheme.logo.small;
           }else{
             this.appConfig.logo = 'images/app-logo.png';

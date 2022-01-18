@@ -98,15 +98,12 @@ define({
     "tooltipText": "Văn bản Chú giải công cụ",
     "findAddressOrPlace": "Tìm địa chỉ hoặc địa điểm",
     "expand": "Mở rộng ${value}",
-    "collapse": "Thu gọn ${value}",
-    "asc": "Tăng dần",
-    "desc": "Giảm dần"
+    "collapse": "Thu gọn ${value}"
   },
   "errorCode": "Mã",
   "errorMessage": "Thông báo",
   "errorDetail": "Chi tiết",
   "widgetPlaceholderTooltip": "Để thiết lập, đi tới Tiện ích và bấm vào trình giữ chỗ tương ứng",
-  "widgetToolTip": "${widgetLabel}. Nhấn Enter để tập trung vào bên trong tiện ích. Khi tập trung vào bên trong, nhấn Esc để tập trung trở lại tiện ích.",
   "skips": {
     "skips": "Bỏ qua Liên kết",
     "skipTo": "Bỏ qua đến ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Hiển thị đối tượng được chọn",
     "ExportToFeatureCollection": "Xuất ra bộ sưu tập đối tượng",
     "ExportToGeoJSON": "Xuất ra GeoJSON",
-    "ExportToFilegdb": "Xuất sang tệp geodatabase",
-    "ExportToShapefile": "Xuất sang shapefile",
     "EditAttributes": "Chỉnh sửa thuộc tính",
     "AddMarker": "Thêm điểm đánh dấu",
     "RemoveMarker": "Xóa điểm đánh dấu",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Nhúng ứng dụng này vào trang web",
     "shareEmailSubject": "Chia sẻ ứng dụng web:",
-    "shareEmailTxt1": "Đây là ứng dụng web được chia sẻ với bạn bằng ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Bạn có thể tạo và chia sẻ ứng dụng web của riêng mình bằng Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Đây là ứng dụng web được chia sẻ với bạn bằng cách sử dụng Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Bạn có thể tạo và chia sẻ ứng dụng web của riêng mình bằng Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Hãy truy cập http://www.esri.com/software/web-appbuilder để biết thêm chi tiết.",
     "smallSize": "Nhỏ",
     "mediumSize": "Trung bình",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Tài khoản của bạn không có quyền tạo hoặc sửa đổi dữ liệu. Hoặc bản đồ web này không chứa bất kỳ lớp nào có thể chỉnh sửa.",
   "invalidConfiguration": "Tiện ích chưa được cấu hình hoặc lớp trong cấu hình không còn trong bản đồ. Vui lòng mở ứng dụng trong chế độ bộ thiết lập và cấu hình lại tiện ích.",
   "essentialAppsLicenseErrorForApp": "Tài khoản của bạn không được cấp phép để sử dụng ứng dụng không được công khai. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng nào có bao gồm các ứng dụng thiết yếu hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ.",
-  "essentialAppsLicenseErrorForBuilder": "Tài khoản của bạn không được cấp phép để sử dụng ứng dụng Web AppBuilder. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng nào có bao gồm các ứng dụng thiết yếu hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ.",
-  "setStyle": "Thiết lập kiểu"
+  "essentialAppsLicenseErrorForBuilder": "Tài khoản của bạn không được cấp phép để sử dụng ứng dụng Web AppBuilder. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng nào có bao gồm các ứng dụng thiết yếu hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ."
 });

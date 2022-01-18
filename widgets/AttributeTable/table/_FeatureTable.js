@@ -74,8 +74,7 @@ define([
   'dojo/query',
   'dojo/string',
   'dojo/topic',
-	'dojo/keys',
-	'dojo/has'
+	'dojo/keys'
 ], function(
   declare,
   html,
@@ -137,8 +136,7 @@ define([
   query,
   string,
   topic,
-  keys,
-  has
+  keys
 ) {
   return declare([_WidgetBase, Evented], {
     baseClass: 'jimu-widget-attributetable-feature-table',
@@ -206,13 +204,6 @@ define([
     //zoom-to
     //refresh
 
-    // CONSTS:
-    GRID_FAR_OFF_REMOVAL: {
-      DEFAULT: 2000,
-      RESELECTION: Infinity,
-      INFINITY: Infinity
-    },
-    
     constructor: function(options) {
       options = options || {};
       this.set('parent', options.parent || null);
@@ -252,10 +243,6 @@ define([
       }
 
       this.own(on(window, 'resize', lang.hitch(this, this._resize)));
-
-      if (this.layerInfo) {	
-        this.own(on(this.layerInfo, 'filterChanged', lang.hitch(this, this._handleFilterChange)));	
-      }
     },
 
     startup: function() {
@@ -729,7 +716,6 @@ define([
           definition.fields = fFields;
 
           var filter = new Filter({
-            widgetId: this.widgetId,
             noFilterTip: this.nls.noFilterTip,
             style: "width:100%;",
             featureLayerId: this.layerInfo.id,
@@ -902,9 +888,9 @@ define([
       if(!richTextFields || richTextFields.hasOwnProperty("length") && !richTextFields.length) return "";
 
       var _EXAMPLE = {
-        preview: '<u>ArcGIS</u> <font color="#31aacd">Web AppBuilder</font>',
-        withHTMLTags: '&ltu&gtArcGIS&lt/u&gt &ltfont color=\"#31aacd\"&gtWeb AppBuilder&lt/font&gt',
-        withoutHTMLTags: 'ArcGIS Web AppBuilder'
+        preview: '<font color="#31aacd">Web AppBuilder</font> for <u>ArcGIS</u>',
+        withHTMLTags: '&ltfont color=\"#31aacd\"&gtWeb AppBuilder&lt/font&gt for &ltu&gtArcGIS&lt/u&gt',
+        withoutHTMLTags: 'Web AppBuilder for ArcGIS'
       };
       var messageWrapper = document.createElement('div');
       var messageHTML = '', richTextFieldsHTML = '';
@@ -959,7 +945,6 @@ define([
 
     onSelectionClear: function() {
       this.clearSelection(false, true);
-      this._setFarOffRemoval(this.GRID_FAR_OFF_REMOVAL.DEFAULT); // set to default
     },
 
     changeToolbarStatus: function() {
@@ -1186,9 +1171,7 @@ define([
             // if they are different, then it needs to send a query request to
             // server side (handle by "_getExportDataFromServer" method in jimu/CSVUtils.js)
             // to get the data with correct spatial reference
-            // or the layer is a layer without a url that cannot be queried from the server side, e.g.: graphics layer then
-            // try to get the data from the client side
-            if(isSameProjection || !this.layer.url) {
+            if(isSameProjection) {
               var rows = array.map(
                 this._getTableSelectedIds(),
                 lang.hitch(this, function(id) {
@@ -2032,12 +2015,7 @@ define([
         json.columns = columns;
         json.store = store;
         json.keepScrollPosition = true;
-        json.farOffRemoval = this.GRID_FAR_OFF_REMOVAL.DEFAULT;
-        // a better handling for lazy loading data when scrolling on Chrome.
-        // original issue from dgrid: https://github.com/SitePen/dgrid/issues/1351 
-        if(!has('chrome')) {
-          json.pagingDelay = 1000;//like search delay
-        }
+        json.pagingDelay = 1000;//like search delay
         json.allowTextSelection = this.allowTextSelection;
         json.deselectOnRefresh = false;
         json.loadingMessage = gridLoadingIndicator.domNode &&
@@ -2079,25 +2057,6 @@ define([
         this.own(on(this.ownerDocument, 'keyup', lang.hitch(this, function() {
           if (this.allowTextSelection && this.grid && !this.grid.allowTextSelection) {
             this.grid._setAllowTextSelection(true);
-          }
-        })));
-        this.own(on(this.ownerDocument, 'keydown', lang.hitch(this, function(evt) {
-          if(this.tableCreated && 
-            (evt.keyCode === keys.SHIFT || 
-            (has('mac') ? evt.keyCode === keys.META : evt.keyCode === keys.CTRL) && 
-            this.isSelectionMode())) {
-            this._setFarOffRemoval(this.GRID_FAR_OFF_REMOVAL.INFINITY);
-            on.once(this.ownerDocument, 'keyup', lang.hitch(this, function(evt) {
-              if(this.tableCreated && 
-                (evt.keyCode === keys.SHIFT || 
-                (has('mac') ? evt.keyCode === keys.META : evt.keyCode === keys.CTRL))) {
-                if(this.isSelectionMode()) {
-                  this._setFarOffRemoval(this.GRID_FAR_OFF_REMOVAL.RESELECTION);
-                } else {
-                  this._setFarOffRemoval(this.GRID_FAR_OFF_REMOVAL.DEFAULT);
-                }
-              }
-            }));
           }
         })));
 
@@ -2953,10 +2912,6 @@ define([
 
       this.setSelectedNumber();
 
-      if(this.getSelectedRows().length === 1) {
-        this._setFarOffRemoval(this.GRID_FAR_OFF_REMOVAL.RESELECTION);
-      }
-
       this.emit('row-click', {
         table: this,
         selectedIds: ids
@@ -3166,41 +3121,7 @@ define([
           this.loading.hide();
         }
       }
-    },
-
-    _setFarOffRemoval: function(number) {
-      if(this.tableCreated && !isNaN(number)) {
-        this.grid.set('farOffRemoval', number);
-      }
-    },
-    
-    // same logic taken from "jimu.js/dijit/_FeatureSetChooserCore.js"	
-    _handleFilterChange: function() {	
-      var selectedFeatures = this.layer.getSelectedFeatures();	
-      var objectIdField = this.layer.objectIdField;	
-      if (selectedFeatures && selectedFeatures.length > 0) {
-        var selectionIds = array.map(selectedFeatures, function(feature) {	
-          return feature.attributes[objectIdField];	
-        });	
-        var queryParams = new Query();	
-        queryParams.where = objectIdField + ' in (' + selectionIds.join(',') + ') AND ' + 	
-        this.layerInfo.getFilter();	
-        var queryTask = new QueryTask(this.layer.url);	
-        queryTask.executeForIds(queryParams).then(lang.hitch(this, function(filterIds){	
-          array.forEach(selectedFeatures, function(feature) {	
-            if (filterIds && filterIds.indexOf(feature.attributes[objectIdField]) >= 0) {	
-              feature.show();	
-            } else {	
-              feature.hide();	
-            }	
-          });	
-          if (this.selectionManager._isLayerNeedDisplayLayer(this.layer)) {	
-            this.selectionManager._updateDisplayLayer(this.layer, selectedFeatures, FeatureLayer.SELECTION_NEW);	
-          }	
-        }), lang.hitch(this, function(err){	
-          console.error(err);	
-        }));	
-      }
     }
+
   });
 });

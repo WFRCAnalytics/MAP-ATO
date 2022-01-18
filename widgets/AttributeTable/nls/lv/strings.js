@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Neviena tabula nav pieejama rādīšanai.",
   "checkConfigutationToSelectLayers": "Lūdzu, atveriet logrīku iestatījumu lapu, lai atlasītu slāņus.",
-  "checkLayerListToSelectLayers": "Atribūtu tabula ir sinhronizēta ar redzamajiem slāņiem kartē; lai ieslēgtu/izslēgtu slāņus, varat izmantot tādu logrīku kā slāņu sarakstu.",
-  "rowHeaderColumnTitle": "Rinda ${layerName}, norādītā; nospiediet Enter, lai atlasītu norādītās rindas"
+  "checkLayerListToSelectLayers": "Atribūtu tabula ir sinhronizēta ar redzamajiem slāņiem kartē; lai ieslēgtu/izslēgtu slāņus, varat izmantot tādu logrīku kā slāņu sarakstu."
 });

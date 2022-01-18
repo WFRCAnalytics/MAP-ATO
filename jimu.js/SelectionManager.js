@@ -208,12 +208,10 @@ define([
         var selectFeatures = featureLayer.getSelectedFeatures();
         this.clearDisplayLayer(featureLayer);
         array.forEach(selectFeatures, lang.hitch(this, function(feature){
-          if (feature.visible) {
-            feature.setSymbol(null);
-            var graphic = new Graphic(feature.toJson());
-            graphic.setSymbol(selectionSymbol);
-            displayLayer.add(graphic);
-          }
+          feature.setSymbol(null);
+          var graphic = new Graphic(feature.toJson());
+          graphic.setSymbol(selectionSymbol);
+          displayLayer.add(graphic);
         }));
       },
 
@@ -225,11 +223,9 @@ define([
 
         if(selectionMethod === FeatureLayer.SELECTION_NEW || selectionMethod === FeatureLayer.SELECTION_ADD){
           array.forEach(features, lang.hitch(this, function(feature){
-            if (feature.visible) {
-              var idField = featureLayer.objectIdField;
-              var featureIdVal = feature.attributes[idField];
-              featureLayer._selectedFeaturesWebGL[featureIdVal] = feature;
-            }
+            var idField = featureLayer.objectIdField;
+            var featureIdVal = feature.attributes[idField];
+            featureLayer._selectedFeaturesWebGL[featureIdVal] = feature;
           }));
         }else if(selectionMethod === FeatureLayer.SELECTION_SUBTRACT){
           array.forEach(features, lang.hitch(this, function(feature){

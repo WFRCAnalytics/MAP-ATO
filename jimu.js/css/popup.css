@@ -36,10 +36,9 @@
 }
 
 .esriMobilePopupInfoView .esriMobileInfoViewItem .popup-menu-button{
-  margin-top: 20px;
-  background-position: top left;
+  margin-top: 10px;
+  background-position: left;
   float: left;
-  height: 30px;
 }
 
 .jimu-rtl .esriPopup .actionList .popup-menu-button {

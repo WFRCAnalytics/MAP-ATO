@@ -70,7 +70,6 @@ function(Evented, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin
 
     //optional, false: setting data logic, true: runtime data logic #12627
     runtime: false,
-    widgetId: '',
 
     //public methods:
     //toJson: UI->partsObj
@@ -146,8 +145,8 @@ function(Evented, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin
           return null;
         }
         part.interactiveObj = {
-          prompt: jimuUtils.sanitizeHTML(this.promptTB.get('value')),
-          hint: jimuUtils.sanitizeHTML(this.hintTB.get('value')),
+          prompt: this.promptTB.get('value'),
+          hint: this.hintTB.get('value'),
           cascade: "none"
         };
 
@@ -750,7 +749,6 @@ function(Evented, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin
         //operator
         partObj.operator = this._getOperatorByUI();//maybe null
       }
-      partObj.widgetId = this.widgetId;
 
       var valueTypes = [];
       var valueType = null;

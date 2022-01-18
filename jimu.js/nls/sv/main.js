@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tipsrutetext",
     "findAddressOrPlace": "Sök efter adress eller plats",
     "expand": "Visa ${value}",
-    "collapse": "Dölj ${value}",
-    "asc": "Stigande",
-    "desc": "Fallande"
+    "collapse": "Dölj ${value}"
   },
   "errorCode": "Kod",
   "errorMessage": "Meddelande",
   "errorDetail": "Information",
   "widgetPlaceholderTooltip": "Ställ in detta genom att gå till Widgetar och klicka på motsvarande platshållare",
-  "widgetToolTip": "${widgetLabel}. Tryck på Enter för att fokusera inuti widgeten. När fokus är inut trycker du på Esc för att fokusera tillbaka på widgeten.",
   "skips": {
     "skips": "Hoppa över länkar",
     "skipTo": "Hoppa till ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Visa valda geoobjekt",
     "ExportToFeatureCollection": "Exportera till geoobjektsamling",
     "ExportToGeoJSON": "Exportera till GeoJSON",
-    "ExportToFilegdb": "Exportera till filbaserad geodatabas",
-    "ExportToShapefile": "Exportera till shapefil",
     "EditAttributes": "Redigera attribut",
     "AddMarker": "Lägg till en markering",
     "RemoveMarker": "Ta bort markering",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Bädda in den här appen på en webbplats",
     "shareEmailSubject": "Delar webbapp:",
-    "shareEmailTxt1": "Här är en webbapp som har delats med dig med hjälp av ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Du kan skapa och dela egna webbappar med Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Här är en webbapp som har delats med dig med hjälp av Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Du kan skapa och dela egna webbappar med Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Mer information finns på http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Liten",
     "mediumSize": "Medium",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Ditt konto har inte behörighet att skapa eller ändra data. Eller så innehåller webbkartan inga redigerbara lager.",
   "invalidConfiguration": "Widgeten är antingen inte konfigurerad eller så finns lagren i konfigurationen inte längre i kartan. Öppna appen i byggläge och konfigurera om widgeten.",
   "essentialAppsLicenseErrorForApp": "Ditt konto har ingen licens för att använda en app som inte är tillgänglig för allmänheten. Be din organisations administratör att tilldela dig en användartyp som omfattar Essential Apps eller en tilläggslicens för Essential Apps.",
-  "essentialAppsLicenseErrorForBuilder": "Ditt konto har ingen licens för Web AppBuilder. Be din organisations administratör att tilldela dig en användartyp som omfattar Essential Apps eller en tilläggslicens för Essential Apps.",
-  "setStyle": "Ange stil"
+  "essentialAppsLicenseErrorForBuilder": "Ditt konto har ingen licens för Web AppBuilder. Be din organisations administratör att tilldela dig en användartyp som omfattar Essential Apps eller en tilläggslicens för Essential Apps."
 });

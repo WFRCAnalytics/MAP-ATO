@@ -361,7 +361,7 @@ define([
         if (this.isValidCredential()) {
           this.getUser().then(lang.hitch(this, function(user) {
             var args = {
-              title: "ArcGIS Web AppBuilder",
+              title: "Web AppBuilder for ArcGIS",
               type: "Web Mapping Application",
               //typeKeywords: "Web AppBuilder",
               text: '',
@@ -491,18 +491,6 @@ define([
         }
 
         return userRole.canCreateItem();
-      },
-
-      canCreateNotebooks: function() {
-        var userRole = new Role({
-          id: this.roleId ? this.roleId : this.role,
-          role: this.role
-        });
-
-        if (this.privileges) {
-          userRole.setPrivileges(this.privileges);
-        }
-        return userRole.canCreateNotebooks();
       },
 
       getGroups: function() {
@@ -1160,7 +1148,7 @@ define([
                   "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/7dc6cea0b1764a1f9af2e679f642f0f5/resources/styles/root.json"
                 }
               ],
-              "id": "172def22f15-basemap-1",
+              "id": "16ecaf7f52f-basemap-1",
               "title": "Topographic",
               "elevationLayers": [
                 {
@@ -1191,11 +1179,11 @@ define([
               "heightModel": "gravity_related_height",
               "heightUnit": "meter"
             },
-            "version": "1.20",
+            "version": "1.18",
             "initialState": {
               "environment": {
                 "lighting": {
-                  "datetime": 1584297035000,
+                  "datetime": 1552674635000,
                   "displayUTCOffset": -7
                 },
                 "atmosphereEnabled": true,
@@ -1208,12 +1196,12 @@ define([
                       "latestWkid": 3857,
                       "wkid": 102100
                     },
-                    "x": -10869958.657732537,
-                    "y": 4499229.6213712515,
-                    "z": 11164974.832619026
+                    "x": -10869958.657734005,
+                    "y": 4489843.959954732,
+                    "z": 21421036.456147786
                   },
                   "heading": 0,
-                  "tilt": 0.18178265086547005
+                  "tilt": 0.11469185141646418
                 }
               }
             },
@@ -1223,7 +1211,7 @@ define([
             },
             "viewingMode": "global",
             "authoringApp": "WebAppBuilder",
-            "authoringAppVersion": "2.17"
+            "authoringAppVersion": "2.15"
           };
           var text = dojoJson.stringify(data);
           var args = {

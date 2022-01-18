@@ -1,0 +1,222 @@
+<div>
+  <br/>
+  <br/>
+  <div class="thicker" style="display: inline; line-height: 200%;" >Show me </div><div style="display: inline" id="cmbMode" data-dojo-type="dojox.form.Select"></div><div class="thicker" style="display: inline"> access to </div><div style="display: inline" id="cmbCategory" data-dojo-type="dojox.form.Select"></div>
+  <div class="thicker" style="display: inline; line-height: 200%;" >within a typical commute time compared to the average for </div><div style="display: inline" id="cmbArea" data-dojo-type="dojox.form.Select"></div><div class="thicker" style="display: inline; line-height: 200%;" >&nbsp;.</div>
+  <br/>
+  <br/>
+  <br/>
+  <div class="thicker" style="display: inline; line-height: 200%;" >Map is currently displaying: </div><div style="display: inline" id="cmbDisplay" data-dojo-type="dojox.form.Select"></div>
+  <br/>
+  <br/>
+  <br/>
+  <table width="200px;" align="center">
+    <tr>
+      <td style="width:105px;" align="center"><div id="ATO_Labels"   style="text-align: right; padding: 1px; display: inline; line-height: 150%;"><input type="checkbox" id="chkLabels"   name="Labels"   data-dojo-type="dijit/form/CheckBox" checked /><label for="chkLabels"  ><small>&nbsp;Show Labels</small></label></div></td>
+      <td style="width:105px;" align="center"><div id="ATO_Zoom" style="text-align: right; padding: 1px; display: inline; line-height: 150%;"><input type="checkbox" id="chkAutoZoom" name="AutoZoom" data-dojo-type="dijit/form/CheckBox" checked /><label for="chkAutoZoom"><small>&nbsp;Auto Zoom&nbsp;&nbsp;</small></div></label></td>
+    </tr>
+  </table>  
+  <hr/>
+  <div id="divLegendArea" data-dojo-attach-event="onClick: showLegend">
+    <table id="tableFY" width="100%;">
+      <tbody>
+        <tr>
+          <td rowspan=3 width="12%;" align="center"  style="display: none;">
+            <button data-dojo-attach-event="onClick: showLegend"><img src="widgets/ATOSidebar/images/legendicon.png" width="25px;"></button>
+          </td>
+          <td colspan=9 align="center">
+            <div id="LegendName" class="thick thicker">ATO</div>
+          </td>
+        </tr>
+        <tr>
+          <td width="9.8%"><div id="divColor1">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor2">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor3">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor4">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor5">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor6">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor7">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor8">&nbsp;</div></td>
+          <td width="9.8%"><div id="divColor9">&nbsp;</div></td>
+        </tr>
+        <tr>
+          <td colspan=3><small>below average</small></td>
+          <td colspan=3 align="center"><small>near average</small></td>
+          <td colspan=3 align="right"><small>above average</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br/>
+  <table align="center" width="270px;">
+    <tr>
+      <td width="240px;">
+        <div class="thick" style="display: inline; line-height: 200%;" >Travelshed Display when TAZ Selected: </div>
+      </td>
+      <td width="30px;" align="center">
+        <div id="traveltoggle"></div>
+      </td>
+    </tr>
+  </table>
+  <hr/>
+  <br/>
+  <div id="chartAreaATO">
+    <div id="chartATO"></div>
+    <div id="legendATO"></div>
+    <br/>
+    <div id="tableATO">
+      <table width="330px;">
+        <tr>
+          <td align="center" style="width:105px;"><div id="empty"></div></td>
+          <td align="center" style="width:69px;"><div id="taz_name" class="thicker" ></div></td>
+          <td align="center" style="width:88px;"><div id="areaname" class="thicker" ></div></td>
+          <td align="center" style="width:67px;"><div id="pavgname" class="thicker" ></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2019"></div></td>
+          <td align="center"><div id="taz_2019value"></div></td>
+          <td align="center"><div id="area2019value"></div></td>
+          <td align="center"><div id="pavg2019value"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2050"></td>
+          <td align="center"><div id="taz_2050value"></div></td>
+          <td align="center"><div id="area2050value"></div></td>
+          <td align="center"><div id="pavg2050value"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rownamenetg"></td>
+          <td align="center"><div id="taz_netgvalue"></div></td>
+          <td align="center"><div id="areanetgvalue"></div></td>
+          <td align="center"><div id="pavgnetgvalue"></div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="travelShedArea">
+    <div id="travelShedTAZTitle" class="thick thicker"></div>
+    <br/>
+    <div hidden id="travelShedTAZSubTitle_EMPAuto"><div class="thick thicker">Auto Accessible Jobs within Travelsheds</div>
+      <br/>
+      <table width="330px;">
+        <tr>
+          <td align="center" style="width:105px;"><div id="empty"></div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP10Min_Auto" class="thicker" >10-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP20Min_Auto" class="thicker" >20-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP30Min_Auto" class="thicker" >30-Minute</div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2019_EMPAuto" class="thicker" >2019</div></td>
+          <td align="center"><div id="cellname2019_EMP10Min_Auto"></div></td>
+          <td align="center"><div id="cellname2019_EMP20Min_Auto"></div></td>
+          <td align="center"><div id="cellname2019_EMP30Min_Auto"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2050_EMPAuto" class="thicker" >Future (2050)</td>
+          <td align="center"><div id="cellname2050_EMP10Min_Auto"></div></td>
+          <td align="center"><div id="cellname2050_EMP20Min_Auto"></div></td>
+          <td align="center"><div id="cellname2050_EMP30Min_Auto"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rownamenetg_EMPAuto" class="thicker" >Net Gain</td>
+            <td align="center"><div id="cellnamenetg_EMP10Min_Auto"></div></td>
+            <td align="center"><div id="cellnamenetg_EMP20Min_Auto"></div></td>
+            <td align="center"><div id="cellnamenetg_EMP30Min_Auto"></div></td>
+        </tr>
+      </table>
+      <br/>
+      <br/>  
+    </div>
+    <div hidden id="travelShedTAZSubTitle_EMPTran"><div class="thick thicker">Transit Accessible Jobs within Travelsheds</div>
+      <br/>
+      <table>
+        <tr>
+          <td align="center" style="width:105px;"><div id="empty"></div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP10Min_Tran" class="thicker" >10-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP20Min_Tran" class="thicker" >20-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_EMP30Min_Tran" class="thicker" >30-Minute</div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2019_EMPTran" class="thicker" >2019</div></td>
+          <td align="center"><div id="cellname2019_EMP10Min_Tran"></div></td>
+          <td align="center"><div id="cellname2019_EMP20Min_Tran"></div></td>
+          <td align="center"><div id="cellname2019_EMP30Min_Tran"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2050_EMPTran" class="thicker" >Future (2050)</td>
+          <td align="center"><div id="cellname2050_EMP10Min_Tran"></div></td>
+          <td align="center"><div id="cellname2050_EMP20Min_Tran"></div></td>
+          <td align="center"><div id="cellname2050_EMP30Min_Tran"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rownamenetg_EMPTran" class="thicker" >Net Gain</td>
+            <td align="center"><div id="cellnamenetg_EMP10Min_Tran"></div></td>
+            <td align="center"><div id="cellnamenetg_EMP20Min_Tran"></div></td>
+            <td align="center"><div id="cellnamenetg_EMP30Min_Tran"></div></td>
+        </tr>
+      </table>
+      <br/>
+      <br/>
+    </div>
+    <div hidden id="travelShedTAZSubTitle_HHsAuto"><div class="thick thicker">Auto Accessible Households within Travelsheds</div>
+      <br/>
+      <table width="330px;">
+        <tr>
+          <td align="center" style="width:105px;"><div id="empty"></div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs10Min_Auto" class="thicker" >10-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs20Min_Auto" class="thicker" >20-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs30Min_Auto" class="thicker" >30-Minute</div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2019_HHsAuto" class="thicker" >2019</div></td>
+          <td align="center"><div id="cellname2019_HHs10Min_Auto"></div></td>
+          <td align="center"><div id="cellname2019_HHs20Min_Auto"></div></td>
+          <td align="center"><div id="cellname2019_HHs30Min_Auto"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2050_HHsAuto" class="thicker" >Future (2050)</td>
+          <td align="center"><div id="cellname2050_HHs10Min_Auto"></div></td>
+          <td align="center"><div id="cellname2050_HHs20Min_Auto"></div></td>
+          <td align="center"><div id="cellname2050_HHs30Min_Auto"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rownamenetg_HHsAuto" class="thicker" >Net Gain</td>
+            <td align="center"><div id="cellnamenetg_HHs10Min_Auto"></div></td>
+            <td align="center"><div id="cellnamenetg_HHs20Min_Auto"></div></td>
+            <td align="center"><div id="cellnamenetg_HHs30Min_Auto"></div></td>
+        </tr>
+      </table>
+      <br/>
+      <br/>
+    </div>
+    <div hidden id="travelShedTAZSubTitle_HHsTran"><div class="thick thicker">Transit Accessible Household within Travelsheds</div>
+      <br/>
+      <table>
+        <tr>
+          <td align="center" style="width:105px;"><div id="empty"></div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs10Min_Tran" class="thicker" >10-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs20Min_Tran" class="thicker" >20-Minute</div></td>
+          <td align="center" style="width:74px;"><div id="colname_HHs30Min_Tran" class="thicker" >30-Minute</div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2019_HHsTran" class="thicker" >2019</div></td>
+          <td align="center"><div id="cellname2019_HHs10Min_Tran"></div></td>
+          <td align="center"><div id="cellname2019_HHs20Min_Tran"></div></td>
+          <td align="center"><div id="cellname2019_HHs30Min_Tran"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rowname2050_HHsTran" class="thicker" >Future (2050)</td>
+          <td align="center"><div id="cellname2050_HHs10Min_Tran"></div></td>
+          <td align="center"><div id="cellname2050_HHs20Min_Tran"></div></td>
+          <td align="center"><div id="cellname2050_HHs30Min_Tran"></div></td>
+        </tr>
+        <tr>
+          <td><div id="rownamenetg_HHsTran" class="thicker" >Net Gain</td>
+            <td align="center"><div id="cellnamenetg_HHs10Min_Tran"></div></td>
+            <td align="center"><div id="cellnamenetg_HHs20Min_Tran"></div></td>
+            <td align="center"><div id="cellnamenetg_HHs30Min_Tran"></div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

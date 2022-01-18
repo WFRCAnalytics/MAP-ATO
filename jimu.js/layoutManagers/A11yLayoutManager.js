@@ -171,7 +171,6 @@ define([
       //add tips for last trap node
       var tabAwayStr = esriLang.substitute({value: window.jimuNls.skips.skips}, window.jimuNls.skips.tabAway);
       html.setAttr(this.lastTrapNode, 'aria-label', tabAwayStr);
-      jimuUtils.addTooltipByDomNode(Tooltip, this.lastTrapNode, tabAwayStr);
 
       this.own(on(firstTrapNode, 'focus', lang.hitch(this, function(evt) {
         var isSpalsh = jimuUtils.tryToFocusSplashWidget(evt);

@@ -28,11 +28,10 @@ define(['dojo/_base/declare',
     'jimu/utils',
     'esri/lang',
     'jimu/dijit/LoadingShelter',
-    'dojo/Deferred',
-    'jimu/dijit/EditorXssFilter'
+    'dojo/Deferred'
   ],
   function(declare, lang, html, on, keys, query, cookie, _WidgetsInTemplateMixin, BaseWidget, topic,
-           CheckBox, utils, esriLang, LoadingShelter, Deferred, EditorXssFilter) {
+           CheckBox, utils, esriLang, LoadingShelter, Deferred) {
     var clazz = declare([BaseWidget, _WidgetsInTemplateMixin], {
       baseClass: 'jimu-widget-splash',
       _hasContent: null,
@@ -41,7 +40,6 @@ define(['dojo/_base/declare',
 
       postCreate: function() {
         this.inherited(arguments);
-        this.isFirstFoucs = true;
         html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
 
         //LoadingShelter
@@ -50,9 +48,6 @@ define(['dojo/_base/declare',
         });
         this.shelter.placeAt(this.domNode);
         this.shelter.startup();
-
-        //xss filter
-        this.config.splash.splashContent = EditorXssFilter.getInstance().sanitize(this.config.splash.splashContent);
 
         this._hasContent = this.config.splash && this.config.splash.splashContent;
         this._requireConfirm = this.config.splash && this.config.splash.requireConfirm;
@@ -159,16 +154,6 @@ define(['dojo/_base/declare',
         })));
 
         utils.setWABLogoDefaultAlt(this.customContentNode);
-
-        //focus on first-node when focusing on the container of splash widget at first time.
-        this.own(on(this.splashDesktop, 'focus', lang.hitch(this, function(){
-          if(this.isFirstFoucs){
-            this.isFirstFoucs = false;
-            setTimeout(function(){
-              focusableNodes[0].focus();
-            }, 0);
-          }
-        })));
       },
 
       _setOkNodeAriaLabel: function(){

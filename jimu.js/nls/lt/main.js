@@ -98,15 +98,12 @@ define({
     "tooltipText": "Įrankio informacijos tekstas",
     "findAddressOrPlace": "Surasti adresą arba vietą",
     "expand": "Išskleisti ${value}",
-    "collapse": "Suskleisti ${value}",
-    "asc": "Didėjimo tvarka",
-    "desc": "Mažėjimo tvarka"
+    "collapse": "Suskleisti ${value}"
   },
   "errorCode": "Kodas",
   "errorMessage": "Pranešimas",
   "errorDetail": "Išsamiau",
   "widgetPlaceholderTooltip": "Norėdami nustatyti, eikite į valdiklių dalį ir spustelėkite atitinkamą vietą",
-  "widgetToolTip": "${widgetLabel}. Norėdami įeiti į šį valdiklį, paspauskite Enter. Norėdami išeiti iš valdiklio, paspauskite Esc.",
   "skips": {
     "skips": "Praleisti susiejimus",
     "skipTo": "Praleisti iki ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Rodyti pažymėtus elementus",
     "ExportToFeatureCollection": "Eksportuoti į elementų rinkinį",
     "ExportToGeoJSON": "Eksportuoti į GeoJSON",
-    "ExportToFilegdb": "Eksportuoti į failų geoduomenų bazę",
-    "ExportToShapefile": "Eksportuoti į Shape failą",
     "EditAttributes": "Redaguoti atributus",
     "AddMarker": "Pridėti žymeklį",
     "RemoveMarker": "Pašalinti žymeklį",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Įterpti šią aplikaciją į interneto svetainę",
     "shareEmailSubject": "Internetinės aplikacijos bendrinimas:",
-    "shareEmailTxt1": "Ši internetinė aplikacija bendrinama su jumis naudojant ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Galite kurti ir bendrinti savo internetines aplikacijas naudodami Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Ši internetinė aplikacija bendrinama su jumis naudojant Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Galite kurti ir bendrinti savo internetines aplikacijas naudodami Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Daugiau informacijos rasite http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Mažas",
     "mediumSize": "Vidutinė",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Jūsų paskyra neturi teisės kurti arba modifikuoti duomenis. Arba šiame žiniatinklio žemėlapyje nėra redaguojamų sluoksnių.",
   "invalidConfiguration": "Valdiklis nesukonfigūruotas arba konfigūracijos sluoksnių žemėlapyje nebėra. Atidarykite aplikaciją kūrimo režime ir iš naujo sukonfigūruokite valdiklį.",
   "essentialAppsLicenseErrorForApp": "Jūsų paskyra nelicencijuota naudoti ne viešą aplikaciją. Kreipkitės į organizacijos administratorių, kad paskirtų jums naudotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją.",
-  "essentialAppsLicenseErrorForBuilder": "Jūsų paskyra nelicencijuota naudoti Web AppBuilder. Kreipkitės į organizacijos administratorių, kad paskirtų jums naudotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją.",
-  "setStyle": "Nustatyti stilių"
+  "essentialAppsLicenseErrorForBuilder": "Jūsų paskyra nelicencijuota naudoti Web AppBuilder. Kreipkitės į organizacijos administratorių, kad paskirtų jums naudotojo tipą, kuris turi svarbiausias aplikacijas, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją."
 });

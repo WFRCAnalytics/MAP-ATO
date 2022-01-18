@@ -62,6 +62,7 @@ define([
       _pointOfSpecifiedUtmCache: null,
 
       postCreate: function() {
+        html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
 
         if (this.closeable || !this.isOnScreen) {
           html.addClass(this.searchNode, 'default-width-for-openAtStart');
@@ -719,7 +720,6 @@ define([
         var sources = this.searchDijit.get('sources');
         var activeSourceIndex = this.searchDijit.get('activeSourceIndex');
         var value = this.searchDijit.get('value');
-        value = jimuUtils.sanitizeHTML(value);
         var htmlContent = "";
         var results = evt.results;
         var _activeSourceNumber = null;
@@ -755,7 +755,6 @@ define([
                     results[i][j].name = outputTextforCustomInput;
                   }
                   text = results[i][j].name;
-                  text = jimuUtils.sanitizeHTML(text);
                 } else {
                   text = this.nls.untitled;
                 }

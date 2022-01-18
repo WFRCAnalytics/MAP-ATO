@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nema raspoloživih tabela za prikaz.",
   "checkConfigutationToSelectLayers": "Idite na stranicu za postavke vidžeta kako biste izabrali slojeve.",
-  "checkLayerListToSelectLayers": "Tabela atributa se sinhronizuje sa vidljivim slojevima na mapi, možete da koristite vidžet poput Liste slojeva za uključivanje/isključivanje slojeva.",
-  "rowHeaderColumnTitle": "Red ${layerName}, iznad kojeg je zadržan pokazivač miša, pritisnite taster Enter da selektujete redove iznad kojih je zadržan pokazivač miša"
+  "checkLayerListToSelectLayers": "Tabela atributa se sinhronizuje sa vidljivim slojevima na mapi, možete da koristite vidžet poput Liste slojeva za uključivanje/isključivanje slojeva."
 });

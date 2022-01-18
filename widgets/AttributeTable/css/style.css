@@ -195,9 +195,6 @@
 .jimu-widget-attributetable .dgrid-header.dgrid-scrollbar-width {
   min-width: 16px;
 }
-.jimu-widget-attributetable .dgrid-hider-toggle {
-  z-index: 10000; /* be on top of the resizer handle */
-}
 .jimu-widget-attributetable .dgrid-header .dgrid-cell:last-child {
   border-right-color: transparent;
 }

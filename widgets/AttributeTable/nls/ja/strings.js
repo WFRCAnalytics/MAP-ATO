@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "表示できるテーブルはありません。",
   "checkConfigutationToSelectLayers": "ウィジェット設定ページに移動して、レイヤーを選択してください。",
-  "checkLayerListToSelectLayers": "属性テーブルはマップ内の表示レイヤーと同期しています。レイヤー リストなどのウィジェットを使用して、レイヤーのオン/オフを切り替えることができます。",
-  "rowHeaderColumnTitle": "行 ${layerName} にポインタを置き、Enter キーを押してポインタを置いた行を選択します。"
+  "checkLayerListToSelectLayers": "属性テーブルはマップ内の表示レイヤーと同期しています。レイヤー リストなどのウィジェットを使用して、レイヤーのオン/オフを切り替えることができます。"
 });

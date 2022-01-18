@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nema tablica za prikaz.",
   "checkConfigutationToSelectLayers": "Idite na stranicu postavki widgeta kako biste odabrali slojeve.",
-  "checkLayerListToSelectLayers": "Atributna tablica sinkronizirana je s vidljivim slojevima na karti. Možete upotrijebiti widget kao što je Popis slojeva da uključite/isključite prikaz slojeva.",
-  "rowHeaderColumnTitle": "Redak ${layerName}, iznad kojeg je pokazivač, pritisnite Enter da biste odabrali retke iznad kojih je pokazivač"
+  "checkLayerListToSelectLayers": "Atributna tablica sinkronizirana je s vidljivim slojevima na karti. Možete upotrijebiti widget kao što je Popis slojeva da uključite/isključite prikaz slojeva."
 });

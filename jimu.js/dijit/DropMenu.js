@@ -97,7 +97,7 @@ function(declare, _WidgetBase, lang, array, html, query, on, focusUtil, keys, Ev
             'tabindex': '0',
             'itemId': item.key,
             'role': 'button',
-            innerHTML: utils.sanitizeHTML(item.label)
+            innerHTML: item.label
           }, this.dropMenuNode);
 
           this.own(on(node, 'click', lang.hitch(this, function(evt){

@@ -482,7 +482,7 @@ esriRequest, FeatureLayer, esriLang) {
 
       var selfType;
       var featureLayer;
-      var msShipFLayerObj = this.getMSShipFeatureLayer(suburl, layerInfo.id);
+      var msShipFLayerObj = this.getMSShipFeatureLayer(suburl);
       if(msShipFLayerObj) {
         selfType = 'mapservice_' + serviceLayerType + '_ship_featurelayer';
         //featureLayer = {
@@ -532,7 +532,7 @@ esriRequest, FeatureLayer, esriLang) {
       };
     },
 
-    getMSShipFeatureLayer: function(msLayerUrl, subId) {
+    getMSShipFeatureLayer: function(msLayerUrl) {
       var featureLayerObj = null;
       var index = msLayerUrl.indexOf("/MapServer");
       if(index > -1) {
@@ -542,7 +542,7 @@ esriRequest, FeatureLayer, esriLang) {
         var baseUrl = msLayerUrl.substring(0, index + 1);
         graphicsLayers.some(lang.hitch(this, function(layerObject) {
           var url = layerObject.url;
-          if(url && url.indexOf(baseUrl + "FeatureServer/" + subId) > -1 &&
+          if(url && url.indexOf(baseUrl + "FeatureServer/" + layerObject.layerId) > -1 &&
             layerObject && !layerObject.empty && layerObject.mode === FeatureLayer.MODE_SELECTION &&
             !lang.getObject("_wabProperties.isMSOwnedFeatureLayer", false, layerObject)) {
             featureLayerObj = layerObject;

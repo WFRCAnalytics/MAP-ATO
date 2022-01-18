@@ -98,15 +98,12 @@ define({
     "tooltipText": "Araç ipucu metni",
     "findAddressOrPlace": "Adres veya yer bul",
     "expand": "${value} değerini genişlet",
-    "collapse": "${value} değerini daralt",
-    "asc": "Artan",
-    "desc": "Azalan"
+    "collapse": "${value} değerini daralt"
   },
   "errorCode": "Kod",
   "errorMessage": "İleti",
   "errorDetail": "Ayrıntı",
   "widgetPlaceholderTooltip": "Ayarlamak için Araçlar'a gidin ve karşılık gelen yer tutucuyu tıklayın",
-  "widgetToolTip": "${widgetLabel}. Bu gerecin içine odaklanmak için Enter tuşuna basın. Odak içerideyken, tekrar gerece odaklanmak için Esc tuşuna basın.",
   "skips": {
     "skips": "Bağlantıları Atla",
     "skipTo": "${value} değerine atla",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Seçili detayları göster",
     "ExportToFeatureCollection": "Detay koleksiyonuna aktar",
     "ExportToGeoJSON": "GeoJSON//'a Aktar",
-    "ExportToFilegdb": "Dosya coğrafi veri tabanına gönder",
-    "ExportToShapefile": "shapefile'a gönder",
     "EditAttributes": "Öznitelikleri düzenle",
     "AddMarker": "İşaretleyici ekle",
     "RemoveMarker": "İşaretleyiciyi kaldır",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Bu uygulamayı bir web sitesine yerleştir",
     "shareEmailSubject": "Web uygulamasını paylaşma:",
-    "shareEmailTxt1": "İşte karşınızda ArcGIS Web AppBuilder kullanılarak sizinle paylaşılan bir web uygulaması.",
-    "shareEmailTxt2": "Esri ArcGIS Web AppBuilder ile kendi web uygulamanızı oluşturabilir ve paylaşabilirsiniz.",
+    "shareEmailTxt1": "İşte karşınızda Web AppBuilder for ArcGIS kullanılarak sizinle paylaşılan bir web uygulaması.",
+    "shareEmailTxt2": "Esri Web AppBuilder for ArcGIS ile kendi web uygulamanızı oluşturabilir ve paylaşabilirsiniz.",
     "shareEmailTxt3": "Ayrıntılar için http://www.esri.com/software/web-appbuilder adresine gidin.",
     "smallSize": "Küçük",
     "mediumSize": "Orta",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Hesabınız veri oluşturmak ya da değiştirmek için gerekli izne sahip değil veya bu web haritası düzenlenebilir katman içermiyor.",
   "invalidConfiguration": "Araç yapılandırılmamış veya yapılandırmadaki katmanlar artık haritada değil. Uygulamayı oluşturucu modda açın ve aracı yeniden yapılandırın.",
   "essentialAppsLicenseErrorForApp": "Hesabınız herkese açık olmayan bir uygulama kullanmak için lisanslandırılmamış. Lütfen kuruluş yöneticinizden Temel Uygulamalar veya eklenti Temel Uygulamalar lisansı içeren bir kullanıcı türü atamasını isteyin.",
-  "essentialAppsLicenseErrorForBuilder": "Hesabınız Web AppBuilder için lisanslandırılmamış. Lütfen kuruluş yöneticinizden Temel Uygulamalar veya eklenti Temel Uygulamalar lisansı içeren bir kullanıcı türü atamasını isteyin.",
-  "setStyle": "Stil ayarla"
+  "essentialAppsLicenseErrorForBuilder": "Hesabınız Web AppBuilder için lisanslandırılmamış. Lütfen kuruluş yöneticinizden Temel Uygulamalar veya eklenti Temel Uygulamalar lisansı içeren bir kullanıcı türü atamasını isteyin."
 });

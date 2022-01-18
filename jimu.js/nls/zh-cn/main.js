@@ -98,15 +98,12 @@ define({
     "tooltipText": "工具提示文本",
     "findAddressOrPlace": "查找地址或地点",
     "expand": "展开 ${value}",
-    "collapse": "折叠 ${value}",
-    "asc": "升序",
-    "desc": "降序"
+    "collapse": "折叠 ${value}"
   },
   "errorCode": "代码",
   "errorMessage": "消息",
   "errorDetail": "详细信息",
   "widgetPlaceholderTooltip": "要进行设置，请转到微件并单击相应占位控件",
-  "widgetToolTip": "${widgetLabel}。 按 Enter 键以聚焦此微件内部。 当焦点位于内部时，按 Esc 键可聚焦回微件。",
   "skips": {
     "skips": "跳过链接",
     "skipTo": "跳转至 ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "显示所选要素",
     "ExportToFeatureCollection": "导出至要素集合",
     "ExportToGeoJSON": "导出至 GeoJSON",
-    "ExportToFilegdb": "导出到文件地理数据库",
-    "ExportToShapefile": "导出到 shapefile",
     "EditAttributes": "编辑属性",
     "AddMarker": "添加标记",
     "RemoveMarker": "移除标记",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "将此应用程序嵌入到网站中",
     "shareEmailSubject": "共享 Web 应用程序：",
-    "shareEmailTxt1": "这是通过使用 ArcGIS Web AppBuilder 与您共享的 web 应用程序。",
-    "shareEmailTxt2": "您可以使用 Esri ArcGIS Web AppBuilder 创建和共享自己的 web 应用程序。",
+    "shareEmailTxt1": "这是通过使用 Web AppBuilder for ArcGIS 与您共享的 Web 应用程序。",
+    "shareEmailTxt2": "可以使用 Esri Web AppBuilder for ArcGIS 创建和共享自己的 Web 应用程序。",
     "shareEmailTxt3": "详细信息请访问 http://www.esri.com/software/web-appbuilder。",
     "smallSize": "小型",
     "mediumSize": "中型",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "您的帐户无权创建或修改数据。或者此 web 地图不包含任何可编辑图层。",
   "invalidConfiguration": "微件尚未配置或配置中的图层已不在地图中。请在构建器模式下打开应用程序，然后重新配置微件。",
   "essentialAppsLicenseErrorForApp": "您的帐户无权使用非公共的应用程序。 请联系您的组织管理员为您分配包含基本应用程序或附加基本应用程序许可的用户类型。",
-  "essentialAppsLicenseErrorForBuilder": "您的帐户未获得 Web AppBuilder 许可。 请联系您的组织管理员为您分配包含基本应用程序或附加基本应用程序许可的用户类型。",
-  "setStyle": "设置样式"
+  "essentialAppsLicenseErrorForBuilder": "您的帐户未获得 Web AppBuilder 许可。 请联系您的组织管理员为您分配包含基本应用程序或附加基本应用程序许可的用户类型。"
 });

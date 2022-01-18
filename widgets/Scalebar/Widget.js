@@ -173,7 +173,7 @@ define([
       },
       _showNumberScale: function () {
         this.numberStyleContainer.innerHTML =
-          utils.sanitizeHTML("<div class='scaleLabelDiv scalebar-line'>" + this._getScaleString() + "</div>");
+          "<div class='scaleLabelDiv scalebar-line'>" + this._getScaleString() + "</div>";
       },
       _set508Label: function (label) {
         var str,

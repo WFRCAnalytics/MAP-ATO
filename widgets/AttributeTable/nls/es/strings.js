@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "No hay tablas disponibles para mostrarlas.",
   "checkConfigutationToSelectLayers": "Vaya a la página de ajustes de widget para seleccionar las capas.",
-  "checkLayerListToSelectLayers": "La tabla de atributos está sincronizada con capas visibles en el mapa; puede usar un widget, por ejemplo, Lista de capas, para activar/desactivar las capas.",
-  "rowHeaderColumnTitle": "Fila ${layerName}, cursor desplazado, pulsar Intro para seleccionar las filas con el cursor desplazado sobre ellas"
+  "checkLayerListToSelectLayers": "La tabla de atributos está sincronizada con capas visibles en el mapa; puede usar un widget, por ejemplo, Lista de capas, para activar/desactivar las capas."
 });

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Työkaluvihjeen teksti",
     "findAddressOrPlace": "Etsi osoite tai paikka",
     "expand": "Laajenna ${value}",
-    "collapse": "Kutista ${value}",
-    "asc": "Nouseva",
-    "desc": "Laskeva"
+    "collapse": "Kutista ${value}"
   },
   "errorCode": "Koodi",
   "errorMessage": "Viesti",
   "errorDetail": "Yksityiskohta",
   "widgetPlaceholderTooltip": "Kun haluat asettaa tähän pienoisohjelman, mene Pienoisohjelmat-välilehdelle ja napsauta vastaavaa paikkamerkkiä",
-  "widgetToolTip": "${widgetLabel}. Kohdista tämän pienoisohjelman sisään painamalla ENTER-näppäintä. Kun kohdistus on sisällä, kohdista takaisin pienoisohjelmaan painamalla Esc-näppäintä.",
   "skips": {
     "skips": "Ohita linkit",
     "skipTo": "Siirry kohteeseen ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Näytä valitut kohteet",
     "ExportToFeatureCollection": "Vie kohdekokoelmaan",
     "ExportToGeoJSON": "Vie GeoJSON-muotoon",
-    "ExportToFilegdb": "Vie File Geodatabseen",
-    "ExportToShapefile": "Vie shapefile-tiedostoon",
     "EditAttributes": "Muokkaa ominaisuuksia",
     "AddMarker": "Lisää merkintä",
     "RemoveMarker": "Poista merkintä",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Upota tämä sovellus Web-sivustoon",
     "shareEmailSubject": "Web-sovelluksen jakaminen:",
-    "shareEmailTxt1": "Tässä on web-sovellus, joka jaetaan kanssasi käyttämällä ArcGIS Web AppBuilderia .",
-    "shareEmailTxt2": "Voit luoda ja jakaa oman web-sovelluksesi Esrin ArcGIS Web AppBuilderilla.",
+    "shareEmailTxt1": "Tässä on web-sovellus, joka jaetaan kanssasi käyttämällä Web AppBuilder for ArcGIS -sovellusta.",
+    "shareEmailTxt2": "Voit luoda ja jakaa oman web-sovelluksesi Esri Web AppBuilder for ArcGIS -sovelluksella.",
     "shareEmailTxt3": "Saat lisätietoja osoitteesta http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Pieni",
     "mediumSize": "Keskisuuri",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Tilisi käyttöoikeudet eivät riitä aineiston luontiin tai muokkaamiseen. Vaihtoehtoisesti tämä web-kartta ei sisällä muokattavia karttatasoja.",
   "invalidConfiguration": "Pienoisohjelmaa ei ole joko määritetty tai määrityksen karttatasoja ei ole enää kartassa. Avaa sovellus luontitilassa ja määritä pienoisohjelma uudelleen.",
   "essentialAppsLicenseErrorForApp": "Tiliäsi ei ole lisensoitu käyttämään sovellusta, joka ei ole julkinen. Pyydä organisaatiosi pääkäyttäjää määrittämään sinulle käyttäjätyyppi, joka sisältää keskeiset sovellukset tai keskeisten sovellusten lisäosan lisenssin.",
-  "essentialAppsLicenseErrorForBuilder": "Tiliäsi ei ole lisensoitu Web AppBuilderille. Pyydä organisaatiosi pääkäyttäjää määrittämään sinulle käyttäjätyyppi, joka sisältää keskeiset sovellukset tai keskeisten sovellusten lisäosan lisenssin.",
-  "setStyle": "Määritä tyyli"
+  "essentialAppsLicenseErrorForBuilder": "Tiliäsi ei ole lisensoitu Web AppBuilderille. Pyydä organisaatiosi pääkäyttäjää määrittämään sinulle käyttäjätyyppi, joka sisältää keskeiset sovellukset tai keskeisten sovellusten lisäosan lisenssin."
 });

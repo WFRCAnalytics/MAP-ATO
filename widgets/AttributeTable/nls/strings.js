@@ -63,8 +63,7 @@ define({
     },
     noTablesAvailable: "No tables available to display.",
     checkConfigutationToSelectLayers: "Please go to widget settings page to select layers.",
-    checkLayerListToSelectLayers: "Attribute Table is synchronized with visible layers in the map,  you can use widget such as Layer List to toggle on/off layers.",
-    rowHeaderColumnTitle: "Row ${layerName}, hovered, press Enter to select the hovered rows"
+    checkLayerListToSelectLayers: "Attribute Table is synchronized with visible layers in the map,  you can use widget such as Layer List to toggle on/off layers."
   }),
   "ar": 1,
   "bs": 1,

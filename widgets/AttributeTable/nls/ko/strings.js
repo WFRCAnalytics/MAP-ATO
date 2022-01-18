@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "표시할 테이블이 없습니다.",
   "checkConfigutationToSelectLayers": "위젯 설정 페이지로 이동하여 레이어를 선택하세요.",
-  "checkLayerListToSelectLayers": "속성 테이블이 맵에 표시된 레이어와 동기화됩니다. 레이어 목록 등 위젯을 사용하여 레이어를 켜거나 끌 수 있습니다.",
-  "rowHeaderColumnTitle": "${layerName} 열, 가리킴, Enter 키를 눌러 가리킨 열을 선택합니다."
+  "checkLayerListToSelectLayers": "속성 테이블이 맵에 표시된 레이어와 동기화됩니다. 레이어 목록 등 위젯을 사용하여 레이어를 켜거나 끌 수 있습니다."
 });

@@ -1378,26 +1378,6 @@ function(BaseVersionManager, utils) {
       },
 
       compatible: true
-    }, {
-      version: '2.16',
-
-      description: 'The version for Online 8.1',
-
-      upgrader: function(oldConfig){
-        return oldConfig;
-      },
-
-      compatible: true
-    }, {
-      version: '2.17',
-
-      description: 'The version for Online 8.2',
-
-      upgrader: function(oldConfig){
-        return oldConfig;
-      },
-
-      compatible: true
     }];
 
     this.isCompatible = function(_oldVersion, _newVersion){

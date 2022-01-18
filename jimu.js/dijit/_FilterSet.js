@@ -50,7 +50,6 @@ function(Evented, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin
     isHosted: false,
     valueProviderFactory: null,
     runtime: false, //optional
-    widgetId: '',
 
     //public methods:
     //toJson
@@ -141,7 +140,6 @@ function(Evented, declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin
 
     _addSingleFilter:function(/* optional */ part){
       var args = {
-        widgetId: this.widgetId,
         url: this.url,
         layerInfo: this.layerInfo,
         popupFieldsInfo: this.popupFieldsInfo,

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Eszköztipp szövege",
     "findAddressOrPlace": "Cím vagy hely keresése",
     "expand": "${value} kibontása",
-    "collapse": "${value} összecsukása",
-    "asc": "Növekvő",
-    "desc": "Csökkenő"
+    "collapse": "${value} összecsukása"
   },
   "errorCode": "Kód",
   "errorMessage": "Üzenet",
   "errorDetail": "Részletek",
   "widgetPlaceholderTooltip": "A beállításhoz lépjen a widgetekre, és kattintson a megfelelő helyőrzőre",
-  "widgetToolTip": "${widgetLabel}. Nyomja meg az Entert, ha szeretne a widgeten belülre fókuszálni. Ha a fókusz a belül van, nyomja meg az Esc gombot, hogy újra a widgetre fókuszáljon.",
   "skips": {
     "skips": "Hivatkozások kihagyása",
     "skipTo": "Ugrás ide: ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Kiválasztott elemek megjelenítése",
     "ExportToFeatureCollection": "Exportálás vektoros gyűjteménybe",
     "ExportToGeoJSON": "Exportálás GeoJSON-ba",
-    "ExportToFilegdb": "Exportálás a fájl-geoadatbázisba",
-    "ExportToShapefile": "Exportálás shapefile-ba",
     "EditAttributes": "Attribútumok szerkesztése",
     "AddMarker": "Jelölő hozzáadása",
     "RemoveMarker": "Jelölő eltávolítása",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Alkalmazás beágyazása egy webhelyen",
     "shareEmailSubject": "A webes alkalmazás megosztása:",
-    "shareEmailTxt1": "Íme egy webalkalmazás, amelyet az ArcGIS Web AppBuilder segítségével osztottak meg Önnel.",
-    "shareEmailTxt2": "Saját webalkalmazásait is létrehozhatja és megoszthatja az Esri ArcGIS Web AppBuilder használatával.",
+    "shareEmailTxt1": "Íme egy webalkalmazás, amelyet a Web AppBuilder for ArcGIS segítségével osztottak meg Önnel.",
+    "shareEmailTxt2": "Saját webalkalmazásait is létrehozhatja és megoszthatja az Esri Web AppBuilder for ArcGIS használatával.",
     "shareEmailTxt3": "A részletekért látogasson el a http://www.esri.com/software/web-appbuilder weboldalra.",
     "smallSize": "Kicsi",
     "mediumSize": "Közepes",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "A fiókja nem teszi lehetővé az adatok létrehozását vagy módosítását. Vagy ez a webtérkép nem tartalmaz szerkeszthető rétegeket.",
   "invalidConfiguration": "A widget nincs konfigurálva, vagy a konfigurációban lévő rétegek már nem szerepelnek a térképen. Nyissa meg az alkalmazást építő módban, és konfigurálja újra a widgetet.",
   "essentialAppsLicenseErrorForApp": "Az Ön fiókjának licence nem terjed ki a nem nyilvános alkalmazásokra. Igényelje a szervezete adminisztrátorától, hogy rendeljen Önhöz olyan felhasználótípust, amely tartalmazza az alapvető alkalmazásokat, vagy egy kiegészítő alapvető alkalmazásokra vonatkozó licencet.",
-  "essentialAppsLicenseErrorForBuilder": "Az Ön fiókjának licence nem terjed ki a Web AppBuilder alkalmazásra. Igényelje a szervezete adminisztrátorától, hogy rendeljen Önhöz olyan felhasználótípust, amely tartalmazza az alapvető alkalmazásokat, vagy egy kiegészítő alapvető alkalmazásokra vonatkozó licencet.",
-  "setStyle": "Stílus beállítása"
+  "essentialAppsLicenseErrorForBuilder": "Az Ön fiókjának licence nem terjed ki a Web AppBuilder alkalmazásra. Igényelje a szervezete adminisztrátorától, hogy rendeljen Önhöz olyan felhasználótípust, amely tartalmazza az alapvető alkalmazásokat, vagy egy kiegészítő alapvető alkalmazásokra vonatkozó licencet."
 });

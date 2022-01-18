@@ -380,24 +380,24 @@ function(declare, lang, array, locale, dojoNumber, esriLang, ItemFileWriteStore,
           var values = clazz.getRealDateByVirtualDate(singlePart.valueObj.virtualDate);
           singlePart.value1 = values[0];
           singlePart.value2 = values[1];
-          singlePart.valueObj.value1 = jimuUtils.getDateTimeStr(values[0]);
-          singlePart.valueObj.value2 = jimuUtils.getDateTimeStr(values[1]);
+          // singlePart.valueObj.value1 = values[0].toDateString();
+          // singlePart.valueObj.value2 = values[1].toDateString();
         }else if(singleVirtualDateOpts.indexOf(singlePart.operator) > -1){
           v = clazz.getRealDateByVirtualDate(singlePart.valueObj.virtualDate);
           singlePart.value = v;
-          singlePart.valueObj.value = jimuUtils.getDateTimeStr(v);
+          // singlePart.valueObj.value = v.toDateString();
         }
       }else{
         if(singlePart.valueObj.virtualDate1){
           v = clazz.getRealDateByVirtualDate(singlePart.valueObj.virtualDate1);
           singlePart.value1 = v;
-          singlePart.valueObj.value1 = jimuUtils.getDateTimeStr(v);
+          // singlePart.valueObj.value1 = v.toDateString();
         }
 
         if(singlePart.valueObj.virtualDate2){
           v = clazz.getRealDateByVirtualDate(singlePart.valueObj.virtualDate2);
           singlePart.value2 = v;
-          singlePart.valueObj.value2 = jimuUtils.getDateTimeStr(v);
+          // singlePart.valueObj.value2 = v.toDateString();
         }
       }
     },

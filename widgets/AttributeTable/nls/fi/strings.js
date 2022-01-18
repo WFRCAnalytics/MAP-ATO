@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Näytettäviä taulukoita ei ole.",
   "checkConfigutationToSelectLayers": "Valitse karttatasot siirtymällä pienoisohjelman asetussivulle.",
-  "checkLayerListToSelectLayers": "Ominaisuustietotaulu on synkronoitu kartan näkyvien karttatasojen kanssa. Voit vaihtaa karttatasojen näkyvyyttä pienoisohjelman, kuten karttatasojen luettelon, avulla.",
-  "rowHeaderColumnTitle": "Rivi ${layerName}, osoitettu hiirellä, valitse osoitetut rivit painamalla Enter-näppäintä"
+  "checkLayerListToSelectLayers": "Ominaisuustietotaulu on synkronoitu kartan näkyvien karttatasojen kanssa. Voit vaihtaa karttatasojen näkyvyyttä pienoisohjelman, kuten karttatasojen luettelon, avulla."
 });

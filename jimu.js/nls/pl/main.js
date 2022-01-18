@@ -98,15 +98,12 @@ define({
     "tooltipText": "Treść etykiety narzędzia",
     "findAddressOrPlace": "Znajdź adres lub miejsce",
     "expand": "Rozwiń ${value}",
-    "collapse": "Zwiń ${value}",
-    "asc": "Rosnąco",
-    "desc": "Malejąco"
+    "collapse": "Zwiń ${value}"
   },
   "errorCode": "Kod",
   "errorMessage": "Komunikat",
   "errorDetail": "Szczegóły",
   "widgetPlaceholderTooltip": "Aby skonfigurować ten element, przejdź do ekranu Widżety i kliknij odpowiedni symbol zastępczy",
-  "widgetToolTip": "${widgetLabel}. Naciśnij klawisz Enter, aby aktywować zawartość tego widżetu. Gdy aktywna jest zawartość widżetu, naciśnij kalwisz Esc, aby ponownie aktywować widżet.",
   "skips": {
     "skips": "Pomiń łącza",
     "skipTo": "Przejdź do $ ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Pokaż wybrane obiekty",
     "ExportToFeatureCollection": "Eksportuj do zbioru obiektów",
     "ExportToGeoJSON": "Eksportuj do GeoJSON",
-    "ExportToFilegdb": "Eksportuj do geobazy plikowej",
-    "ExportToShapefile": "Eksportuj do pliku shape",
     "EditAttributes": "Edytuj atrybuty",
     "AddMarker": "Dodaj sygnaturę",
     "RemoveMarker": "Usuń sygnaturę",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Osadź tę aplikację w witrynie internetowej",
     "shareEmailSubject": "Udostępnianie aplikacji internetowej:",
-    "shareEmailTxt1": "Oto aplikacja internetowa udostępniona Tobie przy użyciu aplikacji ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Możesz utworzyć i udostępnić własną aplikację internetową przy użyciu aplikacji ArcGIS Web AppBuilder firmy Esri.",
+    "shareEmailTxt1": "Oto aplikacja internetowa udostępniona dla Ciebie przy użyciu narzędzia Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Możesz utworzyć i udostępnić własną aplikację internetową przy użyciu narzędzia Web AppBuilder for ArcGIS firmy Esri.",
     "shareEmailTxt3": "Szczegółowe informacje można znaleźć na stronie http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Mały",
     "mediumSize": "Średni",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Twoje konto nie ma uprawnień do tworzenia lub modyfikowania danych. Możliwe też, że ta mapa internetowa nie zawiera żadnych warstw edytowalnych.",
   "invalidConfiguration": "Widżet nie został skonfigurowany lub warstwy w tej konfiguracji nie znajdują się już na mapie. Otwórz aplikację w trybie kreatora i ponownie skonfiguruj widżet.",
   "essentialAppsLicenseErrorForApp": "Twoje konto nie jest licencjonowane do korzystania z aplikacji, która nie jest publiczna. Poproś administratora instytucji o przypisanie typu użytkownika, który obejmuje licencję na kluczowe aplikacje lub licencję na kluczowe aplikacje dodatkowe.",
-  "essentialAppsLicenseErrorForBuilder": "Twoje konto nie obejmuje licencji na aplikację Web AppBuilder. Poproś administratora instytucji o przypisanie typu użytkownika, który obejmuje licencję na kluczowe aplikacje lub licencję na kluczowe aplikacje dodatkowe.",
-  "setStyle": "Skonfiguruj styl"
+  "essentialAppsLicenseErrorForBuilder": "Twoje konto nie obejmuje licencji na aplikację Web AppBuilder. Poproś administratora instytucji o przypisanie typu użytkownika, który obejmuje licencję na kluczowe aplikacje lub licencję na kluczowe aplikacje dodatkowe."
 });

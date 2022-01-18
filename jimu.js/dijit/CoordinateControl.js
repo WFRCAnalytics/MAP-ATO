@@ -781,9 +781,7 @@ define([
       if ((evt.keyCode === dojoKeys.BACKSPACE) || (evt.keyCode === dojoKeys.DELETE)) {
         this.clear();
         this.currentClickPointDD = null;
-        if (this.zoomButton && this.zoomButton.parentNode) {
-          this.zoomButton.parentNode.style.display = "none";
-        }
+        this.zoomButton.parentNode.style.display = "none";
         this.emit('coordinates-deleted', {});
       }
     },
@@ -1006,9 +1004,6 @@ define([
      *
      **/
     remove: function () {
-      if (this._frmtdlg && this._frmtdlg.domNode.offsetParent) {
-        dijitPopup.close(this._frmtdlg);
-      }
       this.destroyRecursive();
       this.emit('removeCoordsControl');
     },

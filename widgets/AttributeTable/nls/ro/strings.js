@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Niciun tabel disponibil pentru afișare.",
   "checkConfigutationToSelectLayers": "Accesați pagina cu setările widgetului pentru a selecta straturile tematice.",
-  "checkLayerListToSelectLayers": "Tabelul de atribute este sincronizat cu straturile tematice vizibile de pe hartă, puteți utiliza un widget, precum Listă straturi tematice pentru a activa/dezactiva straturile tematice.",
-  "rowHeaderColumnTitle": "Rândul ${layerName}, trecere cu mouse-ul, apăsați Enter pentru a selecta rândurile pe deasupra cărora se trece cu mouse-ul"
+  "checkLayerListToSelectLayers": "Tabelul de atribute este sincronizat cu straturile tematice vizibile de pe hartă, puteți utiliza un widget, precum Listă straturi tematice pentru a activa/dezactiva straturile tematice."
 });

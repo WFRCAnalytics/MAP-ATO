@@ -98,15 +98,12 @@ define({
     "tooltipText": "Κείμενο συμβουλής εργαλείου",
     "findAddressOrPlace": "Αναζήτηση διεύθυνσης ή μέρους",
     "expand": "Ανάπτυξη ${value}",
-    "collapse": "Σύμπτυξη ${value}",
-    "asc": "Αύξουσα",
-    "desc": "Φθίνουσα"
+    "collapse": "Σύμπτυξη ${value}"
   },
   "errorCode": "Κωδικός",
   "errorMessage": "Μήνυμα",
   "errorDetail": "Λεπτομέρεια",
   "widgetPlaceholderTooltip": "Για να το ρυθμίσετε, μεταβείτε στα Widget και κάντε κλικ στο αντίστοιχο σύμβολο",
-  "widgetToolTip": "${widgetLabel}. Πιέστε το Enter για εστίαση μέσα στο widget αυτό. Μόλις εστιάσετε μέσα στο widget, πιέστε το Esc για να εστιάσετε και πάλι επάνω του.",
   "skips": {
     "skips": "Παράλειψη συνδέσμων",
     "skipTo": "Παράλειψη και μετάβαση σε ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Εμφάνιση επιλεγμένων στοιχείων",
     "ExportToFeatureCollection": "Εξαγωγή σε feature collection",
     "ExportToGeoJSON": "Εξαγωγή σε GeoJSON",
-    "ExportToFilegdb": "Εξαγωγή σε file geodatabase",
-    "ExportToShapefile": "Εξαγωγή σε shapefile",
     "EditAttributes": "Επεξεργασία περιγραφικών γνωρισμάτων",
     "AddMarker": "Προσθήκη δείκτη",
     "RemoveMarker": "Κατάργηση δείκτη",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Ενσωμάτωση αυτής της εφαρμογής σε ιστότοπο",
     "shareEmailSubject": "Κοινοποίηση web εφαρμογής:",
-    "shareEmailTxt1": "Εδώ έχουμε μια web εφαρμογή που σας έχει κοινοποιηθεί μέσω του ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Μπορείτε να δημιουργήσετε και να κοινοποιήσετε τη δική σας web εφαρμογή μέσω του ArcGIS Web AppBuilder της Esri.",
+    "shareEmailTxt1": "Αυτή είναι μια web εφαρμογή που σας κοινοποιείται με χρήση του Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Μπορείτε να δημιουργήσετε και να κοινοποιήσετε τη δική σας web εφαρμογή με το Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Επισκεφθείτε τη διεύθυνση http://www.esri.com/software/web-appbuilder για λεπτομέρειες.",
     "smallSize": "Μικρό",
     "mediumSize": "Μεσαίο",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Ο λογαριασμός σας δεν έχει δικαιώματα δημιουργίας ή τροποποίησης δεδομένων. Ή αυτός ο web χάρτης δεν περιέχει επεξεργάσιμα θεματικά επίπεδα.",
   "invalidConfiguration": "To widget δεν είναι διαμορφωμένο ή τα θεματικά επίπεδα στη διαμόρφωση δεν βρίσκονται πλέον στο χάρτη. Ανοίξτε την εφαρμογή στη λειτουργία Εργαλείο δημιουργίας και αναδιαμορφώστε το widget.",
   "essentialAppsLicenseErrorForApp": "Ο λογαριασμός σας δεν διαθέτει άδεια χρήσης για εφαρμογές που δεν είναι δημόσιες. Ζητήστε από τον διαχειριστή του οργανισμού σας να σας εκχωρήσει τύπο χρήστη που να περιλαμβάνει Βασικές Εφαρμογές ή πρόσθετη άδεια χρήσης για Βασικές Εφαρμογές.",
-  "essentialAppsLicenseErrorForBuilder": "Ο λογαριασμός σας δεν διαθέτει άδεια χρήσης για το Web AppBuilder. Ζητήστε από τον διαχειριστή του οργανισμού σας να σας εκχωρήσει τύπο χρήστη που να περιλαμβάνει Βασικές Εφαρμογές ή πρόσθετη άδεια χρήσης για Βασικές Εφαρμογές.",
-  "setStyle": "Καθορισμός στιλ"
+  "essentialAppsLicenseErrorForBuilder": "Ο λογαριασμός σας δεν διαθέτει άδεια χρήσης για το Web AppBuilder. Ζητήστε από τον διαχειριστή του οργανισμού σας να σας εκχωρήσει τύπο χρήστη που να περιλαμβάνει Βασικές Εφαρμογές ή πρόσθετη άδεια χρήσης για Βασικές Εφαρμογές."
 });

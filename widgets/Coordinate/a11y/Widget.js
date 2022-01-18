@@ -51,7 +51,7 @@ define([
       var labelDom = this.coordinateInfo;
       var widgetDom = this.domNode;
       if (labelDom) {
-        labelDom.innerHTML = jimuUtils.sanitizeHTML(str);
+        labelDom.innerHTML = str;
       }
 
       if (widgetDom) {

@@ -187,7 +187,6 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
         }
         console.timeEnd('Load widgetOnScreen');
         topic.publish('preloadWidgetsLoaded');
-        this._doPostLoad();
       }), lang.hitch(this, function(){
         if(loading){
           loading.destroy();
@@ -196,7 +195,6 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
         //if error when load widget, let the others continue
         console.timeEnd('Load widgetOnScreen');
         topic.publish('preloadWidgetsLoaded');
-        this._doPostLoad();
       }));
     },
 
@@ -327,7 +325,7 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
         });
         if (stackIds.length > 0) {
           stackIds = stackIds.sort(function(a, b) {
-            return a - b;
+            return a > b;
           });
           this.maxStackId = stackIds[stackIds.length - 1];
         } else {
@@ -694,7 +692,6 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
         }));
       } else {
         this.mobilePanel.clearPanels();
-        domConstruct.place(this.mapId, this.mobilePanel.mapNode);
         def.resolve();
       }
       return def;
@@ -739,8 +736,7 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
     },
 
     _destroyLayout: function() {
-      // do not use $ here, since mobile layout doesn't require goldenlayout. $ is not available.
-      domConstruct.place(this.mapId, this.layoutId);
+      $('#' + this.mapId).appendTo('#' + this.layoutId);
       if(this.layout) {
         this.layout.destroy();
         this.layout = null;
@@ -900,18 +896,16 @@ function(declare, lang, array, html, topic, on, domConstruct, domGeometry,
       var panel = this.dashboardPanels[widgetConfig.id];
       if (panel) {
         panel.reloadWidget(widgetConfig);
-        if (this.layout) {
-          var rootElem = this.layout.root.contentItems[0];
-          var result = rootElem.getItemsByType('component');
-          if (result && result.length > 0) {
-            result.forEach(function(component) {
-              if(component.config.id === widgetConfig.id &&
-                component.config.title !== widgetConfig.label) {
-                component.config.title = widgetConfig.label;
-                component.setTitle(widgetConfig.label);
-              }
-            });
-          }
+        var rootElem = this.layout.root.contentItems[0];
+        var result = rootElem.getItemsByType('component');
+        if (result && result.length > 0) {
+          result.forEach(function(component) {
+            if(component.config.id === widgetConfig.id &&
+              component.config.title !== widgetConfig.label) {
+              component.config.title = widgetConfig.label;
+              component.setTitle(widgetConfig.label);
+            }
+          });
         }
         return;
       }

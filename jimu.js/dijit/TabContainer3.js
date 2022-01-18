@@ -26,11 +26,10 @@ define([
   'dijit/_WidgetBase',
   'dijit/_TemplatedMixin',
   'dojo/text!./templates/TabContainer3.html',
-  'jimu/dijit/ViewStack',
-  'jimu/utils'
+  'jimu/dijit/ViewStack'
 ],
 function(declare, lang, array, html, on, keys, Evented, query,
-  _WidgetBase, _TemplatedMixin, template, ViewStack, jimuUtils){
+  _WidgetBase, _TemplatedMixin, template, ViewStack){
   return declare([_WidgetBase, _TemplatedMixin, Evented], {
     templateString: template,
     'baseClass':'jimu-tab3',
@@ -207,7 +206,7 @@ function(declare, lang, array, html, on, keys, Evented, query,
       tabItemTd.title = tabConfig.title;
       html.place(tabItemTd, this.tabTr);
       var tabItemDiv = query('.tab-item-div', tabItemTd)[0];
-      tabItemDiv.innerHTML = jimuUtils.sanitizeHTML(tabItemTd.label);
+      tabItemDiv.innerHTML = tabItemTd.label;
       tabItemDiv.label = tabItemTd.label;
       tabConfig.content.label = tabItemTd.label;
       this.viewStack.addView(tabConfig.content);

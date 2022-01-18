@@ -17,10 +17,9 @@ define([
   'dojo/_base/lang',
   'dojo/_base/html',
   'dojo/query',
-  'esri/lang',
   'dojo/keys',
   'dojo/on'
-], function(lang, html, query, esriLang, keys, on) {
+], function(lang, html, query, keys, on) {
   var mo = {};
 
   mo.firstFocusNodeClass = 'firstFocusNode';
@@ -45,19 +44,7 @@ define([
     }
     mo.initFirstFocusNode(widgetObj.domNode, firstNode);
     mo.initLastFocusNode(widgetObj.domNode, lastNode);
-
-    mo.addLabelToWidgetDOM(widgetObj);
   };
-  
-  //add user-friendly tips as aria-label when focusing on widget's DOM node.
-  mo.addLabelToWidgetDOM  = function(widgetObj){
-    var widgetList = ['ZoomSlider', 'AttributeTable', 'Search', 'ExtentNavigate', 'OverviewMap'];
-    if(widgetList.indexOf(widgetObj.name) >= 0){
-      console.log(widgetObj.name);
-      var widgetLabel = esriLang.substitute({widgetLabel: widgetObj.name}, window.jimuNls.widgetToolTip);
-      html.setAttr(widgetObj.domNode, 'aria-label', widgetLabel);
-    }
-  }
 
   //There types of widgets:
   //1. on screen not closeable off panel, like HomeButton, ZoomSlider, Search(can't closeable), AT, ...

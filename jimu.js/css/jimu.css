@@ -77,34 +77,6 @@ td, th{
   right: -100px;
 }
 
-.lastTrapLinkNode{
-  position: absolute;
-  left: unset;
-  top: unset;
-  right: -100px;
-  bottom: 10px;
-  width: 20px;
-  height: 20px;
-  padding: 2px;
-  background-color: rgba(0,0,0,0.50);
-  background-image: url(images/jump_to_top.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1000;
-}
-.lastTrapLinkNode:focus{
-  right: 10px;
-}
-.jimu-rtl .lastTrapLinkNode{
-  position: absolute;
-  right: unset;
-  left: -100px;
-  transform: rotate(180deg);
-}
-.jimu-rtl .lastTrapLinkNode:focus{
-  left: 10px;
-}
-
 #skipContainer{
   white-space: nowrap;
   font-size: 18px;
@@ -739,7 +711,7 @@ classes can be used in the html
 
 .add-with-icon.jimu-state-disabled{
   cursor: default;
-  color: #CCCCCC;
+  color: #a0acbf;
 }
 
 .add-with-icon .jimu-icon-add{
@@ -5151,87 +5123,13 @@ html.hr .jimu-filter .allExpsBox > div{
 .share-container .shareLink .optionsRow .optionsMore span {
   width: 100px;
   display: table-cell;
-  /* height: 30px;
-  line-height: 30px; */
+  height: 30px;
+  line-height: 30px;
   word-break: break-all;
 }
 
 .share-container .shareLink .optionsRow .optionsMore .queryFeature_layer{
   margin-bottom: 4px;
-}
-.share-container .shareLink .optionsRow .queryFeature_value_filter{
-  background-color: transparent;
-}
-.share-container .shareLink .optionsRow .query-wapper {
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-.share-container .shareLink .optionsRow .query-wapper .t-row {
-  vertical-align: top;
-}
-.share-container .shareLink .optionsRow .queryFeature_value_filter,
-.share-container .shareLink .optionsRow .queryFeature_value_filter table,
-.share-container .shareLink .optionsRow .queryFeature_value_filter tr,
-.share-container .shareLink .optionsRow .queryFeature_value_filter th,
-.share-container .shareLink .optionsRow .queryFeature_value_filter td{
-  border-collapse:collapse;
-  border:none;
-}
-.share-container .shareLink .optionsRow .queryFeature_value_filter th,
-.share-container .shareLink .optionsRow .queryFeature_value_filter td {
-  padding: 0;
-}
-.share-container .shareLink .optionsRow .jimu-filter-parameters {
-  height: 100%;
-}
-.share-container .shareLink .optionsRow .jimu-filter-parameters .checkedNameDiv {
-  width: 100%;
-}
-.share-container .shareLink .optionsRow .jimu-filter-parameters .jimu-single-filter-parameter > table > tbody > .third-tr > td {
-  padding-bottom: 0;
-}
-.share-container .shareLink .optionsRow .jimu-filter-parameters .jimu-single-filter-parameter .first-tr{
-  display: none;
-}
-.share-container .shareLink .optionsRow .jimu-filter-parameters .jimu-single-filter-parameter>table {
-  width: 100%;
-  table-layout: fixed;
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn-wapper {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px #999999 solid;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  /*margin-bottom: 5px;*/
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn{
-  width: 100%;
-  height: 100%;
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn.ASC{
-  background: url("images/share/sort_asc.svg") no-repeat;
-  background-position: 50% 50%;
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn.ASC:hover{
-  background: url("images/share/sort_asc_hover.svg") no-repeat;
-  background-position: 50% 50%;
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn.DESC{
-  background: url("images/share/sort_desc.svg") no-repeat;
-  background-position: 50% 50%;
-}
-.share-container .shareLink .optionsRow .optionsMore .sort-btn.DESC:hover{
-  background: url("images/share/sort_desc_hover.svg") no-repeat;
-  background-position: 50% 50%;
-}
-/*.share-container .shareLink .optionsRow .optionsMore .dijitSelect .dijitButtonContents {
-  background-color: #fff;
-}*/
-.share-container .shareLink .optionsRow .optionsMore .dijitSelect .dijitButtonContents .dijitButtonText {
-  text-align: start;
 }
 
 .share-layerChooser-dropbox .jimu-icon-error{
@@ -5253,10 +5151,12 @@ html.hr .jimu-filter .allExpsBox > div{
 }
 
 .share-container .shareLink .optionsRow .optionsMore .dijitSelect{
-  min-width: 120px;
-  height: 31px;
+  min-width: 110px;
+  line-height: 30px;
+  height: 30px;
   font-size: 12px;
   display: inline-table !important;
+  margin-bottom: 5px;
 }
 
 /*.share-container .shareLink .optionsRow .optionsMore .longinput{
@@ -6049,7 +5949,7 @@ body:not(.ie-gte-10) .jimu-dijit-statistics-chart{
   height: calc(100% - 48px);
 }
 
-.jimu-dijit-statistics-chart .chart-section.render-faild .chart-container .chart-real-container {
+.jimu-dijit-statistics-chart .chart-section.render-faild .chart-container {
   display: none !important;
 }
 
@@ -6884,7 +6784,7 @@ body:not(.ie-gte-10) .jimu-dijit-statistics-chart{
 }
 
 .jimu-coordinate-control .add-with-icon.coordLabel {
-  width: 75px;
+  width: 75px;  
 }
 
 .jimu-coordinate-control .add-output {
@@ -7346,7 +7246,7 @@ body:not(.ie-gte-10) .jimu-dijit-statistics-chart{
 .jimu-multiple-items-list .item{
   line-height: 30px;
   height: 30px;
-  overflow: hidden;
+  overflow-y: hidden;
   cursor: pointer;
   padding-left: 10px;
   /* border-bottom: 1px solid #d9dde0; */

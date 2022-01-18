@@ -98,15 +98,12 @@ define({
     "tooltipText": "Testo descrizione comandi",
     "findAddressOrPlace": "Trova indirizzo o posizione",
     "expand": "Espandi ${value}",
-    "collapse": "Comprimi ${value}",
-    "asc": "Crescente",
-    "desc": "Decrescente"
+    "collapse": "Comprimi ${value}"
   },
   "errorCode": "Codice",
   "errorMessage": "Messaggio",
   "errorDetail": "Dettagli",
   "widgetPlaceholderTooltip": "Per configurarlo, passare a Widget e fare clic sul segnaposto corrispondente",
-  "widgetToolTip": "${widgetLabel}. Premere Invio per focalizzarsi all'interno di questo widget. Quando il focus è all'interno, premere Esc per focalizzarsi nuovamente sul widget.",
   "skips": {
     "skips": "Salta collegamenti",
     "skipTo": "Salta a ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Mostra feature selezionate",
     "ExportToFeatureCollection": "Esporta in raccolta di feature",
     "ExportToGeoJSON": "Esporta in GeoJSON",
-    "ExportToFilegdb": "Esporta in un geodatabase di file",
-    "ExportToShapefile": "Esporta in uno shapefile",
     "EditAttributes": "Modifica attributi",
     "AddMarker": "Aggiungi un marcatore",
     "RemoveMarker": "Rimuovi marcatore",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Incorpora questa app in un sito Web",
     "shareEmailSubject": "Condivisione app Web:",
-    "shareEmailTxt1": "Ecco un'applicazione Web condivisa con l'utente utilizzando ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "È possibile creare e condividere proprie app Web con ArcGIS Web AppBuilder di Esri.",
+    "shareEmailTxt1": "App Web condivisa con l'utente utilizzando Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "È possibile creare e condividere proprie app Web con Web AppBuilder for ArcGIS di Esri.",
     "shareEmailTxt3": "Per ulteriori dettagli, visitare http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Piccolo",
     "mediumSize": "Media",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "L'account non dispone dell'autorizzazione per creare o modificare dati oppure la Web Map non contiene layer modificabili.",
   "invalidConfiguration": "Il widget non è configurato o i layer nella configurazione non sono più presenti nella mappa. Aprire l'app nella modalità generatore e riconfigurare il widget.",
   "essentialAppsLicenseErrorForApp": "L’account non dispone della licenza per l’uso di un’app non pubblica. È necessario richiedere all’amministratore dell'organizzazione l’assegnazione di un tipo di utente che includa le app essenziali o una licenza aggiuntiva per le app essenziali.",
-  "essentialAppsLicenseErrorForBuilder": "L’account non dispone della licenza per Web AppBuilder. È necessario richiedere all’amministratore dell'organizzazione l’assegnazione di un tipo di utente che includa le app essenziali o una licenza aggiuntiva per le app essenziali.",
-  "setStyle": "Imposta stile"
+  "essentialAppsLicenseErrorForBuilder": "L’account non dispone della licenza per Web AppBuilder. È necessario richiedere all’amministratore dell'organizzazione l’assegnazione di un tipo di utente che includa le app essenziali o una licenza aggiuntiva per le app essenziali."
 });

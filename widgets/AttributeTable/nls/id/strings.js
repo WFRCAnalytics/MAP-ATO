@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Tidak tersedia tabel untuk ditampilkan.",
   "checkConfigutationToSelectLayers": "Harap buka halaman pengaturan widget untuk memilih layer.",
-  "checkLayerListToSelectLayers": "Tabel Atribut disinkronkan dengan layer yang terlihat pada peta, Anda dapat menggunakan widget seperti Daftar Layer untuk menghidupkan/mematikan layer.",
-  "rowHeaderColumnTitle": "Baris ${layerName}, melayang, tekan Enter untuk memilih baris yang melayang"
+  "checkLayerListToSelectLayers": "Tabel Atribut disinkronkan dengan layer yang terlihat pada peta, Anda dapat menggunakan widget seperti Daftar Layer untuk menghidupkan/mematikan layer."
 });

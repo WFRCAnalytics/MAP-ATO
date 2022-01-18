@@ -35,7 +35,7 @@ define([
       'baseClass': 'jimu-dijit-chart',
       templateString: '<div></div>',
       declaredClass: 'jimu.dijit.chart',
-      // constructor -> this.config, this.chartDom, this.preview: boolean
+      // constructor -> this.config, this.chartDom
 
       //public methods:
       //setConfig -> update the option of this.chart.
@@ -73,9 +73,6 @@ define([
       // "backgroundColor": "#fff",
       // "scale": true, //if stack = true,  force scale = false
       // "dataZoom": ["slider"], //inside
-      // "dataZoomOption": {
-      //    mode: 'AUTO', // ALL
-      // }
       // "events": [{
       //   "name": "", //"click"、"dblclick"、"mousedown"、"mousemove"、"mouseup"、"mouseover"、"mouseout"
       //   "callback": "function (params) {}"
@@ -176,24 +173,20 @@ define([
       },
 
       updateConfig: function(config) {
-        if (!config || !this.chart) {
+        if (!config) {
           return false;
         }
-
-        var prevOption = this.chart.getOption();
-        var prevRatio = !this.preview ? this.getDatazoomRatio(prevOption) : null;
-
         this.config = config;
         this._specialThemeByConfig(config);
         var option = this._chartFactory(config);
         this.chart.setOption(option, true);
 
-        this._settingByGrid(config, option, prevRatio);
+        this._settingByGrid(config, option);
 
         return true;
       },
 
-      _settingByGrid: function(config, option, prevRatio) {
+      _settingByGrid: function(config, option) {
         if (config.type === 'gauge') {
           return this._resetGaugePosition(config);
         }
@@ -201,7 +194,7 @@ define([
         config.layout = this.chartUtils.calcDefaultLayout(config);
         if (this.chartUtils.isAxisChart(config)) {
           option = this.chartUtils.settingGrid(option, config);
-          option = this.chartUtils.settingDataZoom(option, config, position, prevRatio);
+          option = this.chartUtils.settingDataZoom(option, config, position);
         }
         option = this.chartUtils.settingChartLayout(option, config);
         this.chart.setOption(option, false);
@@ -284,13 +277,9 @@ define([
           height: height || '100%'
         });
         this.chart.resize();
+        //data zoom
+        this._resizeDataZoom();
         this._resetGaugePosition(this.config);
-      },
-
-      getDatazoomRatio: function(option){
-        var dataZoom = option && option.dataZoom && option.dataZoom[0]
-        var ratio = dataZoom ? [dataZoom.start, dataZoom.end] : null;
-        return ratio
       },
 
       _resizeDataZoom: function() {

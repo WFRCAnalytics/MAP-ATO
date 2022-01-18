@@ -122,7 +122,7 @@ define([
         this.fileProperty = {};
 
         if (this.label && typeof this.label === 'string') {
-          this.displayText.innerHTML = utils.sanitizeHTML(this.label);
+          this.displayText.innerHTML = this.label;
           html.setStyle(this.hintText, 'display', 'block');
         }
         if (this.showSelfImg) {

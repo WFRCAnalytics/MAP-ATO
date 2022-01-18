@@ -99,15 +99,12 @@ define({
       tooltipText: "Tooltip text",
       findAddressOrPlace: "Find address or place",
       expand: "Expand ${value}",
-      collapse: "Collapse ${value}",
-      asc: "Ascending",
-      desc: "Descending"
+      collapse: "Collapse ${value}"
     },
     errorCode: "Code",
     errorMessage: "Message",
     errorDetail: "Detail",
     widgetPlaceholderTooltip: "To set it up, go to Widgets and click corresponding placeholder",
-    widgetToolTip: "${widgetLabel}. Press Enter to focus inside this widget. When the focus is inside, press Esc to focus back on the widget.",
     skips:{
       'skips': 'Skip Links',
       'skipTo': "Skip to ${value}",
@@ -514,8 +511,6 @@ define({
       ShowSelectedFeature: "Show selected features",
       ExportToFeatureCollection: "Export to feature collection",
       ExportToGeoJSON: "Export to GeoJSON",
-      ExportToFilegdb: "Export to file geodatabase",
-      ExportToShapefile: "Export to shapefile",
       EditAttributes: "Edit attributes",
       AddMarker: "Add a marker",
       RemoveMarker: "Remove marker",
@@ -636,8 +631,8 @@ define({
       shareGooglePlus: "Google+",
       EmbedTips: "Embed this app in a website",
       shareEmailSubject: "Sharing web app:",
-      shareEmailTxt1: "Here is a web app shared with you by using ArcGIS Web AppBuilder.",
-      shareEmailTxt2: "You can create and share your own web app with Esri ArcGIS Web AppBuilder.",
+      shareEmailTxt1: "Here is a web app shared with you by using Web AppBuilder for ArcGIS.",
+      shareEmailTxt2: "You can create and share your own web app with Esri Web AppBuilder for ArcGIS.",
       shareEmailTxt3: "Visit http://www.esri.com/software/web-appbuilder for details.",
       smallSize: "Small",
       mediumSize: "Medium",
@@ -827,8 +822,6 @@ define({
     invalidConfiguration: "Widget is either not configured or the layers in the configuration are no longer in the map.  Please open the app in the builder mode and reconfigure the widget.",
     essentialAppsLicenseErrorForApp: "Your account is not licensed to use an app that is not public. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license.",
     essentialAppsLicenseErrorForBuilder: "Your account is not licensed for Web AppBuilder. Please ask your organization administrator to assign you a user type that includes Essential Apps or an add-on Essential Apps license.",
-
-    setStyle: "Set style"
   }),
   "ar": 1,
   "bs": 1,

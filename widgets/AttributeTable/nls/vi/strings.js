@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Không có bảng nào để hiển thị.",
   "checkConfigutationToSelectLayers": "Vui lòng truy cập trang cài đặt tiện ích để chọn lớp.",
-  "checkLayerListToSelectLayers": "Bảng Thuộc tính được đồng bộ hóa với lớp có thể hiển thị trong bản đồ, bạn có thể sử dụng tiện ích như Danh sách lớp để bật/tắt các lớp.",
-  "rowHeaderColumnTitle": "Hàng ${layerName}, đã di chuột, nhấn Enter để chọn các hàng đã di chuột"
+  "checkLayerListToSelectLayers": "Bảng Thuộc tính được đồng bộ hóa với lớp có thể hiển thị trong bản đồ, bạn có thể sử dụng tiện ích như Danh sách lớp để bật/tắt các lớp."
 });

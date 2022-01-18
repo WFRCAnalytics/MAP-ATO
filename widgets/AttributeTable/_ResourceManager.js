@@ -50,7 +50,6 @@ define([
       relationshipInfoMapping: {},
 
       constructor: function(params) {
-        this.widgetId = params && params.widgetId;
         this.map = params && params.map;
         this.nls = params && params.nls;
         this.parent = params && params.parent;
@@ -218,7 +217,6 @@ define([
               );
 
               var table = new _FeatureTable({
-                widgetId: this.widgetId,
                 map: this.map,
                 matchingMap: enabledMatchingMap,
                 hideExportButton: hideExportButton,

@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Geen tabellen beschikbaar om weer te geven.",
   "checkConfigutationToSelectLayers": "Ga naar de widgetinstellingenpagina voor het selecteren van lagen.",
-  "checkLayerListToSelectLayers": "Attribuuttabel is gesynchroniseerd met de zichtbare lagen in de tabel. U kunt widgets gebruiken als Lagenlijst om te schakelen tussen het aan- en uitzetten van lagen.",
-  "rowHeaderColumnTitle": "Rij ${layerName}, zweefde, druk op Enter om de zwevende rijen te selecteren"
+  "checkLayerListToSelectLayers": "Attribuuttabel is gesynchroniseerd met de zichtbare lagen in de tabel. U kunt widgets gebruiken als Lagenlijst om te schakelen tussen het aan- en uitzetten van lagen."
 });

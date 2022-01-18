@@ -98,15 +98,12 @@ define({
     "tooltipText": "Teks tooltip",
     "findAddressOrPlace": "Temukan alamat atau tempat",
     "expand": "Perluas ${value}",
-    "collapse": "Ciutkan ${value}",
-    "asc": "Naik",
-    "desc": "Turun"
+    "collapse": "Ciutkan ${value}"
   },
   "errorCode": "Kode",
   "errorMessage": "Pesan",
   "errorDetail": "Detail",
   "widgetPlaceholderTooltip": "Untuk mengaturnya, pergi ke Widget dan klik tempat teks yang sesuai",
-  "widgetToolTip": "${widgetLabel}. Tekan Enter untuk berfokus ke dalam widget ini. Saat fokus berada di dalam, tekan Esc untuk berfokus kembali pada widget.",
   "skips": {
     "skips": "Lewati Tautan",
     "skipTo": "Lewati ke ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Perlihatkan fitur terpilih",
     "ExportToFeatureCollection": "Ekspor ke koleksi fitur",
     "ExportToGeoJSON": "Ekspor ke GeoJSON",
-    "ExportToFilegdb": "Ekspor ke geodatabase file",
-    "ExportToShapefile": "Ekspor ke shapefile",
     "EditAttributes": "Edit atribut",
     "AddMarker": "Tambahkan penanda",
     "RemoveMarker": "Hapus penanda",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Tempelkan aplikasi ini di situs web",
     "shareEmailSubject": "Berbagi aplikasi web:",
-    "shareEmailTxt1": "Ini adalah aplikasi web yang dibagikan dengan Anda menggunakan ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Anda dapat membuat dan berbagi aplikasi web Anda sendiri dengan Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Ini aplikasi web yang dibagi dengan Anda menggunakan Web AppBuilder untuk ArcGIS.",
+    "shareEmailTxt2": "Anda dapat membuat dan berbagi aplikasi web Anda sendiri dengan Web AppBuilder untuk ArcGIS Esri.",
     "shareEmailTxt3": "Kunjungi http://www.esri.com/software/web-appbuilder untuk keterangan selengkapnya.",
     "smallSize": "Kecil",
     "mediumSize": "Sedang",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Akun Anda tidak memiliki izin untuk membuat atau mengubah data. Atau web map ini tidak berisi layer yang dapat diedit.",
   "invalidConfiguration": "Widget tidak dikonfigurasi atau layer dalam konfigurasi tidak ada lagi dalam peta. Harap buka aplikasi dalam mode builder dan konfigurasi ulang widget.",
   "essentialAppsLicenseErrorForApp": "Akun Anda tidak dilisensikan untuk menggunakan aplikasi yang bukan bersifat publik. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan lisensi Essential App atau add-on Essential App.",
-  "essentialAppsLicenseErrorForBuilder": "Akun Anda tidak dilisensikan untuk Web AppBuilder. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan lisensi Essential App atau add-on Essential App.",
-  "setStyle": "Atur gaya"
+  "essentialAppsLicenseErrorForBuilder": "Akun Anda tidak dilisensikan untuk Web AppBuilder. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan lisensi Essential App atau add-on Essential App."
 });

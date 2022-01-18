@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Brak tabel dostępnych do wyświetlenia.",
   "checkConfigutationToSelectLayers": "Przejdź na stronę ustawień widżetu, aby wybrać warstwy.",
-  "checkLayerListToSelectLayers": "Tabela atrybutów jest synchronizowana z warstwami widocznymi na mapie, warstwy można włączać i wyłączać przy użyciu widżetu, takiego jak Lista warstw.",
-  "rowHeaderColumnTitle": "Umieszczono wskaźnik myszy nad wierszem ${layerName}. Naciśnij klawisz Enter, aby wybrać wiersze, nad którymi umieszczono wskaźnik myszy."
+  "checkLayerListToSelectLayers": "Tabela atrybutów jest synchronizowana z warstwami widocznymi na mapie, warstwy można włączać i wyłączać przy użyciu widżetu, takiego jak Lista warstw."
 });

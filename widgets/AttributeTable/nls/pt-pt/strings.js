@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Sem tabelas disponíveis para exibir.",
   "checkConfigutationToSelectLayers": "Por favor, vá à página de definições do widget para selecionar camadas.",
-  "checkLayerListToSelectLayers": "A Tabela de Atributos encontra-se sincronizada com camadas visíveis no mapa,  pode utilizar um widget, tal como Layer List para alternar camadas entre ligado/desligado.",
-  "rowHeaderColumnTitle": "Linha ${layerName}, com o cursor sobreposto, pressionar Enter para selecionar linhas com o cursor sobreposto"
+  "checkLayerListToSelectLayers": "A Tabela de Atributos encontra-se sincronizada com camadas visíveis no mapa,  pode utilizar um widget, tal como Layer List para alternar camadas entre ligado/desligado."
 });

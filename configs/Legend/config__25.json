@@ -1,0 +1,20 @@
+{
+  "legend": {
+    "arrangement": 0,
+    "autoUpdate": true,
+    "respectCurrentMapScale": true
+  },
+  "layerState": {
+    "EquityFocusAreas_gdb_3883": {
+      "selected": true
+    },
+    "ATOTAZ_855": {
+      "selected": true
+    },
+    "ATOTAZ_855_3645": {
+      "selected": true
+    }
+  },
+  "syncWithWebmap": false,
+  "showLegendForBasemap": false
+}

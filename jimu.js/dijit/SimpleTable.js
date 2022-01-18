@@ -201,7 +201,7 @@ define([
             html.create('col', {width:width}, this.bodyColgroup);
 
             var th = html.create('th', {
-              innerHTML: jimuUtils.sanitizeHTML(item.title),
+              innerHTML: item.title,
               title: item.title
             }, tr);
 
@@ -548,7 +548,7 @@ define([
         var td = html.toDom(strTd);
         html.addClass(td, fieldMeta.name);
         var textDiv = query('div', td)[0];
-        textDiv.innerHTML = jimuUtils.sanitizeHTML(fieldData) || "";
+        textDiv.innerHTML = fieldData || "";
         textDiv.title = fieldData || "";
         if (fieldMeta['class']) {
           html.addClass(td, fieldMeta['class']);
@@ -569,7 +569,7 @@ define([
         }
         var editableDiv = query('div', td)[0];
         var editableInput = query('input', td)[0];
-        editableDiv.innerHTML = jimuUtils.sanitizeHTML(fieldData) || "";
+        editableDiv.innerHTML = fieldData || "";
         if (editableDiv.innerHTML !== "") {
           editableDiv.title = editableDiv.innerText || editableDiv.innerHTML;
         }
@@ -588,7 +588,7 @@ define([
           }
         })));
         this.own(on(editableInput, 'blur', lang.hitch(this, function() {
-          editableInput.value = lang.trim(jimuUtils.sanitizeHTML(editableInput.value));
+          editableInput.value = lang.trim(editableInput.value);
           var oldValue = editableDiv.innerText || editableDiv.innerHTML;
           var newValue = editableInput.value;
           if (newValue !== '') {
@@ -597,10 +597,10 @@ define([
               if (sameValueRows.length > 0) {
                 editableInput.value = oldValue;
               } else {
-                editableDiv.innerHTML = jimuUtils.sanitizeHTML(newValue);
+                editableDiv.innerHTML = newValue;
               }
             } else {
-              editableDiv.innerHTML = jimuUtils.sanitizeHTML(newValue);
+              editableDiv.innerHTML = newValue;
             }
           } else {
             editableInput.value = oldValue;
@@ -870,14 +870,14 @@ define([
       _editNormalText: function(td, fieldMeta, fieldData) {
         /*jshint unused: false*/
         var normalTextDiv = query('div', td)[0];
-        normalTextDiv.innerHTML = jimuUtils.sanitizeHTML(fieldData) || "";
+        normalTextDiv.innerHTML = fieldData || "";
         normalTextDiv.title = normalTextDiv.innerHTML;
       },
 
       _editEditableText: function(td, fieldMeta, fieldData) {
         /*jshint unused: false*/
         var editableDiv = query('div', td)[0];
-        editableDiv.innerHTML = jimuUtils.sanitizeHTML(fieldData) || "";
+        editableDiv.innerHTML = fieldData || "";
         var editableInput = query('input', td)[0];
         editableInput.value = editableDiv.innerHTML;
       },

@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "无可显示的表格。",
   "checkConfigutationToSelectLayers": "请转到微件设置页面选择图层。",
-  "checkLayerListToSelectLayers": "属性表与地图中的可见图层同步，您可以使用图层列表等微件打开/关闭图层。",
-  "rowHeaderColumnTitle": "行 ${layerName} 已悬停，请按 Enter 键选择悬停的行"
+  "checkLayerListToSelectLayers": "属性表与地图中的可见图层同步，您可以使用图层列表等微件打开/关闭图层。"
 });

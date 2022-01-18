@@ -109,7 +109,6 @@ function(declare, lang, array, html, topic, domConstruct, domGeometry,
         }
         console.timeEnd('Load widgetOnScreen');
         topic.publish('preloadWidgetsLoaded');
-        this._doPostLoad();
       }), lang.hitch(this, function(){
         if(loading){
           loading.destroy();
@@ -118,7 +117,6 @@ function(declare, lang, array, html, topic, domConstruct, domGeometry,
         //if error when load widget, let the others continue
         console.timeEnd('Load widgetOnScreen');
         topic.publish('preloadWidgetsLoaded');
-        this._doPostLoad();
       }));
     },
 

@@ -67,12 +67,12 @@ define([
     },
 
     //sort order client statistics data
-    sortClientStatisticsData: function(data, options, layerObject) {
+    sortClientStatisticsData: function(data, options) {
       var mode = options.mode;
       var sortOrder = options.sortOrder; //{isAsc:boolean,field:''}
       var valueFields = options.valueFields;
       var clusterField = options.clusterField;
-      return this.sortStatisticsData(data, mode, sortOrder, clusterField, valueFields, layerObject);
+      return this.sortStatisticsData(data, mode, sortOrder, clusterField, valueFields);
     },
 
     //Slice data by input number
@@ -298,7 +298,7 @@ define([
 
     /*------------ Tool method -------------*/
     //return sorted data
-    sortStatisticsData: function(data, mode, sortOrder, labelField, valueFields, layerObject) {
+    sortStatisticsData: function(data, mode, sortOrder, labelField, valueFields) {
       //sortOrder
       //  isLabelAxis:boolean
       //  isAsc:boolean
@@ -355,18 +355,7 @@ define([
       data.sort(function(a, b) {
         var aValue = getVaildValue(a, mode, sortOrder);
         var bValue = getVaildValue(b, mode, sortOrder);
-        if(sortOrder.isLabelAxis && layerObject && mode !== 'field') {
-          var attr1= {};
-          attr1[labelField] = aValue;
-          var res1 = jimuUtils.getDisplayValueForCodedValueOrSubtype(layerObject, labelField, attr1);
-          var attr2= {};
-          attr2[labelField] = bValue;
-          var res2 = jimuUtils.getDisplayValueForCodedValueOrSubtype(layerObject, labelField, attr2);
-          if(res1.isCodedValueOrSubtype && res2.isCodedValueOrSubtype){
-            aValue = res1.displayValue;
-            bValue = res2.displayValue;
-          }
-        }
+
         if (aValue === '_NULL&UNDEFINED_') {
           aValue = Infinity;
         }

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Text al sfatului ecran",
     "findAddressOrPlace": "Găsire adresă sau loc",
     "expand": "Extindere ${value}",
-    "collapse": "Restrângere ${value}",
-    "asc": "Ascendent",
-    "desc": "Descendent"
+    "collapse": "Restrângere ${value}"
   },
   "errorCode": "Cod",
   "errorMessage": "Mesaj",
   "errorDetail": "Detaliu",
   "widgetPlaceholderTooltip": "Pentru a-l configura, mergeţi la Widgeturi şi faceţi clic pe substituentul corespunzător",
-  "widgetToolTip": "${widgetLabel}. Apăsați pe Enter pentru a focaliza în acest widget. Când focalizarea este în interior, apăsați pe Esc pentru ca focalizarea să revină pe widget.",
   "skips": {
     "skips": "Omitere linkuri",
     "skipTo": "Omitere la ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Afişare obiecte spaţiale selectate",
     "ExportToFeatureCollection": "Export către colecția de obiecte spațiale",
     "ExportToGeoJSON": "Export către GeoJSON",
-    "ExportToFilegdb": "Export către baza de date geografice",
-    "ExportToShapefile": "Export către fișierul shapefile",
     "EditAttributes": "Editare atribute",
     "AddMarker": "Adăugare marcaj",
     "RemoveMarker": "Eliminare marcaj",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Încorporaţi această aplicaţie într-un site web",
     "shareEmailSubject": "Partajarea aplicaţiei web:",
-    "shareEmailTxt1": "Aceasta este o aplicație web partajată cu dvs. prin intermediul ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Vă puteţi crea şi partaja propria aplicaţie web folosind Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Aceasta este o aplicaţie web partajată cu dvs. prin intermediul Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Vă puteţi crea şi partaja propria aplicaţie web folosind Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Accesaţi adresa http://www.esri.com/software/web-appbuilder pentru detalii.",
     "smallSize": "Mic",
     "mediumSize": "Mediu",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Contul dumneavoastră nu are permisiunea de a crea sau modifica date. Sau această hartă web nu include niciun strat tematic editabil.",
   "invalidConfiguration": "Widgetul nu este configurat sau straturile tematice din configuraţie nu se mai află pe hartă.  Deschideţi aplicaţia în modul de creare şi reconfiguraţi widgetul.",
   "essentialAppsLicenseErrorForApp": "Contul dvs. nu este licențiat să utilizeze o aplicație care nu este publică. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include aplicații esențiale sau o licență pentru aplicații esențiale de completare.",
-  "essentialAppsLicenseErrorForBuilder": "Contul dvs. nu este licențiat pentru Web AppBuilder. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include aplicații esențiale sau o licență pentru aplicații esențiale de completare.",
-  "setStyle": "Setați stilul"
+  "essentialAppsLicenseErrorForBuilder": "Contul dvs. nu este licențiat pentru Web AppBuilder. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include aplicații esențiale sau o licență pentru aplicații esențiale de completare."
 });

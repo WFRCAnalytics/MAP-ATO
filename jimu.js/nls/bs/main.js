@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tekst opisa elementa",
     "findAddressOrPlace": "Pronađi adresu ili mjesto",
     "expand": "Proširi ${value}",
-    "collapse": "Sažmi ${value}",
-    "asc": "Uzlazno",
-    "desc": "Silazno"
+    "collapse": "Sažmi ${value}"
   },
   "errorCode": "Kod",
   "errorMessage": "Poruka",
   "errorDetail": "Pojedinost",
   "widgetPlaceholderTooltip": "Za postavljanje idite u Widgete i kliknite na odgovarajuće mjesto",
-  "widgetToolTip": "${widgetLabel}. Pritisnite tipku \"Enter\" za fokus unutar ovog widgeta. Kada je fokus unutar, pritisnite tipku \"Esc\" za fokusiranje natrag na widget",
   "skips": {
     "skips": "Preskoči poveznice",
     "skipTo": "Preskoči na ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Prikaži odabrane geoobjekte",
     "ExportToFeatureCollection": "Izvezi u kolekciju geoobjekata",
     "ExportToGeoJSON": "Izvezi u GeoJSON",
-    "ExportToFilegdb": "Izvezi u geobazu podataka datoteke",
-    "ExportToShapefile": "Izvezi u shapefile",
     "EditAttributes": "Uredi atribute",
     "AddMarker": "Dodaj oznaku",
     "RemoveMarker": "Ukloni oznaku",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Ugradi ovaj app u web-mjesto",
     "shareEmailSubject": "Dijeljenje web-appa:",
-    "shareEmailTxt1": "Ovdje je web-app podijeljen s vama putem programa ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Možete stvoriti i podijeliti svoj web-app pomoću programa Esri Web AppBuilder.",
+    "shareEmailTxt1": "Ovdje je web-app koji se dijeli s vama pomoću alata Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Možete stvoriti i podijeliti svoj web-app a Esrijevim alatom Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Posjetite http://www.esri.com/software/web-appbuilder za pojedinosti.",
     "smallSize": "Malo",
     "mediumSize": "Srednje",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Vaš račun nema dozvolu za stvaranje ili izmjenu podataka. Ili ova web-karta ne sadrži nikakve slojeve koji se mogu uređivati.",
   "invalidConfiguration": "Widget nije konfiguriran ili slojevi u konfiguraciji više nisu u karti. Otvorite app u načinu sastavljača i ponovo konfigurirajte widget.",
   "essentialAppsLicenseErrorForApp": "Vaš račun nije licenciran za upotrebu appa koji nije javan. Obratite se administratoru svoje organizacije da vam dodijeli vrstu korisnika koja sadrži licencu za osnovne appove ili za dodatke za osnovne appove.",
-  "essentialAppsLicenseErrorForBuilder": "Vaš račun nije licenciran za Web AppBuilder. Obratite se administratoru svoje organizacije da vam dodijeli vrstu korisnika koja sadrži licencu za osnovne appove ili za dodatke za osnovne appove.",
-  "setStyle": "Postavi stil"
+  "essentialAppsLicenseErrorForBuilder": "Vaš račun nije licenciran za Web AppBuilder. Obratite se administratoru svoje organizacije da vam dodijeli vrstu korisnika koja sadrži licencu za osnovne appove ili za dodatke za osnovne appove."
 });

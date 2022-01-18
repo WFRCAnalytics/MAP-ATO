@@ -505,6 +505,12 @@ function(declare, lang, html, _WidgetBase, topic, on, query,
       return 'theme_' + theme.name + '_style_' + theme.styles[0];
     },
 
+    _doPostLoad: function(){
+      //load somethings that may be used later.
+      //let it load behind the stage.
+      require(['dynamic-modules/postload']);
+    },
+
     _onOpenWidgetRequest: function(widgetId){
       this.layoutManager.openWidget(widgetId);
     }

@@ -27,6 +27,7 @@ define([
     var mo = {};
 
     mo.a11y_init = function () {
+      html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
 
       html.setAttr(this.overviewMapDijit._maximizerDiv, "tabindex", 0);
 

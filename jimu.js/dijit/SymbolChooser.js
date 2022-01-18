@@ -1101,13 +1101,9 @@ function(declare, _WidgetBase, BindLabelPropsMixin, _TemplatedMixin, _WidgetsInT
         html.addClass(this.fillSection, 'arrow-symbol-section');
       }else{ //other polygons
         html.removeClass(this.fillSection, 'arrow-symbol-section');
-        // update symbol when changing section type(fill or arrow)
-        // reset to symbol's default arrowWidth for keeping current symbol for polygon to draw
-        if(this.isArrow && !this.arrowWidth.validate()){
-          this.arrowWidth.set('value', 12);
-        }
       }
       this.isArrow = isArrow;
+      this._onFillSymbolChange(true);//update symbol when changing section type(fill or arrow)
     },
 
     /* fill section */
@@ -1278,7 +1274,7 @@ function(declare, _WidgetBase, BindLabelPropsMixin, _TemplatedMixin, _WidgetsInT
       return symbol && symbol.declaredClass === 'esri.symbol.TextSymbol';
     },
 
-    _updateTextPreview:function(text, fontFamily){
+    _updateTextPreview:function(fontFamily){
       var colorHex = this.textColor.getColor().toHex();
       var size = parseInt(this.textFontSize.get('value'), 10) + 'px';
       html.setStyle(this.textPreview, {
@@ -1286,13 +1282,12 @@ function(declare, _WidgetBase, BindLabelPropsMixin, _TemplatedMixin, _WidgetsInT
         fontSize: size,
         fontFamily: fontFamily
       });
-      this.textPreview.innerHTML = text;
+      this.textPreview.innerHTML = this.inputText.value;
     },
 
     _getTextSymbolBySetting:function(checkValidity){
-      var text = jimuUtils.sanitizeHTML(this.inputText.value);
       if(checkValidity){
-        if(text.replace(/^\s+|\s+$/g,"") === ''){
+        if(this.inputText.value.replace(/^\s+|\s+$/g,"") === ''){
           return null;
         }
         if(!this.textFontSize.validate()){
@@ -1300,6 +1295,7 @@ function(declare, _WidgetBase, BindLabelPropsMixin, _TemplatedMixin, _WidgetsInT
         }
       }
       this.symbol = new TextSymbol();
+      var text = this.inputText.value;
       var color = this.textColor.getColor();
       var size = parseInt(this.textFontSize.get('value'), 10);
       var font = new Font();// Default font family : Serif
@@ -1307,7 +1303,7 @@ function(declare, _WidgetBase, BindLabelPropsMixin, _TemplatedMixin, _WidgetsInT
       this.symbol.setText(text);
       this.symbol.setColor(color);
       this.symbol.setFont(font);
-      this._updateTextPreview(text, font.family);
+      this._updateTextPreview(font.family);
       return this.symbol;
     },
 

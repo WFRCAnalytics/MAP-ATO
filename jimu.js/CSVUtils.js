@@ -19,9 +19,7 @@ define([
   'dojo/_base/lang',
   'dojo/_base/array',
   'dojo/_base/html',
-  "dojo/_base/kernel",
   'dojo/has',
-  "dojo/number",
   'dojo/Deferred',
   'jimu/utils',
   'esri/lang',
@@ -29,8 +27,8 @@ define([
   'esri/tasks/query',
   'esri/graphic',
   "jimu/ArcadeUtils"],
-  function(exports, lang, array, html, dojo, has, number, Deferred, jimuUtils, esriLang, 
-    QueryTask, Query, Graphic, ArcadeUtils) {
+  function(exports, lang, array, html, has, Deferred, jimuUtils, esriLang, QueryTask, Query,
+  Graphic, ArcadeUtils) {
     /*
     ** filename String no file extension
     ** datas Object[]
@@ -143,9 +141,8 @@ define([
       var content = "";
       var len = 0,
         n = 0,
-        separator = "",
+        comma = "",
         value = "";
-      var defaultDelimiter = getDelimiter(); // either "," or ";"
       try {
         columns = array.map(columns, function(f){
           if(typeof f === 'string'){
@@ -156,38 +153,30 @@ define([
         });
         array.forEach(columns, function(_field) {
           var _fieldText = _field.alias || _field.name;
-          // append "" to fields that include delimiter
-          if(_fieldText.toString().indexOf(defaultDelimiter) > -1) {
+          // append "" to fields that include commas
+          if(_fieldText.toString().indexOf(",") > -1) {
             _fieldText = '"' + _fieldText + '"';
           }
-          content = content + separator + _fieldText;
-          separator = defaultDelimiter;
+          content = content + comma + _fieldText;
+          comma = ",";
         });
 
         content = content + "\r\n";
         len = datas.length;
         n = columns.length;
         for (var i = 0; i < len; i++) {
-          separator = "";
+          comma = "";
           for (var m = 0; m < n; m++) {
             var _field = columns[m];
             value = datas[i][_field.name];
             if (!value && typeof value !== "number") {
               value = "";
             }
-            if(typeof value === "string") {
-              var shouldAddQuotes = false;
-              if(defaultDelimiter === ";") {
-                shouldAddQuotes = /[";\r\n]/g.test(value);
-              } else {
-                shouldAddQuotes = /[",\r\n]/g.test(value);
-              }
-              if(shouldAddQuotes) {
-                value = textField + value.replace(/(")/g, '""') + textField;
-              }
+            if (value && /[",\r\n]/g.test(value)) {
+              value = textField + value.replace(/(")/g, '""') + textField;
             }
-            content = content + separator + value;
-            separator = defaultDelimiter;
+            content = content + comma + value;
+            comma = ",";
           }
           content = content + "\r\n";
         }
@@ -544,17 +533,6 @@ define([
       }
 
       return attrs;
-    }
-
-    function getDelimiter() {
-      var decimalNumberTester = number.format(1.1, {
-        locale: dojo.locale
-      });
-      var sep = decimalNumberTester.substring(1,2);
-      if(sep === ',') {
-        return ';';
-      }
-      return ',';
     }
 
   });

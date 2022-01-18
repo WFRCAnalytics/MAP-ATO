@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tekst opisa alatke",
     "findAddressOrPlace": "Pronađi adresu ili mesto",
     "expand": "Proširi ${value}",
-    "collapse": "Skupi ${value}",
-    "asc": "Rastuće",
-    "desc": "Opadajuće"
+    "collapse": "Skupi ${value}"
   },
   "errorCode": "Kôd",
   "errorMessage": "Poruka",
   "errorDetail": "Detalj",
   "widgetPlaceholderTooltip": "Da biste postavili, idite na „Vidžet“ i kliknite na odgovarajućeg čuvara mesta",
-  "widgetToolTip": "${widgetLabel}. Pritisnite Enter da biste se fokusirali na unutrašnjost ovog vidžeta. Kada se fokusirate na unutrašnjost, pritisnite Esc da biste pomerili fokus van vidžeta.",
   "skips": {
     "skips": "Preskoči linkove",
     "skipTo": "Pređi na ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Prikaži izabrane geoobjekte",
     "ExportToFeatureCollection": "Izvezi u kolekciju geoobjekata",
     "ExportToGeoJSON": "Izvezi u GeoJSON",
-    "ExportToFilegdb": "Istražite bazu geopodataka datoteke",
-    "ExportToShapefile": "Izvezi u shapefile datoteku",
     "EditAttributes": "Izmeni atribute",
     "AddMarker": "Dodaj marker",
     "RemoveMarker": "Ukloni marker",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Ugradi ovu aplikaciju u veb sajt",
     "shareEmailSubject": "Deljenje veb aplikacije:",
-    "shareEmailTxt1": "Evo veb aplikacije koja se deli sa vama pomoću ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Možete kreirati i deliti svoje veb aplikacije uz ArcGIS Web AppBuilder kompanije Esri.",
+    "shareEmailTxt1": "Evo veb aplikacije koja se deli sa vama pomoću Veb AppBuilder-a za ArcGIS.",
+    "shareEmailTxt2": "Možete da kreirate i delite svoju veb aplikaciju pomoću Esri Veb AppBuilder-a za ArcGIS.",
     "shareEmailTxt3": "Posetite http://www.esri.com/software/web-appbuilder za detalje.",
     "smallSize": "Malo",
     "mediumSize": "Srednje",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Vaš nalog nema dozvolu za kreiranje ili izmenu podataka. Ili ova veb mapa ne sadrži slojeve koji mogu da se uređuju.",
   "invalidConfiguration": "Vidžet nije konfigurisan ili slojevi u konfiguraciji više nisu na mapi. Otvorite aplikaciju u režimu za izradu i ponovo konfigurišite vidžet.",
   "essentialAppsLicenseErrorForApp": "Vaš nalog nema licencu za korišćenje aplikacija koje nisu javne. Zatražite od administratora organizacije da vam dodeli onaj tip korisnika koji uključuje osnovne aplikacije ili licencu za dodatne osnovne aplikacije.",
-  "essentialAppsLicenseErrorForBuilder": "Vaš nalog nema licencu za Web AppBuilder. Zatražite od administratora organizacije da vam dodeli onaj tip korisnika koji uključuje osnovne aplikacije ili licencu za dodatne osnovne aplikacije.",
-  "setStyle": "Postavi stil"
+  "essentialAppsLicenseErrorForBuilder": "Vaš nalog nema licencu za Web AppBuilder. Zatražite od administratora organizacije da vam dodeli onaj tip korisnika koji uključuje osnovne aplikacije ili licencu za dodatne osnovne aplikacije."
 });

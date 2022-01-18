@@ -98,7 +98,7 @@ define([
       setSelectedLayer: function(layer){
         var def = new Deferred();
         if (layer) {
-          var layerInfo = this.layerInfosObj.getLayerOrTableInfoById(layer.id);
+          var layerInfo = this.layerInfosObj.getLayerInfoById(layer.id);
           if (layerInfo) {
             this.layerChooser.filter(layerInfo).then(lang.hitch(this, function(success){
               if(success){

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Besedilo zaslonskega namiga",
     "findAddressOrPlace": "Najdi naslov ali kraj",
     "expand": "Razširi ${value}",
-    "collapse": "Strni ${value}",
-    "asc": "Naraščajoče",
-    "desc": "Padajoče"
+    "collapse": "Strni ${value}"
   },
   "errorCode": "Koda",
   "errorMessage": "Sporočilo",
   "errorDetail": "Podrobnost",
   "widgetPlaceholderTooltip": "Za nastavitev pojdite na Pripomočke in kliknite ustrezno označbo mesta",
-  "widgetToolTip": "${widgetLabel}. Pritisnite Enter za fokus znotraj tega pripomočka. Kadar se fokus nahaja znotraj, pritisnite Esc, da fokus preusmerite nazaj na pripomoček.",
   "skips": {
     "skips": "Preskoči povezave",
     "skipTo": "Preskoči na ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Pokaži izbrane geoobjekte",
     "ExportToFeatureCollection": "Izvozi v zbirko geoobjektov",
     "ExportToGeoJSON": "Izvozi v GeoJSON",
-    "ExportToFilegdb": "Izvozite v file geodatabase",
-    "ExportToShapefile": "Izvozite v shapefile",
     "EditAttributes": "Uredi atribute",
     "AddMarker": "Dodaj označbo",
     "RemoveMarker": "Odstrani označbo",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Vdelaj to aplikacijo v spletno mesto",
     "shareEmailSubject": "Deljenje spletne aplikacije:",
-    "shareEmailTxt1": "Tukaj je spletna aplikacija, deljena z vami, izdelana z uporabo ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Svojo spletno aplikacijo lahko ustvarite in delite z Esri Web AppBuilder",
+    "shareEmailTxt1": "Tukaj je spletna aplikacija, deljena z vami, z uporabo Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Svoje spletne aplikacije lahko ustvarite in delite z Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Za več informacij obiščite http://www.esri.com/software/web-appbuilder.",
     "smallSize": "Majhno",
     "mediumSize": "Srednje",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Vaš račun nima dovoljenja ustvariti ali spremeniti podatke. Ali pa ta spletna karta ne vsebuje nobenih uredljivih slojev.",
   "invalidConfiguration": "Pripomoček morda ni konfiguriran ali pa slojev v konfiguraciji ni več na karti. Odprite aplikacijo v graditeljskem načinu in ponovno konfigurirajte pripomoček.",
   "essentialAppsLicenseErrorForApp": "Vaš račun ni licenciran za uporabo aplikacije, ki ni javna. Prosite administratorja v vaši organizaciji, da vam dodeli tip uporabnika, ki vsebuje aplikacije Essential Apps ali licenco za dodatne aplikacije Essential Apps.",
-  "essentialAppsLicenseErrorForBuilder": "Vaš račun ni licenciran za Web AppBuilder. Prosite administratorja v vaši organizaciji, da vam dodeli tip uporabnika, ki vsebuje aplikacije Essential Apps ali licenco za dodatne aplikacije Essential Apps.",
-  "setStyle": "Nastavite slog"
+  "essentialAppsLicenseErrorForBuilder": "Vaš račun ni licenciran za Web AppBuilder. Prosite administratorja v vaši organizaciji, da vam dodeli tip uporabnika, ki vsebuje aplikacije Essential Apps ali licenco za dodatne aplikacije Essential Apps."
 });

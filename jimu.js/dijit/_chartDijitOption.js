@@ -25,8 +25,6 @@ define([
   return declare([_WidgetBase], {
     //options
     // map
-    // featureLayer
-    // layerObject
 
     //public methods
     //init
@@ -53,8 +51,6 @@ define([
       this.chartHelpUtils.setPopupInfo(popupInfo);
       this.chartHelpUtils.setMap(map);
       this.chartHelpUtils.setLayerObject(layerObject);
-      this.featureLayer = featureLayer;
-      this.layerObject = layerObject;
     },
 
     // return {label:'', values:[2000], unit /*optional*/}
@@ -62,7 +58,7 @@ define([
       //init: get statistics data
       var data = clientStatisticsUtils.getClietStatisticsData(dataOption);
       //sort:
-      data = clientStatisticsUtils.sortClientStatisticsData(data, dataOption, this.layerObject || this.featureLayer);
+      data = clientStatisticsUtils.sortClientStatisticsData(data, dataOption);
       //max number categories
       data = clientStatisticsUtils.getDataForMaxLabels(data, dataOption.maxLabels);
       //keep value best decimal places
@@ -162,11 +158,6 @@ define([
 
       chartOptions.type = type;
       chartOptions.dataZoom = ["inside", "slider"];
-      if(type !== 'pie') {
-        chartOptions.dataZoomOption = {
-          mode: displayOption.displayRange || 'AUTO'
-        };
-      }
       chartOptions.confine = true;
       chartOptions.backgroundColor = displayOption.backgroundColor;
 

@@ -98,15 +98,12 @@ define({
     "tooltipText": "Текст подсказки",
     "findAddressOrPlace": "Найти адрес или место",
     "expand": "Развернуть ${value}",
-    "collapse": "Свернуть ${value}",
-    "asc": "По возрастанию",
-    "desc": "По убыванию"
+    "collapse": "Свернуть ${value}"
   },
   "errorCode": "Код",
   "errorMessage": "Сообщение",
   "errorDetail": "Подробности",
   "widgetPlaceholderTooltip": "Чтобы настроить его, перейдите в Виджеты и щелкните соответствующий ограничитель",
-  "widgetToolTip": "${widgetLabel}. Нажмите Enter для фокусировки внутри виджета. Если фокус находится внутри, нажмите Esc, чтобы выйти из фокуса в виджете.",
   "skips": {
     "skips": "Пропустить ссылки",
     "skipTo": "Перейти к ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Показывать выбранные объекты",
     "ExportToFeatureCollection": "Экспорт в Коллекцию объектов",
     "ExportToGeoJSON": "Экспорт в GeoJSON",
-    "ExportToFilegdb": "Экспорт в файловую базу геоданных",
-    "ExportToShapefile": "Экспорт в шейп-файл",
     "EditAttributes": "Редактирование атрибутов",
     "AddMarker": "Добавить маркер",
     "RemoveMarker": "Удалить маркер",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Встроить это приложение в веб-сайт",
     "shareEmailSubject": "Публикация веб-приложения:",
-    "shareEmailTxt1": "Доступное для вас веб-приложение, опубликованное с помощью ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "Вы можете создать и опубликовать собственное веб-приложение с помощью Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Доступное для вас веб-приложение, опубликованное с помощью Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "Вы можете создать и опубликовать собственное веб-приложение с помощью Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Посетите http://www.esri.com/software/web-appbuilder, чтобы получить дополнительные сведения.",
     "smallSize": "Малая",
     "mediumSize": "Средняя",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "У вашей учетной записи нет прав на создание или изменение данных. Или на этой веб-карте нет слоев, доступных для редактирования.",
   "invalidConfiguration": "Виджет не настроен, или на карте больше нет слоёв из конфигурации. Откройте приложение в режиме конструктора и настройте виджет.",
   "essentialAppsLicenseErrorForApp": "Ваша учетная запись не лицензирована на использование не публичных приложений. Обратитесь к администратору организации, чтобы получить тип пользователя, в который входит Essential Apps или лицензия дополнительного модуля Essential Apps.",
-  "essentialAppsLicenseErrorForBuilder": "Ваша учетная запись не лицензирована на использование Web AppBuilder. Обратитесь к администратору организации, чтобы получить тип пользователя, в который входит Essential Apps или лицензия дополнительного модуля Essential Apps.",
-  "setStyle": "Задать стиль"
+  "essentialAppsLicenseErrorForBuilder": "Ваша учетная запись не лицензирована на использование Web AppBuilder. Обратитесь к администратору организации, чтобы получить тип пользователя, в который входит Essential Apps или лицензия дополнительного модуля Essential Apps."
 });

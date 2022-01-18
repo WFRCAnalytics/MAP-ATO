@@ -1,36 +1,39 @@
 {
   "theme": {
-    "name": "FoldableTheme",
+    "name": "JewelryBoxTheme",
     "styles": [
       "default",
       "black",
-      "blue",
-      "cyan",
       "green",
-      "purple",
+      "cyan",
       "red",
+      "purple",
+      "blue",
       "yellow"
     ],
-    "version": "2.17",
+    "version": "2.15",
     "sharedTheme": {
-      "isPortalSupport": true,
-      "useHeader": false,
-      "useLogo": false
+      "useHeader": true,
+      "useLogo": false,
+      "isPortalSupport": true
+    },
+    "customStyles": {
+      "mainBackgroundColor": null
     }
   },
-  "portalUrl": "http://wfrc.maps.arcgis.com",
+  "portalUrl": "https://wfrc.maps.arcgis.com",
   "appId": "",
   "authorizedCrossOriginDomains": [],
-  "title": "ATO Web App v1",
-  "subtitle": "with ArcGIS Web AppBuilder",
+  "title": "Access to Opportunities",
+  "subtitle": "",
   "keepAppState": true,
-  "logo": "images/app-logo.png",
+  "logo": "images/logo.png",
   "geometryService": "https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer",
   "links": [],
   "widgetOnScreen": {
     "widgets": [
       {
-        "uri": "themes/FoldableTheme/widgets/HeaderController/Widget",
+        "uri": "themes/JewelryBoxTheme/widgets/HeaderController/Widget",
         "position": {
           "left": 0,
           "top": 0,
@@ -38,8 +41,8 @@
           "height": 40,
           "relativeTo": "browser"
         },
-        "version": "2.17",
-        "id": "themes_FoldableTheme_widgets_HeaderController_Widget_1",
+        "version": "2.15",
+        "id": "themes_JewelryBoxTheme_widgets_HeaderController_Widget_21",
         "name": "HeaderController"
       },
       {
@@ -49,8 +52,8 @@
           "bottom": 25,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_Scalebar_Widget_2",
+        "version": "2.15",
+        "id": "widgets_Scalebar_Widget_22",
         "name": "Scalebar"
       },
       {
@@ -60,8 +63,8 @@
           "top": 5,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_Search_Widget_3",
+        "version": "2.15",
+        "id": "widgets_Search_Widget_23",
         "name": "Search"
       },
       {
@@ -71,8 +74,8 @@
           "bottom": 5,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_Coordinate_Widget_4",
+        "version": "2.15",
+        "id": "widgets_Coordinate_Widget_24",
         "name": "Coordinate"
       },
       {
@@ -82,14 +85,13 @@
           "relativeTo": "map"
         },
         "placeholderIndex": 1,
-        "id": "_5",
-        "name": "Filter",
-        "label": "Filter To Salt Lake County",
-        "version": "2.17",
+        "id": "_25",
+        "name": "Legend",
+        "label": "Legend_2",
+        "version": "2.15",
         "closeable": true,
-        "uri": "widgets/Filter/Widget",
-        "openAtStart": false,
-        "config": "configs/Filter/config__5.json"
+        "uri": "widgets/Legend/Widget",
+        "config": "configs/Legend/config__25.json"
       },
       {
         "position": {
@@ -98,7 +100,7 @@
           "relativeTo": "map"
         },
         "placeholderIndex": 1,
-        "id": "_6"
+        "id": "_26"
       },
       {
         "position": {
@@ -107,36 +109,17 @@
           "relativeTo": "map"
         },
         "placeholderIndex": 2,
-        "id": "_7"
-      },
-      {
-        "position": {
-          "left": 205,
-          "top": 45,
-          "relativeTo": "map"
-        },
-        "placeholderIndex": 3,
-        "id": "_8"
-      },
-      {
-        "position": {
-          "left": 255,
-          "top": 45,
-          "relativeTo": "map"
-        },
-        "placeholderIndex": 4,
-        "id": "_9"
+        "id": "_27"
       },
       {
         "uri": "widgets/OverviewMap/Widget",
         "position": {
-          "bottom": 0,
           "right": 0,
-          "zIndex": 1,
+          "bottom": 0,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_OverviewMap_Widget_10",
+        "version": "2.15",
+        "id": "widgets_OverviewMap_Widget_28",
         "name": "OverviewMap"
       },
       {
@@ -146,8 +129,8 @@
           "top": 75,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_HomeButton_Widget_11",
+        "version": "2.15",
+        "id": "widgets_HomeButton_Widget_29",
         "name": "HomeButton"
       },
       {
@@ -157,17 +140,17 @@
           "top": 110,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_MyLocation_Widget_12",
+        "version": "2.15",
+        "id": "widgets_MyLocation_Widget_30",
         "name": "MyLocation"
       },
       {
         "uri": "widgets/AttributeTable/Widget",
+        "version": "2.15",
         "position": {
           "relativeTo": "browser"
         },
-        "version": "2.17",
-        "id": "widgets_AttributeTable_Widget_13",
+        "id": "widgets_AttributeTable_Widget_31",
         "name": "AttributeTable"
       },
       {
@@ -176,8 +159,8 @@
         "position": {
           "relativeTo": "browser"
         },
-        "version": "2.17",
-        "id": "widgets_Splash_Widget_14",
+        "version": "2.15",
+        "id": "widgets_Splash_Widget_32",
         "name": "Splash"
       },
       {
@@ -187,33 +170,62 @@
           "left": 7,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_ZoomSlider_Widget_15",
+        "version": "2.15",
+        "id": "widgets_ZoomSlider_Widget_33",
         "name": "ZoomSlider"
       },
       {
         "uri": "widgets/ExtentNavigate/Widget",
         "visible": false,
         "position": {
-          "top": 190,
+          "top": 148,
           "left": 7,
           "relativeTo": "map"
         },
-        "id": "widgets_ExtentNavigate_Widget_16",
-        "name": "ExtentNavigate",
-        "version": "2.17"
+        "version": "2.15",
+        "id": "widgets_ExtentNavigate_Widget_34",
+        "name": "ExtentNavigate"
       },
       {
         "uri": "widgets/FullScreen/Widget",
         "visible": false,
         "position": {
-          "top": 150,
-          "left": 7,
+          "right": 8,
+          "top": 8,
           "relativeTo": "map"
         },
-        "version": "2.17",
-        "id": "widgets_FullScreen_Widget_17",
+        "version": "2.15",
+        "id": "widgets_FullScreen_Widget_35",
         "name": "FullScreen"
+      }
+    ],
+    "groups": [
+      {
+        "visible": false,
+        "panel": {
+          "uri": "themes/JewelryBoxTheme/panels/LDockablePanel/Panel",
+          "position": {
+            "left": 0,
+            "top": 40,
+            "bottom": 0,
+            "width": 360,
+            "relativeTo": "browser"
+          }
+        },
+        "maxWidgets": 1,
+        "placeholderIndex": 1,
+        "id": "_20",
+        "widgets": [
+          {
+            "name": "ATOSidebar",
+            "version": "2.10",
+            "IsController": false,
+            "uri": "widgets/ATOSidebar/Widget",
+            "id": "widgets_ATOSidebar_Widget_36"
+          }
+        ],
+        "label": "Group 0",
+        "icon": "widgets/ATOSidebar/images/icon.png?wab_dv=2.15"
       }
     ],
     "panel": {
@@ -232,17 +244,27 @@
       "right": 0,
       "bottom": 0
     },
-    "itemId": "cb17d387166f4c00b53e5e01c31a5088",
-    "mapOptions": {},
+    "itemId": "8221d00abb3e4af8b02dc098253ecb03",
+    "mapOptions": {
+      "extent": {
+        "xmin": -12495197.188321318,
+        "ymin": 4928363.715240059,
+        "xmax": -12406530.235510439,
+        "ymax": 4994711.055791648,
+        "spatialReference": {
+          "wkid": 102100
+        }
+      }
+    },
     "id": "map",
-    "portalUrl": "http://wfrc.maps.arcgis.com",
+    "portalUrl": "https://wfrc.maps.arcgis.com",
     "mapRefreshInterval": {
       "useWebMapRefreshInterval": true
     }
   },
   "widgetPool": {
     "panel": {
-      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "uri": "themes/JewelryBoxTheme/panels/FoldablePanel/Panel",
       "position": {
         "top": 5,
         "right": 5,
@@ -251,40 +273,169 @@
         "relativeTo": "map"
       }
     },
-    "widgets": [
-      {
-        "uri": "widgets/Legend/Widget",
-        "version": "2.17",
-        "id": "widgets_Legend_Widget_18",
-        "name": "Legend",
-        "config": "configs/Legend/config_widgets_Legend_Widget_18.json",
-        "index": 0
-      },
-      {
-        "uri": "widgets/LayerList/Widget",
-        "version": "2.17",
-        "id": "widgets_LayerList_Widget_19",
-        "name": "LayerList",
-        "index": 1
-      }
-    ]
+    "widgets": [],
+    "groups": []
   },
   "mobileLayout": {
     "widgetOnScreen": {
-      "widgets": {
-        "widgets/Scalebar/Widget": {
+      "widgets": [
+        {
+          "uri": "themes/JewelryBoxTheme/widgets/HeaderController/Widget",
           "position": {
-            "left": 7,
-            "bottom": 40
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "height": 40,
+            "relativeTo": "browser"
           },
-          "version": "1.4"
+          "version": "2.15"
         },
-        "widgets/Coordinate/Widget": {
+        {
+          "uri": "widgets/Scalebar/Widget",
           "position": {
             "left": 7,
-            "bottom": 17
+            "bottom": 40,
+            "relativeTo": "map"
           },
-          "version": "1.4"
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/Search/Widget",
+          "position": {
+            "left": 55,
+            "top": 5
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/Coordinate/Widget",
+          "position": {
+            "left": 7,
+            "bottom": 17,
+            "relativeTo": "map"
+          },
+          "version": "2.15"
+        },
+        {
+          "position": {
+            "left": 55,
+            "top": 45
+          }
+        },
+        {
+          "position": {
+            "left": 105,
+            "top": 45
+          }
+        },
+        {
+          "position": {
+            "left": 155,
+            "top": 45
+          }
+        },
+        {
+          "uri": "widgets/OverviewMap/Widget",
+          "position": {
+            "right": 0,
+            "bottom": 0
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/HomeButton/Widget",
+          "inPanel": false,
+          "position": {
+            "left": 7,
+            "top": 75
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/MyLocation/Widget",
+          "inPanel": false,
+          "position": {
+            "left": 7,
+            "top": 110
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/AttributeTable/Widget",
+          "version": "2.15",
+          "position": {
+            "relativeTo": "browser"
+          }
+        },
+        {
+          "uri": "widgets/Splash/Widget",
+          "visible": false,
+          "position": {
+            "relativeTo": "browser"
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/ZoomSlider/Widget",
+          "visible": true,
+          "position": {
+            "top": 5,
+            "left": 7
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/ExtentNavigate/Widget",
+          "visible": false,
+          "position": {
+            "top": 148,
+            "left": 7
+          },
+          "version": "2.15"
+        },
+        {
+          "uri": "widgets/FullScreen/Widget",
+          "visible": false,
+          "position": {
+            "right": 8,
+            "top": 8
+          },
+          "version": "2.15"
+        }
+      ],
+      "groups": [
+        {
+          "visible": false,
+          "panel": {
+            "uri": "themes/JewelryBoxTheme/panels/LDockablePanel/Panel",
+            "position": {
+              "left": 0,
+              "top": 40,
+              "bottom": 0,
+              "width": 360,
+              "relativeTo": "browser"
+            }
+          },
+          "maxWidgets": 1
+        }
+      ]
+    },
+    "map": {
+      "position": {
+        "left": 0,
+        "top": 40,
+        "right": 0,
+        "bottom": 0
+      }
+    },
+    "widgetPool": {
+      "panel": {
+        "uri": "themes/JewelryBoxTheme/panels/FoldablePanel/Panel",
+        "position": {
+          "top": 5,
+          "right": 5,
+          "bottom": 5,
+          "zIndex": 5
         }
       }
     }
@@ -301,15 +452,16 @@
       "height": 29
     }
   },
-  "wabVersion": "2.17",
+  "wabVersion": "2.15",
   "isTemplateApp": true,
   "isWebTier": false,
   "httpProxy": {
     "useProxy": true,
-    "url": "/proxy.js"
+    "url": "https://ws032920162.wfrc1.local:3344/proxy.js"
   },
   "dataSource": {
     "dataSources": {},
     "settings": {}
-  }
+  },
+  "logoLink": "https://wfrc.org/"
 }

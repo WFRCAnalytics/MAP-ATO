@@ -98,15 +98,12 @@ define({
     "tooltipText": "도구 설명 텍스트",
     "findAddressOrPlace": "주소 또는 위치 찾기",
     "expand": "${value} 확장",
-    "collapse": "${value} 축소",
-    "asc": "오름차순",
-    "desc": "내림차순"
+    "collapse": "${value} 축소"
   },
   "errorCode": "코드",
   "errorMessage": "메시지",
   "errorDetail": "세부정보",
   "widgetPlaceholderTooltip": "설정하려면, 위젯으로 이동한 다음 해당 개체 틀을 클릭",
-  "widgetToolTip": "${widgetLabel}. Enter 키를 눌러 이 위젯 내부에 초점을 맞춥니다. 초점이 내부에 있으면 Esc 키를 눌러 위젯에 다시 초점을 맞춥니다.",
   "skips": {
     "skips": "링크 건너뛰기",
     "skipTo": "${value}(으)로 건너뛰기",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "선택한 피처 표시",
     "ExportToFeatureCollection": "피처 컬렉션으로 내보내기",
     "ExportToGeoJSON": "GeoJSON으로 내보내기",
-    "ExportToFilegdb": "파일 지오데이터베이스로 내보내기",
-    "ExportToShapefile": "쉐이프파일로 내보내기",
     "EditAttributes": "속성 편집",
     "AddMarker": "표시 추가",
     "RemoveMarker": "표시 제거",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "웹 사이트에 이 앱 임베드",
     "shareEmailSubject": "웹 앱 공유:",
-    "shareEmailTxt1": "ArcGIS Web AppBuilder를 사용하여 공유된 웹앱입니다.",
-    "shareEmailTxt2": "Esri ArcGIS Web AppBuilder로 고유 웹앱을 생성하고 공유할 수 있습니다.",
+    "shareEmailTxt1": "Web AppBuilder for ArcGIS를 사용하여 웹 앱을 공유할 수 있습니다.",
+    "shareEmailTxt2": "Esri Web AppBuilder for ArcGIS로 고유 웹 앱을 생성하고 공유할 수 있습니다.",
     "shareEmailTxt3": "자세한 내용은 http://www.esri.com/software/web-appbuilder를 방문하세요.",
     "smallSize": "작게",
     "mediumSize": "중간",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "해당 계정에는 데이터를 만들거나 수정할 수 있는 권한이 없습니다. 또는 이 웹 맵에는 편집 가능한 레이어가 없습니다.",
   "invalidConfiguration": "위젯이 구성되지 않았거나 구성의 레이어가 더 이상 맵에 없습니다. 빌더 모드에서 앱을 열고 위젯을 다시 구성하세요.",
   "essentialAppsLicenseErrorForApp": "귀하의 계정에는 공개 상태가 아닌 앱을 사용할 수 있는 라이선스가 없습니다. 필수 앱 또는 애드온 필수 앱 라이선스가 포함된 사용자 유형을 업무 지시하려면 기관 관리자에게 문의하세요.",
-  "essentialAppsLicenseErrorForBuilder": "귀하의 계정에는 웹 앱 빌더의 라이선스가 없습니다. 필수 앱 또는 애드온 필수 앱 라이선스가 포함된 사용자 유형을 업무 지시하려면 기관 관리자에게 문의하세요.",
-  "setStyle": "스타일 설정"
+  "essentialAppsLicenseErrorForBuilder": "귀하의 계정에는 웹 앱 빌더의 라이선스가 없습니다. 필수 앱 또는 애드온 필수 앱 라이선스가 포함된 사용자 유형을 업무 지시하려면 기관 관리자에게 문의하세요."
 });

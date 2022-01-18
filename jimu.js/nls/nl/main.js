@@ -98,15 +98,12 @@ define({
     "tooltipText": "Tekst knopinfo",
     "findAddressOrPlace": "Adres of plaats zoeken",
     "expand": "${value} uitklappen",
-    "collapse": "${value} inklappen",
-    "asc": "Oplopend",
-    "desc": "Aflopend"
+    "collapse": "${value} inklappen"
   },
   "errorCode": "Code",
   "errorMessage": "Bericht",
   "errorDetail": "Detail",
   "widgetPlaceholderTooltip": "Om dit in te stellen, gaat u naar Widgets en klikt u op de overeenkomende tijdelijke aanduiding",
-  "widgetToolTip": "${widgetLabel}. Druk op Enter om de focus binnen deze widget te plaatsen. Als de focus binnen is, druk dan op Esc om weer op de widget te focussen.",
   "skips": {
     "skips": "Links overslaan",
     "skipTo": "Overslaan en verdergaan naar ${value}",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "Geselecteerde objecten weergeven",
     "ExportToFeatureCollection": "Exporteren naar objectverzameling",
     "ExportToGeoJSON": "Exporteren naar GeoJSON",
-    "ExportToFilegdb": "Exporteren naar bestand geodatabase",
-    "ExportToShapefile": "Exporteren naar shapefile",
     "EditAttributes": "Attributen bewerken",
     "AddMarker": "Een markering toevoegen",
     "RemoveMarker": "Markering verwijderen",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "Deze app inbedden in een website",
     "shareEmailSubject": "Een webapp delen:",
-    "shareEmailTxt1": "Hier is een webapp gedeeld met u via ArcGIS Web AppBuilder.",
-    "shareEmailTxt2": "U kunt uw eigen webapp maken en delen met Esri ArcGIS Web AppBuilder.",
+    "shareEmailTxt1": "Hier is een webapp gedeeld met u via Web AppBuilder for ArcGIS.",
+    "shareEmailTxt2": "U kunt uw eigen webapp maken en delen met Esri Web AppBuilder for ArcGIS.",
     "shareEmailTxt3": "Ga naar http://www.esri.com/software/web-appbuilder voor details.",
     "smallSize": "Klein",
     "mediumSize": "Middel",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "Uw account is niet gemachtigd om data te maken of wijzigen. Of deze webmap bevat geen bewerkbare lagen.",
   "invalidConfiguration": "Widget is niet geconfigureerd of de lagen in de configuratie zijn niet langer in de kaart. Open de app in de bouwmodus en configureer de widget opnieuw.",
   "essentialAppsLicenseErrorForApp": "Uw account heeft geen licentie om een app te gebruiken die niet openbaar is. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen dat Essential Apps of een add-on Essential Apps-licentie bevat.",
-  "essentialAppsLicenseErrorForBuilder": "Uw account is niet gelicentieerd voor Web AppBuilder. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen dat Essential Apps of een add-on Essential Apps-licentie bevat.",
-  "setStyle": "Stijl instellen"
+  "essentialAppsLicenseErrorForBuilder": "Uw account is niet gelicentieerd voor Web AppBuilder. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen dat Essential Apps of een add-on Essential Apps-licentie bevat."
 });

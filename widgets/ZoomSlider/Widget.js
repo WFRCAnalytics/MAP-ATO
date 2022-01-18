@@ -47,6 +47,7 @@ define([
 
       postCreate: function(){
         this.inherited(arguments);
+        html.setAttr(this.domNode, 'aria-label', this.nls._widgetLabel);
 
         this.own(on(this.map, 'zoom-end', lang.hitch(this, this._zoomHandler)));
         this._zoomHandler();

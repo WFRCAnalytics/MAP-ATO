@@ -29,7 +29,6 @@ define([
     './AlignSelector',
     'dijit/_WidgetsInTemplateMixin',
     'dijit/Editor',
-    'jimu/dijit/EditorXssFilter',
     'jimu/utils',
     'jimu/BaseWidgetSetting',
     "jimu/dijit/CheckBox",
@@ -56,8 +55,8 @@ define([
   ],
   function(declare, lang, html, on, aspect, cookie, has, query,
            ColorTransparencyPicker, BackgroundSelector, SizeSelector, AlignSelector,
-           _WidgetsInTemplateMixin, Editor, EditorXssFilter,
-           utils, BaseWidgetSetting, CheckBox, TabContainer, LoadingShelter, Deferred) {
+           _WidgetsInTemplateMixin,
+           Editor, utils, BaseWidgetSetting, CheckBox, TabContainer, LoadingShelter, Deferred) {
     return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
       baseClass: 'jimu-widget-splash-setting',
       _defaultSize: {mode: "wh", wh: {w: 600, h: 264}},
@@ -67,7 +66,6 @@ define([
 
       postMixInProperties: function() {
         this.nls = lang.mixin(this.nls, window.jimuNls.common);
-        this.editorXssFilter = EditorXssFilter.getInstance();
       },
       postCreate: function() {
         //LoadingShelter
@@ -228,7 +226,7 @@ define([
 
         this._setWidthForOldVersion().then(lang.hitch(this, function() {
           //var content = utils.setWABLogoAlt(config);
-          this.editor.set('value', this.editorXssFilter.sanitize(config.splash.splashContent || this.nls.defaultContent));
+          this.editor.set('value', config.splash.splashContent || this.nls.defaultContent);
           this.set('requireConfirm', config.splash.requireConfirm);
           this.showOption.setValue(config.splash.showOption);
           this.confirmOption.setValue(config.splash.confirmEverytime);

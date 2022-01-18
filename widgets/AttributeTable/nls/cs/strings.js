@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Žádné tabulky nejsou dostupné k zobrazení.",
   "checkConfigutationToSelectLayers": "Přejděte na stránku nastavení widgetu a vyberte vrstvy.",
-  "checkLayerListToSelectLayers": "Atributová tabulka je synchronizována pomocí viditelných vrstev v mapě, můžete využít widget jako Seznam vrstev a zapnout/vypnout vrstvy.",
-  "rowHeaderColumnTitle": "Řádek ${layerName}, přejet myší, stisknutím klávesy Enter vyberte řádky, nad kterými bylo přejeto myší"
+  "checkLayerListToSelectLayers": "Atributová tabulka je synchronizována pomocí viditelných vrstev v mapě, můžete využít widget jako Seznam vrstev a zapnout/vypnout vrstvy."
 });

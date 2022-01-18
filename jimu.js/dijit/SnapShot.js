@@ -23,14 +23,14 @@ define([
   'jimu/utils',
   'esri/request',
   'esri/geometry/webMercatorUtils',
+  'esri/geometry/Polygon',
+  'esri/geometry/Polyline',
   'jimu/portalUtils',
   'jimu/tokenUtils',
-  'jimu/dijit/Message',
-  'esri/layers/FeatureLayer',
-  'esri/graphic'
+  'jimu/dijit/Message'
 ],
   function (declare, lang, array, Deferred, DeferredList, utils, esriRequest,
-    webMercatorUtils, portalUtils, tokenUtils, Message, FeatureLayer, Graphic) {
+    webMercatorUtils, Polygon, Polyline, portalUtils, tokenUtils, Message) {
     var Snapshot = declare('Snapshot', null, {
       _portal: null,
       _portalUrl: "",
@@ -69,8 +69,7 @@ define([
       //  typeIdField: str,
       //  types: [],
       //  minScale: int,
-      //  maxScale: int,
-      //  originalLayerName: str
+      //  maxScale: int
       //}]
 
       constructor: function (appConfig, map) {
@@ -177,11 +176,8 @@ define([
         var defList = new DeferredList(defArray);
         defList.then(lang.hitch(this, function (defResults) {
           for (var r = 0; r < defResults.length; r++) {
-            //to skip failed layer
-            if (defResults[r][0] === true && defResults[r][1] !== null) {
-              var featureSet = defResults[r][1];
-              itemList.push(featureSet);
-            }
+            var featureSet = defResults[r][1];
+            itemList.push(featureSet);
           }
           def.resolve(itemList);
         }), lang.hitch(this, function (err) {
@@ -213,7 +209,7 @@ define([
         return def;
       },
 
-      _createMap: function (mapItemInfo) {
+      _createMap: function (mapItemInfo, layers) {
         var itemData = mapItemInfo.itemData;
         var title = this.name;
         var baseMapLayers = [];
@@ -241,10 +237,9 @@ define([
             layerType: "ArcGISFeatureLayer",
             visibility: l.layer.visible,
             opacity: l.layer.opacity,
-            title: l.layer.label,
-            type: "feature",
-            url: l.layer.url,
-            popupInfo: l.layer.popupInfo// To enable popup of layer in webMap
+            title: l.label,
+            type: "Feature Collection",
+            itemId: layers[j]
           });
         }
 
@@ -374,161 +369,26 @@ define([
         var layerDetailsDefault = {
           description: dataItem.name,
           name: dataItem.name,
-          tags: [dataItem.name],
-          type: "Feature Service",
-          title: dataItem.name
+          tags: [dataItem.name]
         };
-        //dataItem.originalLayerName contains original layer name without any modification
-        //to ensure that feature service name should not contain any special characters otherwise it will fail
-        this._createFeatureService(dataItem.originalLayerName).then(lang.hitch(this, function (response1) {
-          if (response1.success) {
-            var addToDefinitionUrl = response1.serviceurl.replace(
-              new RegExp('rest', 'g'), "rest/admin") + "/addToDefinition";
-            var layerParams = this._createLayer(lang.mixin(dataItem, layerDetailsDefault));
-            this._addDefinitionToService(addToDefinitionUrl, layerParams).then(lang.hitch(this, function (response2) {
-              if (response2.success) {
-                //Push features to new layer
-                var newFeatureLayer =
-                  new FeatureLayer(response1.serviceurl + "/0?token=" + this._credential.token, {
-                    id: layerDetailsDefault.name,
-                    outFields: ["*"]
-                  });
-
-                layerDetailsDefault.url = response1.serviceurl + "/0";
-                //this Layerarray will be used for adding layer info to webMap
-                //So added required details
-                this.layerArray.push({
-                  layer: {
-                    id: layerDetailsDefault.name,
-                    label: layerDetailsDefault.name,
-                    opacity: 1,
-                    visible: true,
-                    url: layerDetailsDefault.url,
-                    popupInfo: dataItem.infoTemplate && dataItem.infoTemplate.info ?
-                      dataItem.infoTemplate.info : dataItem.infoTemplate ? dataItem.infoTemplate : undefined
-                  }
-                });
-                this._applyEditsOnLayer(newFeatureLayer, dataItem.graphics, def, layerDetailsDefault);
-              }
-            }), lang.hitch(this, function (err2) {
-              console.log(err2.message);
-              //to skip failed layer passed null
-              def.reject(null);
-
-            }));
-          } else {
-            //to skip failed layer passed null
-            def.reject(null);
-          }
-        }), lang.hitch(this, function (err1) {
-          console.log(err1.message);
-          //to skip failed layer passed null
-          def.reject(null);
-        }));
-        return def;
-      },
-
-      _applyEditsOnLayer: function (layer, graphics, def, layerDetailsDefault) {
-        var newGraphics = [];
-        array.forEach(graphics, function (g) {
-          //if attributes found - pass d attributes else add blank obj
-          if (g.attributes) {
-            newGraphics.push(new Graphic(g.geometry, null, g.attributes));
-          } else {
-            newGraphics.push(new Graphic(g.geometry, null, {}));
-          }
-        }, this);
-        layer.applyEdits(newGraphics, null, null).then(
-          lang.hitch(this, function () {
-            def.resolve(layerDetailsDefault);
-          })).otherwise(lang.hitch(this, function (err) {
-            console.log(err.message);
-            //to skip failed layer passed null
-            def.reject(null);
-          }));
-      },
-
-      _createFeatureService: function (layerDetailsDefault) {
-        var serviceUrl = this._portalUrl +
-          "sharing/content/users/" + this._credential.userId + "/createService";
-        //create the service
-        var def = esriRequest({
-          url: serviceUrl,
-          content: {
-            f: "json",
-            token: this._credential.token,
-            typeKeywords: "ArcGIS Server,Data,Feature Access,Feature Service,Service,Hosted Service",
-            createParameters: JSON.stringify(this._getFeatureServiceParams(layerDetailsDefault)),
-            outputType: "featureService"
-          },
-          handleAs: "json",
-          callbackParamName: "callback"
-        }, {
-          usePost: true
-        });
-        return def;
-      },
-
-      _getFeatureServiceParams: function (featureServiceName) {
-        return {
-          "name": featureServiceName + "_" + new Date().getTime(),// like originalLayerName_timestamp
-          "serviceDescription": "",
-          "hasStaticData": false,
-          "maxRecordCount": 1000,
-          "supportedQueryFormats": "JSON",
-          "capabilities": "Create,Delete,Query,Update,Editing",
-          "tags": "",
-          "description": "",
-          "copyrightText": "",
-          "spatialReference": {
-            "wkid": 102100
-          },
-          "initialExtent": {
-            "xmin": this.map.extent.xmin,
-            "ymin": this.map.extent.ymin,
-            "xmax": this.map.extent.xmax,
-            "ymax": this.map.extent.ymax,
-            "spatialReference": {
-              "wkid": 102100
-            }
-          },
-          "allowGeometryUpdates": true,
-          "units": "esriMeters",
-          "xssPreventionInfo": {
-            "xssPreventionEnabled": true,
-            "xssPreventionRule": "InputOnly",
-            "xssInputRule": "rejectInvalid"
-          }
-        };
-      },
-
-      _addDefinitionToService: function (serviceUrl, defParams) {
-        var def = esriRequest({
-          url: serviceUrl,
-          content: {
-            token: this._credential.token,
-            addToDefinition: JSON.stringify(defParams),
-            f: "json"
-          },
-          handleAs: "json",
-          callbackParamName: "callback"
-        }, {
-          usePost: true
-        });
+        var t = this._createLayer(dataItem.graphics, lang.mixin({}, layerDetailsDefault, dataItem));
+        def.resolve(t);
         return def;
       },
 
       /* jshint loopfunc:true */
-      _createLayer: function (li) {
+      _createLayer: function (graphics, li) {
         var gl = {
           'point': "esriGeometryPoint",
           'polyline': "esriGeometryPolyline",
           'polygon': "esriGeometryPolygon"
         };
         var nls = this.nls;
-        var g = li.graphics[0];
+        var time = this.time;
+        var g = graphics[0];
         var gt = gl[typeof (g.geometry) !== 'undefined' ? g.geometry.type : g.type];
         var symbol = g.symbol ? g.symbol.toJson() : "";
+        var features = [];
         var fields = [{
           name: "ObjectID",
           alias: "ObjectID",
@@ -539,7 +399,7 @@ define([
           type: "esriFieldTypeString"
         }];
         if (li.fields && li.fields.length > 0) {
-          array.forEach(li.fields, function (field) {
+          array.forEach(li.fields, function(field) {
             fields.push({
               name: field.name,
               alias: field.alias,
@@ -548,6 +408,55 @@ define([
             });
           });
         }
+
+        //Feature Collections do not support multi-part
+        var i = 0;
+        array.forEach(graphics, function (g) {
+          var _parts;
+          switch (gt) {
+            case "esriGeometryPolyline":
+              _parts = g.geometry.paths;
+              break;
+            case "esriGeometryPolygon":
+              _parts = g.geometry.rings;
+              break;
+            case "esriGeometryPoint":
+              _parts = [g.geometry];
+              break;
+          }
+          var _i = 0;
+          var newGeom;
+          array.forEach(_parts, function (p) {
+            switch (gt) {
+              case "esriGeometryPolyline":
+                newGeom = new Polyline(p);
+                newGeom.spatialReference = g.geometry.spatialReference;
+                break;
+              case "esriGeometryPolygon":
+                newGeom = new Polygon(p);
+                newGeom.spatialReference = g.geometry.spatialReference;
+                break;
+              case "esriGeometryPoint":
+                newGeom = p;
+                break;
+            }
+            var f = {
+              attributes: {
+                ObjectID: i + _i
+              },
+              geometry: newGeom
+            };
+            f.attributes[nls.snapshot_append] = time;
+            if (li.fields && li.fields.length > 0) {
+              array.forEach(li.fields, function (field) {
+                f.attributes[field.name] = g.attributes[field.name];
+              });
+            }
+            features.push(f);
+            _i += 1;
+          });
+          i += 1;
+        });
 
         var extent = {
           xmin: this.extent.xmin,
@@ -564,108 +473,50 @@ define([
             description: '',
             symbol: symbol
           };
-        return {
-          "layers": [{
-            "adminLayerInfo": {
-              "geometryField": {
-                "name": "Shape"
-              },
-              "xssTrustedFields": ""
-            },
-            "id": 0,
-            "name": li.name,
-            "type": "Feature Layer",
-            "displayField": "",
-            "description": li.description,
-            "tags": "SA",
-            "copyrightText": "",
-            "defaultVisibility": true,
-            "ownershipBasedAccessControlForFeatures": {
-              "allowOthersToQuery": false,
-              "allowOthersToDelete": false,
-              "allowOthersToUpdate": false
-            },
-            "relationships": [],
-            "isDataVersioned": false,
-            "supportsCalculate": true,
-            "supportsAttachmentsByUploadId": true,
-            "supportsRollbackOnFailureParameter": true,
-            "supportsStatistics": true,
-            "supportsAdvancedQueries": true,
-            "supportsValidateSql": true,
-            "supportsCoordinatesQuantization": true,
-            "supportsApplyEditsWithGlobalIds": true,
-            "advancedQueryCapabilities": {
-              "supportsPagination": true,
-              "supportsQueryWithDistance": true,
-              "supportsReturningQueryExtent": true,
-              "supportsStatistics": true,
-              "supportsOrderBy": true,
-              "supportsDistinct": true,
-              "supportsQueryWithResultType": true,
-              "supportsSqlExpression": true,
-              "supportsReturningGeometryCentroid": true
-            },
-            "useStandardizedQueries": false,
-            "geometryType": gt,
-            "minScale": 0,
-            "maxScale": 0,
-            "extent": extent,
-            "drawingInfo": {
-              "renderer": renderer
-            },
-            "allowGeometryUpdates": true,
-            "hasAttachments": false,
-            "htmlPopupType": "esriServerHTMLPopupTypeNone",
-            "hasM": false,
-            "hasZ": false,
-            "objectIdField": "OBJECTID",
-            "globalIdField": "",
-            "typeIdField": "",
-            "fields": this._getLayerFields(li.fields),
-            "indexes": [],
-            "types": [],
-            "templates": [{
-              "name": "New Feature",
-              "description": "",
-              "drawingTool": "esriFeatureEditToolPolygon",
-              "prototype": {
-                "attributes": {
-                }
-              }
-            }],
-            "supportedQueryFormats": "JSON",
-            "hasStaticData": false,
-            "maxRecordCount": 10000,
-            "standardMaxRecordCount": 4000,
-            "tileMaxRecordCount": 4000,
-            "maxRecordCountFactor": 1,
-            "exceedsLimitFactor": 1,
-            "capabilities": "Query,Editing,Create,Update,Delete"
-          }]
-        };
-      },
 
-      _getLayerFields: function (layerFields) {
-        var fields = [{
-          "name": "OBJECTID",
-          "type": "esriFieldTypeOID",
-          "actualType": "int",
-          "alias": "OBJECTID",
-          "sqlType": "sqlTypeOther",
-          "nullable": false,
-          "editable": false,
-          "domain": null,
-          "defaultValue": null
-        }];
-        array.forEach(layerFields, lang.hitch(this, function (field) {
-          if (field.type === "esriFieldTypeString") {
-            field.actualType = "nvarchar";
-            field.sqlType = "sqlTypeNVarchar";
-          }
-          fields.push(field);
-        }));
-        return fields;
+        this.layerArray.push({
+          layer: {
+            id: li.name,
+            label: li.name,
+            opacity: 1,
+            visible: li.visibleOnStartup
+          },
+          label: li.name
+        });
+        return {
+          title: li.name,
+          type: "Feature Collection",
+          tags: li.tags,
+          description: li.description,
+          extent: extent,
+          name: li.name,
+          text: JSON.stringify({
+            layers: [{
+              layerDefinition: {
+                name: li.name,
+                geometryType: gt,
+                objectIdField: "ObjectID",
+                typeIdField: li.typeIdField,
+                types: li.types,
+                type: "Feature Layer",
+                extent: extent,
+                drawingInfo: {
+                  renderer: renderer
+                },
+                fields: fields,
+                minScale: li.minScale,
+                maxScale: li.maxScale
+              },
+              popupInfo: li.infoTemplate && li.infoTemplate.info ?
+                li.infoTemplate.info : li.infoTemplate ? li.infoTemplate : undefined,
+              featureSet: {
+                features: features,
+                geometryType: gt
+              }
+            }]
+          }),
+          f: "json"
+        };
       }
     });
     return Snapshot;

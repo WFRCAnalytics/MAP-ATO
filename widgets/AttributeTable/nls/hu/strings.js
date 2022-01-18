@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Nincs megjeleníthető táblázat.",
   "checkConfigutationToSelectLayers": "Ha réteget szeretne kiválasztani, keresse fel a widget beállításainak oldalát.",
-  "checkLayerListToSelectLayers": "Az Attribútum táblát a rendszer szinkronizálja a térkép látható rétegeivel; Ön például a Réteg lista widget segítségével kapcsolhatja be/ki a rétegeket.",
-  "rowHeaderColumnTitle": "A(z) ${layerName} sor felett áll. A sor kiválasztásához nyomja meg az Entert"
+  "checkLayerListToSelectLayers": "Az Attribútum táblát a rendszer szinkronizálja a térkép látható rétegeivel; Ön például a Réteg lista widget segítségével kapcsolhatja be/ki a rétegeket."
 });

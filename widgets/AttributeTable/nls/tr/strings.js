@@ -62,6 +62,5 @@ define({
   },
   "noTablesAvailable": "Görüntülenecek tablo yok.",
   "checkConfigutationToSelectLayers": "Katmanları seçmek için lütfen araç ayarları sayfasına gidin.",
-  "checkLayerListToSelectLayers": "Öznitelik Tablosu, haritadaki görünür katmanlar ile senkronize edilir, katmanları açma/kapama arasında geçiş yapmak için Katman Listesi gibi araçları kullanabilirsiniz.",
-  "rowHeaderColumnTitle": "Satır ${layerName}, üzerinde dolaştırılmış, üzerinde dolaştırılan satırları seçmek için Enter tuşuna basın"
+  "checkLayerListToSelectLayers": "Öznitelik Tablosu, haritadaki görünür katmanlar ile senkronize edilir, katmanları açma/kapama arasında geçiş yapmak için Katman Listesi gibi araçları kullanabilirsiniz."
 });

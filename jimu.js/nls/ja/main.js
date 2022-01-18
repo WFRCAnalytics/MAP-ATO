@@ -98,15 +98,12 @@ define({
     "tooltipText": "ツールチップ テキスト",
     "findAddressOrPlace": "住所または場所の検索",
     "expand": "${value} の展開",
-    "collapse": "${value} の折りたたみ",
-    "asc": "昇順",
-    "desc": "降順"
+    "collapse": "${value} の折りたたみ"
   },
   "errorCode": "コード",
   "errorMessage": "メッセージ",
   "errorDetail": "詳細",
   "widgetPlaceholderTooltip": "これを設定するには、ウィジェットに移動して、対応するプレースホルダーをクリックします",
-  "widgetToolTip": "${widgetLabel} Enter キーを押してこのウィジェットの内部にフォーカスします。 フォーカスが内部にある場合、Esc キーを押すとフォーカスがウィジェットに戻ります。",
   "skips": {
     "skips": "リンクをスキップ",
     "skipTo": "${value} に移動",
@@ -512,8 +509,6 @@ define({
     "ShowSelectedFeature": "選択フィーチャの表示",
     "ExportToFeatureCollection": "フィーチャ コレクションにエクスポート",
     "ExportToGeoJSON": "GeoJSON にエクスポート",
-    "ExportToFilegdb": "ファイル ジオデータベースへのエクスポート",
-    "ExportToShapefile": "シェープファイルへのエクスポート",
     "EditAttributes": "属性編集",
     "AddMarker": "マーカーの追加",
     "RemoveMarker": "マーカーの削除",
@@ -634,8 +629,8 @@ define({
     "shareGooglePlus": "Google+",
     "EmbedTips": "このアプリの Web サイトへの埋め込み",
     "shareEmailSubject": "Web アプリの共有:",
-    "shareEmailTxt1": "これは、ArcGIS Web AppBuilder を使用して作成された Web アプリで、共有されています。",
-    "shareEmailTxt2": "Esri ArcGIS Web AppBuilder を使用して、独自の Web アプリを作成して共有することができます。",
+    "shareEmailTxt1": "これは、Web AppBuilder for ArcGIS を使用して共有されている Web アプリです。",
+    "shareEmailTxt2": "Esri Web AppBuilder for ArcGIS を使用して、独自の Web アプリを作成して共有することができます。",
     "shareEmailTxt3": "詳細については、http://www.esri.com/software/web-appbuilder をご参照ください。",
     "smallSize": "小",
     "mediumSize": "中",
@@ -820,6 +815,5 @@ define({
   "noEditableLayers": "ご使用のアカウントには、データを作成/変更する権限がありません。または、この Web マップに編集可能なレイヤーが含まれていません。",
   "invalidConfiguration": "ウィジェットが構成されていないか、構成で指定されたレイヤーがマップ内に存在しません。アプリをビルダー モードで開き、ウィジェットを再構成してください。",
   "essentialAppsLicenseErrorForApp": "パブリックでないアプリを使用するためのライセンスがアカウントに付与されていません。 組織の管理者に Essential Apps またはアドオン Essential Apps ライセンスを含むユーザー タイプを割り当てるよう依頼してください。",
-  "essentialAppsLicenseErrorForBuilder": "Web AppBuilder のライセンスがアカウントに付与されていません。 組織の管理者に Essential Apps またはアドオン Essential Apps ライセンスを含むユーザー タイプを割り当てるよう依頼してください。",
-  "setStyle": "スタイルの設定"
+  "essentialAppsLicenseErrorForBuilder": "Web AppBuilder のライセンスがアカウントに付与されていません。 組織の管理者に Essential Apps またはアドオン Essential Apps ライセンスを含むユーザー タイプを割り当てるよう依頼してください。"
 });
