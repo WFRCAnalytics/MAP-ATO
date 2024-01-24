@@ -8,20 +8,20 @@ var dModeOptions = [
 ];
 
 var dCategoryOptions = [
-  { label: "jobs"                , name: "Access to Jobs"               , value: "JB"  , selected: true },
-  { label: "households"          , name: "Access to Households"         , value: "HH"                   },
-  { label: "jobs and households" , name: "Access to Jobs and Households", value: "COMP"                 }
+  { label: "jobs"                , name: "Access to Jobs"               , value: "JOB"      , selected: true },
+  { label: "households"          , name: "Access to Households"         , value: "HH"                        },
+  { label: "jobs and households" , name: "Access to Jobs and Households", value: "COMPJOBHH"                 }
 ];
 
 var dDisplayOptions = [
-  { label: "2019 Conditions"                    , value: "YEAR_2019_AVG_2019", shed: 2019, selected: true },
-  { label: "Future Projections"                 , value: "YEAR_2050_AVG_2050", shed: 2050                 },
-  { label: "Future Projections Relative to 2019", value: "YEAR_2050_AVG_2019", shed: 2050                 },
-  { label: "Net Gain"                           , value: "GAIN_2019to2050"   , shed: 0                     }
+  { label: "2023 Conditions"                    , value: "RTP2023_YEAR_2023_AVG_2023", shed: 2023, selected: true },
+  { label: "Future Projections"                 , value: "RTP2023_YEAR_2050_AVG_2050", shed: 2050                 },
+  { label: "Future Projections Relative to 2023", value: "RTP2023_YEAR_2050_AVG_2023", shed: 2050                 },
+  { label: "Net Gain"                           , value: "RTP2023_GAIN_2023TO2050"   , shed: 0                    }
 ];
 
 var dAreaOptions = [
-  { label: "the entire Wasatch Front"      , name: "Wasatch Front"             , value: "Region", selected: true },
+  { label: "the entire Wasatch Front"      , name: "Wasatch Front"             , value: "REGION", selected: true },
   { label: "the Brigham City area"         , name: "Brigham City"              , value: "BE"                     },
   { label: "Northern Weber County"         , name: "Northern Weber County"     , value: "NW"                     },
   { label: "Southern Weber County"         , name: "Southern Weber County"     , value: "SW"                     },
@@ -36,12 +36,12 @@ var dAreaOptions = [
   { label: "Southern Utah County"          , name: "Southern Utah County"      , value: "SU"                     }
 ];
 
-var dChartX = [2019, 2030, 2040, 2050];
+var dChartX = [2023, 2032, 2042, 2050];
 
 var dChartSeries = [
-  { label: "Jobs"               , category: "JB"  },
-  { label: "Households"         , category: "HH"  },
-  { label: "Jobs and Households", category: "COMP"}
+  { label: "Jobs"               , category: "JOB"      },
+  { label: "Households"         , category: "HH"       },
+  { label: "Jobs and Households", category: "COMPJOBHH"}
 ];
 
 var dChartLineTypes_TAZ  = [];
@@ -56,27 +56,27 @@ var curDisplay    = '';
 var curTAZ        =  0;
 var lyrTAZ;
 var lyrAreas;
-var lyrSheds_2019_AUTO;
-var lyrSheds_2019_TRAN;
+var lyrSheds_2023_AUTO;
+var lyrSheds_2023_TRAN;
 var lyrSheds_2050_AUTO;
 var lyrSheds_2050_TRAN;
-var sSheds_2019_AUTO = "TravelSheds_gdb - TAZSheds 2019 AUTO";
-var sSheds_2019_TRAN = "TravelSheds_gdb - TAZSheds 2019 TRAN";
+var sSheds_2023_AUTO = "TravelSheds_gdb - TAZSheds 2023 AUTO";
+var sSheds_2023_TRAN = "TravelSheds_gdb - TAZSheds 2023 TRAN";
 var sSheds_2050_AUTO = "TravelSheds_gdb - TAZSheds 2050 AUTO";
 var sSheds_2050_TRAN = "TravelSheds_gdb - TAZSheds 2050 TRAN";
-var sShed10       = "SampleShed10";
-var sShed20       = "SampleShed20";
-var sShed30       = "SampleShed30";
-var lyrDispLayers = []            ;
-var sDispLayersP  = "ATO_gdb - "  ; //prefix for layer names
-var sDispLayers   = []            ; //layer name for all display layers (filled programatically)
-var sTAZLayer     = "TAZ_ATO"     ; //layer name for TAZs
-var sAreasLayer   = "Areas_ATO"   ; //layer name for Areas
-var sCDefaultGrey = "#CCCCCC"     ; //color of default line
-var sFNATOTAZID   = "TAZID"       ; //field name for TAZID
-var sFNATOBinP    = "BIN_"        ; //field name for display (color) using bins
-var chartkey      = []            ;
-var chartdata     = []            ;
+var sShed10       = "SampleShed10"     ;
+var sShed20       = "SampleShed20"     ;
+var sShed30       = "SampleShed30"     ;
+var lyrDispLayers = []                 ;
+var sDispLayersP  = ""                 ; //prefix for layer names
+var sDispLayers   = []                 ; //layer name for all display layers (filled programatically)
+var sTAZLayer     = "TAZ_ATO_RTP2023"  ; //layer name for TAZs
+var sAreasLayer   = "Areas_ATO_RTP2023"; //layer name for Areas
+var sCDefaultGrey = "#CCCCCC"          ; //color of default line
+var sFNATOTAZID   = "TAZID"            ; //field name for TAZID
+var sFNATOBinP    = "BIN_"             ; //field name for display (color) using bins
+var chartkey      = []                 ;
+var chartdata     = []                 ;
 
 var minScaleForLabels = 87804;
 var labelClassOn;
@@ -189,7 +189,7 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
       for (_chartx in dChartX) {
         for (_mode in dModeOptions) {
           for (_category in dCategoryOptions) {
-            _name = "YEAR_" + dChartX[_chartx] + "_" + dModeOptions[_mode]['value'] + '_' + dCategoryOptions[_category]['value'];
+            _name = "RTP2023_YEAR_" + dChartX[_chartx] + '_AVG_'  + dChartX[_chartx] + "_" + dModeOptions[_mode]['value'] + '_' + dCategoryOptions[_category]['value'];
             //Populate chartdata array of objects
             dojo.xhrGet({
               url: "widgets/ATOSidebar/data/" + _name + ".json",
@@ -222,10 +222,10 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
           lyrAreas = layerInfosObject._layerInfos[j].layerObject;
         } else if (currentLayerInfo.title == sTAZLayer) {
           lyrTAZ = layerInfosObject._layerInfos[j].layerObject;
-        } else if (currentLayerInfo.title == sSheds_2019_AUTO) {
-          lyrSheds_2019_AUTO = layerInfosObject._layerInfos[j].layerObject;
-        } else if (currentLayerInfo.title == sSheds_2019_TRAN) {
-          lyrSheds_2019_TRAN = layerInfosObject._layerInfos[j].layerObject;
+        } else if (currentLayerInfo.title == sSheds_2023_AUTO) {
+          lyrSheds_2023_AUTO = layerInfosObject._layerInfos[j].layerObject;
+        } else if (currentLayerInfo.title == sSheds_2023_TRAN) {
+          lyrSheds_2023_TRAN = layerInfosObject._layerInfos[j].layerObject;
         } else if (currentLayerInfo.title == sSheds_2050_AUTO) {
           lyrSheds_2050_AUTO = layerInfosObject._layerInfos[j].layerObject;
         } else if (currentLayerInfo.title == sSheds_2050_TRAN) {
@@ -280,11 +280,11 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
 
       //Populate TAZ TravelShed Object
       dojo.xhrGet({
-        url: "widgets/ATOSidebar/data/TAZSheds_Summary.json",
+        url: "widgets/ATOSidebar/data/TAZSheds_Summary_RTP2023.json",
         handleAs: "json",
         load: function(obj) {
             /* here, obj will already be a JS object deserialized from the JSON response */
-            console.log('TAZSheds_Summary.json');
+            console.log('TAZSheds_Summary_RTP2023.json');
             tazshed = obj;
         },
         error: function(err) {
@@ -297,14 +297,13 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
         id: "selectMode",
         name: "selectModeName",
         options: dModeOptions,
-        onChange: function(){
-          curMode = this.value;
-          parent.updateDisplayLayer();
-          parent.setLegendBar();
-          parent.updateChart();
-          parent.updateShed();
-          //parent.loadJsonData();
-        }
+        onChange: function() {
+            curMode = this.value;
+            parent.updateDisplayLayer();
+            parent.setLegendBar();
+            parent.updateChart();
+            parent.updateShed();
+          }
         }, "cmbMode");
       curMode = "AUTO";
       cmbMode.startup();
@@ -313,16 +312,15 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
         id: "selectCategory",
         name: "selectCategoryName",
         options: dCategoryOptions,
-        onChange: function(){
+        onChange: function() {
             curCategory = this.value;
             parent.updateDisplayLayer();
             parent.setLegendBar();
             parent.updateChart();
             parent.updateShedTable(); //only table changes, layer does not
-            //parent.loadJsonData();
-        }
+          }
         }, "cmbCategory");
-      curCategory = "JB";
+      curCategory = "JOB";
       cmbCategory.startup();
       
       cmbDisplay = new Select({
@@ -335,9 +333,9 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
             parent.updateDisplayLayer();
             parent.updateShed();
             //parent.loadJsonData();
-        }
+          }
         }, "cmbDisplay");
-      curDisplay = "YEAR_2019_AVG_2019";
+      curDisplay = "RTP2023_YEAR_2023_AVG_2023";
       cmbDisplay.startup();
 
       cmbArea = new Select({
@@ -352,11 +350,10 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
             parent.setLegendBar();
             parent.zoomToArea();
             parent.updateChart();
-            //parent.loadJsonData();
-        }
+          }
         }, "cmbArea");
       cmbArea.startup();
-      curArea = "Region"
+      curArea = "REGION"
 
       // create a text symbol to define the style of labels
       var volumeLabel = new TextSymbol();
@@ -424,8 +421,8 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
               lyrTAZ.setDefinitionExpression(fnTAZID + "=" + curTAZ);
               lyrTAZ.show();
               var _TAZID = parseInt(curTAZ.toString().substr(-4));
-              lyrSheds_2019_AUTO.setDefinitionExpression("I=" + _TAZID);
-              lyrSheds_2019_TRAN.setDefinitionExpression("I=" + _TAZID);
+              lyrSheds_2023_AUTO.setDefinitionExpression("I=" + _TAZID);
+              lyrSheds_2023_TRAN.setDefinitionExpression("I=" + _TAZID);
               lyrSheds_2050_AUTO.setDefinitionExpression("I=" + _TAZID);
               lyrSheds_2050_TRAN.setDefinitionExpression("I=" + _TAZID);
               parent.updateShed();
@@ -473,7 +470,7 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
               {value: 2016, text: "2016"},
               {value: 2017, text: "2017"},
               {value: 2018, text: "2018"},
-              {value: 2019, text: "2019"},
+              {value: 2023, text: "2023"},
               {value: 2020, text: "2020"},
               {value: 2021, text: "2021"},
               {value: 2022, text: "2022"},
@@ -587,14 +584,14 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
           if (dChartSeries[_series]['category'] == curCategory) {//only show for current category
             
             //var _catlabeltaz  = "Accessible "         + dChartSeries[_series]['label'] + " for TAZ " + curTAZ.toString();
-            var _catlabeltaz  = "TAZ " + curTAZ.toString().substr(-4);
+            var _catlabeltaz  = "TAZ " + curTAZ.toString();
             var _category = dChartSeries[_series]['category'];
             //_seriesnames.push(_catlabel);
             var _xyseriesdatataz  = [];
             for (_x in dChartX) {
               _year     = dChartX[_x];
               //construct name of data
-              var _nametaz  = 'YEAR_' + _year.toString() + '_' + curMode + '_' + _category;
+              var _nametaz  = 'RTP2023_YEAR_' + _year.toString() + '_AVG_' + _year.toString() + '_' + curMode + '_' + _category;
 
               //check key location for given name
               var _chartkeyloc = chartkey.indexOf(_nametaz);
@@ -607,11 +604,11 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
                 _taz_value = _chartdatarecord[0]['V'];
                 _xyseriesdatataz.push({x:_year,y:_taz_value});
                 
-                if (_year == 2019) {
-                  _taz_2019value = _taz_value;
+                if (_year == 2023) {
+                  _taz_2023value = _taz_value;
                 } else if (_year == 2050) {
                   _taz_2050value = _taz_value;
-                  _taz_netgvalue = _taz_2050value - _taz_2019value;
+                  _taz_netgvalue = _taz_2050value - _taz_2023value;
                 }
               }
 
@@ -641,7 +638,7 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
             for (_x in dChartX) {
               _year     = dChartX[_x];
               //construct name of data
-              var _namearea = 'YEAR_' + _year.toString() + '_' + curMode + '_' + _category + '_' + curArea;
+              var _namearea = 'RTP2023_YEAR_' + _year.toString() + '_' + curMode + '_' + _category + '_' + curArea;
 
               //query area object
               var _averagevaluesrecord = averagevalues.filter( function(averagevalues){return (averagevalues['Name']==_namearea);} );
@@ -651,13 +648,13 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
                 _areavalue = _averagevaluesrecord[0]['Average'];
                 _xyseriesdataarea.push({x:_year,y:_areavalue});
                 
-                if (_year == 2019) {
-                  _area2019value = _areavalue;
+                if (_year == 2023) {
+                  _area2023value = _areavalue;
                 } else if (_year == 2050) {
                   _area2050value = _areavalue;
-                  _areanetgvalue = _area2050value - _area2019value;
+                  _areanetgvalue = _area2050value - _area2023value;
 
-                  _pavg2019value = _taz_2019value / _area2019value;
+                  _pavg2023value = _taz_2023value / _area2023value;
                   _pavg2050value = _taz_2050value / _area2050value;
                   _pavgnetgvalue = _taz_netgvalue / _areanetgvalue;
                   
@@ -690,17 +687,17 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
         dom.byId("areaname").innerHTML = _catlabelarea;
         dom.byId("pavgname").innerHTML = "% of<br/>Average";
         
-        dom.byId("rowname2019").innerHTML = "<p class = \"thicker\">2019</p>";
+        dom.byId("rowname2023").innerHTML = "<p class = \"thicker\">2023</p>";
         dom.byId("rowname2050").innerHTML = "<p class = \"thicker\">Future (2050)</p>";
         dom.byId("rownamenetg").innerHTML = "<p class = \"thicker\">Net Gain</p>";
 
-        dom.byId("taz_2019value").innerHTML = this.numberWithCommas(Math.round(_taz_2019value/100)*100);
+        dom.byId("taz_2023value").innerHTML = this.numberWithCommas(Math.round(_taz_2023value/100)*100);
         dom.byId("taz_2050value").innerHTML = this.numberWithCommas(Math.round(_taz_2050value/100)*100);
         dom.byId("taz_netgvalue").innerHTML = this.numberWithCommas(Math.round(_taz_netgvalue/100)*100);
-        dom.byId("area2019value").innerHTML = this.numberWithCommas(Math.round(_area2019value/100)*100);
+        dom.byId("area2023value").innerHTML = this.numberWithCommas(Math.round(_area2023value/100)*100);
         dom.byId("area2050value").innerHTML = this.numberWithCommas(Math.round(_area2050value/100)*100);
         dom.byId("areanetgvalue").innerHTML = this.numberWithCommas(Math.round(_areanetgvalue/100)*100);
-        dom.byId("pavg2019value").innerHTML = (100*_pavg2019value).toFixed(0) + "%";
+        dom.byId("pavg2023value").innerHTML = (100*_pavg2023value).toFixed(0) + "%";
         dom.byId("pavg2050value").innerHTML = (100*_pavg2050value).toFixed(0) + "%";
         dom.byId("pavgnetgvalue").innerHTML = (100*_pavgnetgvalue).toFixed(0) + "%";
 
@@ -800,38 +797,6 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
         }
       }
     },
-
-    loadJsonData: function() {
-      console.log('loadJsonData');
-      parent = this;
-      //Populate ATO datastore
-      lyrTAZ.hide();
-      dojo.xhrGet({
-        url: "widgets/ATOSidebar/data/" + curDisplay + "_" + curMode + "_" + curCategory + "_" + curArea + ".json",
-        handleAs: "json",
-        load: function(obj) {
-            /* here, obj will already be a JS object deserialized from the JSON response */
-            console.log('forecasts.json');
-            ato = obj;
-            parent.updateATOLayer();
-            //Populate dowFactors DataStore
-            //storeATO = Observable(new Memory({
-            //  data: {
-            //    identifier: "Z",
-            //    label: "V",
-            //    items: ato
-            //  }
-            //}));
-            //parent.UpdateCCSs(curSiteGroup);
-            //parent.UpdateChart();
-        },
-        error: function(err) {
-            /* this will execute if the response couldn't be converted to a JS object,
-                or if the request was unsuccessful altogether. */
-        }
-      });
-
-    },    
         
     setLegendBar: function() {
       console.log('setLegendBar');
@@ -942,8 +907,8 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
       } else {
         dom.byId("chartAreaATO").style.display = 'inline';
         //dom.byId("travelShedArea").style.display = 'none';
-        lyrSheds_2019_AUTO.hide();
-        lyrSheds_2019_TRAN.hide();
+        lyrSheds_2023_AUTO.hide();
+        lyrSheds_2023_TRAN.hide();
         lyrSheds_2050_AUTO.hide();
         lyrSheds_2050_TRAN.hide();
         dom.byId("travelShedTAZTitle").style.display = 'none';
@@ -959,36 +924,36 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
       console.log('updateShed');
       if (dom.byId("traveltoggle").checked && curTAZ>0){
 
-        if        (this.getCurShed() == 2019 && curMode == "AUTO") {
-          lyrSheds_2019_AUTO.show();
-          lyrSheds_2019_TRAN.hide();
+        if        (this.getCurShed() == 2023 && curMode == "AUTO") {
+          lyrSheds_2023_AUTO.show();
+          lyrSheds_2023_TRAN.hide();
           lyrSheds_2050_AUTO.hide();
           lyrSheds_2050_TRAN.hide();
-        } else if (this.getCurShed() == 2019 && curMode == "TRAN") {
-          lyrSheds_2019_AUTO.hide();
-          lyrSheds_2019_TRAN.show();
+        } else if (this.getCurShed() == 2023 && curMode == "TRAN") {
+          lyrSheds_2023_AUTO.hide();
+          lyrSheds_2023_TRAN.show();
           lyrSheds_2050_AUTO.hide();
           lyrSheds_2050_TRAN.hide();
         } else if (this.getCurShed() == 2050 && curMode == "AUTO") {
-          lyrSheds_2019_AUTO.hide();
-          lyrSheds_2019_TRAN.hide();
+          lyrSheds_2023_AUTO.hide();
+          lyrSheds_2023_TRAN.hide();
           lyrSheds_2050_AUTO.show()
           lyrSheds_2050_TRAN.hide();
         } else if (this.getCurShed() == 2050 && curMode == "TRAN") {
-          lyrSheds_2019_AUTO.hide();
-          lyrSheds_2019_TRAN.hide();
+          lyrSheds_2023_AUTO.hide();
+          lyrSheds_2023_TRAN.hide();
           lyrSheds_2050_AUTO.hide()
           lyrSheds_2050_TRAN.show();
         } else {
-          lyrSheds_2019_AUTO.hide();
-          lyrSheds_2019_TRAN.hide();
+          lyrSheds_2023_AUTO.hide();
+          lyrSheds_2023_TRAN.hide();
           lyrSheds_2050_AUTO.hide();
           lyrSheds_2050_TRAN.hide();
         }
 
       } else {
-        lyrSheds_2019_AUTO.hide();
-        lyrSheds_2019_TRAN.hide();
+        lyrSheds_2023_AUTO.hide();
+        lyrSheds_2023_TRAN.hide();
         lyrSheds_2050_AUTO.hide();
         lyrSheds_2050_TRAN.hide();
       }
@@ -1028,7 +993,7 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
 
         var _TAZID = parseInt(curTAZ.toString().substr(-4));
 
-        var _tdms = ['2019','2050'];
+        var _tdms = ['2023','2050'];
         var _compares = ['compare_base','compare_future']; //for calculating net gain between two years
         var _cats = ['EMP','HHs'];
         var _sheds = ['10Min','20Min','30Min'];

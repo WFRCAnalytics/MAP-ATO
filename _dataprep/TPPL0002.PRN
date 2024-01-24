@@ -1,0 +1,582 @@
+Page 1  (VOYAGER PILOT) Model Run
+Wasatch Front Regional Council
+----------------------------------
+PILOT (v.08/13/2019 [6.4.5 x64]) Fri Jan 19 13:00:57 2024
+
+Args: E:\GitHub\ATO-Web-App\_dataprep\3_PreProcess-TravelSheds.s -SE:\GitHub\ATO-Web-App\_dataprep -PTPPL -PH:58 -PW:80 -IModel Run
+Input:   E:\GitHub\ATO-Web-App\_dataprep\3_PreProcess-TravelSheds.s
+
+M(658): Input expanded to C:\Users\bhereth\AppData\Local\Temp\Voy17012_34600.$$$ before starting run
+
+;*READ FILE = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\0GeneralParameters.block'
+    GLOBAL PAGEHEIGHT=32767
+    ZoneMsgRate = 50
+    UsedZones       = 3629                        ;highest value of any used zone or external
+    BoxElderRange   = '1-153'
+    WeberRange      = '154-581'
+    DavisRange      = '582-905'
+    SLRange         = '906-2216'
+    UtahRange       = '2217-3546'
+    dummyzones      = '3547-3600'
+    externalzones   = '3601-3629'
+    NorthBC         = '3604,3605,3606'            ;used in 2_ModelScripts\4_ModeChoice\10_ConvertSomeXI2HBW.s
+    HwyNodes        = '10000-99999'               ;note: highway node numbering schema
+    colleges     = '437,521,693,959,979,1007,1029,1051,1085,1231,1263,1491,1525,1580,1776,1886,2031,2606,2809,2848,2882,2939,3336'
+    Ensign          = 1029                        ;95 N 300 W, Salt Lake City, UT 84101
+    Westmin         = 1263                        ;1840 S 1300 E, Salt Lake City, UT 84105
+    UOFU_Main       = 1051                        ;201 Presidents Cir, Salt Lake City, UT 84112
+    UOFU_Med        = 1007                        ;30 N 1900 E, Salt Lake City, UT 84132
+    WSU_Main        =  437                        ;3848 Harrison Blvd, Ogden, UT 84403
+    WSU_Davis       =  693                        ;2750 University Park Blvd. layton, UT, 84041
+    WSU_West        =  521                        ;5627S 3500W, Roy, UT, 84067
+    SLCC_Main       = 1580                        ;4600 S Redwood Rd, Salt Lake City, UT 84123
+    SLCC_SC         = 1231                        ;1575 S State Street ,Salt Lake City, UT 84115
+    SLCC_JD         = 1776                        ;3491 W 9000 S, West Jordan, UT  84088
+    SLCC_Mead       = 1491                        ;218 W 3900 S, Salt Lake City, UT 84107
+    SLCC_ML         = 1886                        ;9750 S 300 W, Sandy, UT  84070 (Miller campus as called Sandy campus)
+    SLCC_LB         = 1085                        ;231 E 400 S, Salt Lake City, UT  84111
+    SLCC_HL         = 1525                        ;3760 S Highland Drive, Salt Lake City, UT  84106
+    SLCC_Airp       =  979                        ;551 2200 W, Salt Lake City, UT 84116
+    SLCC_West       =  959                        ;2150 W Dauntless Ave, Salt Lake City, UT 84116
+    SLCC_HM         = 2031                        ;14200 S 4000 W, Herriman, UT (FUTURE CAMPUS)
+    BYU             = 2939                        ;1 N University Hill, Provo, UT 84602
+    UVU_Main        = 2848                        ;800 West University Parkway, Orem, UT 84058
+    UVU_Geneva      = 2882                        ;951 S Geneva Rd, Orem, UT 84058
+    UVU_Lehi        = 2606                        ;2301 W. Ashton Blvd, Lehi, UT 84043 (Thanksgiving point)
+    UVU_Vine        = 2809                        ;Mill Rd, Vineyard UT  (FUTURE CAMPUS)
+    UVU_Payson      = 3336                        ;Future Nebo Belt Rd, Payson UT  (FUTURE CAMPUS)
+    Lagoon          =  781
+    Airport         =  965
+    TempleSquare    = 1035
+    SLC_Library     = 1147
+    Centroids       = '1'
+    P_Arts          = '2'
+    M_Arts          = '3'
+    Collectors      = '4-5'
+    Locals          = '6-7'
+    Expressways     = '12-15'
+    Freeways        = '30-36'
+    HOVs            = '37'
+    HOTs            = '38'
+    HOVAccess       = '39'
+    Tolls           = '40'
+    Ramps           = '41-42'
+    FT_Ramp         = '41'                        ;freeway on ramps
+    FT_Sys          = '30-31'                     ;freeway system-to-system ramps
+    FT_GP           = '32-36'                     ;freeway general purpose lanes
+    FT_Fwy          = '30-38'                     ;all freeway lanes
+    MF_FT_Ramp      = '28'                        ;managed freeway on ramps
+    MF_FT_Sys       = '20-21'                     ;managed freeway system-to-system ramps
+    MF_FT_GP        = '22-26'                     ;managed freeway general purpose lanes
+    BarrierToWalkFT = '12-42'
+    Og_Cor_Y        = 4557215                     ;Ogden - north of 5600 S, Roy
+    Pr_Cor_Y        = 4471210                     ;Provo - south of Main St, AF
+    Og_X            = 418659                      ;Ogden (24th St / Washington Ave)
+    Og_Y            = 4563940
+    SL_X            = 424555                      ;Salt Lake (W Temple / S Temple)
+    SL_Y            = 4513537
+    Pr_X            = 443993                      ;Provo (University Pky / University Ave
+    Pr_Y            = 4456355
+    Income_Lo       = 45000                       ;breakpoint between Inc1 & Inc2
+    Income_Md       = 75000                       ;breakpoint between Inc2 & Inc3
+    Income_Hi       = 125000                      ;breakpoint between Inc3 & Inc4
+    Dist_Short      = 3
+    Dist_Medium     = 5
+    Dist_Long       = 20
+    HHDen           = 4
+    BE_LC2_0to17    = 0.993
+    BE_LC2_18to64   = 0.664
+    WE_LC2_0to17    = 0.982
+    WE_LC2_18to64   = 0.606
+    DA_LC2_0to17    = 0.974
+    DA_LC2_18to64   = 0.711
+    SL_LC2_0to17    = 0.961
+    SL_LC2_18to64   = 0.525
+    UT_LC2_0to17    = 0.981
+    UT_LC2_18to64   = 0.659
+    BE_HHSize_LC1   = 1.86
+    BE_HHSize_LC2   = 4.21
+    BE_HHSize_LC3   = 2.41
+    WE_HHSize_LC1   = 1.88
+    WE_HHSize_LC2   = 4.53
+    WE_HHSize_LC3   = 1.81
+    DA_HHSize_LC1   = 2.14
+    DA_HHSize_LC2   = 4.68
+    DA_HHSize_LC3   = 2.33
+    SL_HHSize_LC1   = 1.86
+    SL_HHSize_LC2   = 4.44
+    SL_HHSize_LC3   = 1.81
+    UT_HHSize_LC1   = 2.11
+    UT_HHSize_LC2   = 4.75
+    UT_HHSize_LC3   = 2.21
+    Reg_Median_Inc  = 74946
+    AveNum3PlusCars = 3.5                         ;average number of cars for those who have more than 3 cars
+    OneWayBump_Spd = 1.05
+    OneWayBump_Cap = 1.20
+    RGAPCriteria_n1_2 = 0.01
+    RGAPCriteria_n3   = 0.001
+    RGAPCriteria_n4p  = 0.0001
+    RGAPCriteria_FinAsgn = 0.0001
+    IntrazonalSpeed = 20.0                        ;assume 20 mph
+    walkspeed       = 2.5                         ;miles per hour
+    bikespeed       = 10                          ;miles per hour
+    FARE_DISCOUNT = 0.54
+    PCE_MD = 1.5
+    PCE_HV = 2.0
+    MinRampPen      = 0.25                        ;minutes
+    RampPenWeight   = 2.0                         ;convert from actual to perceived time in path cost function
+    RampVolAdjMax    = 1000                       ;volume below which the maximum ramp penalty is reduced
+    RampVolAdjMin    = 250                        ;volume below which the maximum ramp penalty factor is applied
+    MaxRampPenAdjFac = 0.5                        ;maximum adjustment to the maximum ramp penalty due to low volumes
+    RAIL2COR_MULTIPLIER = 0.33                    ;set Core Route constant relative to LRT constant
+    SL_UT_KFAC_Wrk  = 1.00
+    SL_UT_KFAC_Oth  = 1.00
+    SL_UT_KFAC_Trk  = 1.00
+    SL_UT_KFAC_Ext  = 1.00
+    SL_DA_KFAC_Wrk  = 1.00
+    SL_DA_KFAC_Oth  = 1.00
+    SL_DA_KFAC_Trk  = 1.00
+    SL_DA_KFAC_Ext  = 1.00
+    WE_BE_KFAC_Wrk  = 1.00
+    WE_BE_KFAC_Oth  = 1.00
+    WE_BE_KFAC_Trk  = 1.00
+    WE_BE_KFAC_Ext  = 1.00
+    VehOcc_HBW      = 1.10
+    VehOcc_HBShp    = 1.63
+    VehOcc_HBOth    = 1.68
+    VehOcc_HBSch    = 1.76
+    VehOcc_HBC      = 1.12
+    VehOcc_NHBW     = 1.21
+    VehOcc_NHBNW    = 1.76
+    VehOcc_Rec      = 1.68
+    VehOcc_HBO      = 1.67
+    VehOcc_NHB      = 1.54
+    VehOcc_ExtWrk   = 1.16
+    VehOcc_ExtHBO   = 1.82
+    VehOcc_ExtNHB   = 1.73
+    VehOcc_ExtRec   = 1.73
+    VehOcc_3p_HBW   = 3.53
+    VehOcc_3p_HBShp = 3.49
+    VehOcc_3p_HBOth = 3.73
+    VehOcc_3p_HBSch = 3.88
+    VehOcc_3p_HBC   = 3.24
+    VehOcc_3p_NHBW  = 3.71
+    VehOcc_3p_NHBNW = 3.71
+    VehOcc_3p_Rec   = 3.73
+    VehOcc_3p_HBO   = 3.68
+    VehOcc_3p_NHB   = 3.71
+    VOT_Auto_Wrk    = 22                          ;or $13.20/hr
+    VOT_Auto_Per    = 17                          ;or $10.20/hr
+    VOT_Auto_Ext    = 20                          ;or $11.70/hr
+    VOT_LT          = 37                          ;or $22.20/hr
+    VOT_MD          = 50                          ;or $30.00/hr
+    VOT_HV          = 63                          ;or $37.80/hr
+    VOT_Toll        = 63                          ;all vehicles on tollway - set same as VOT_HV
+    VOT_HOT_DA      = 63                          ;drive alone on HOT - set same as VOT_HV
+    VOT_Auto_Wrk_Lo = 9                           ;or $ 5.40/hr
+    VOT_Auto_Wrk_Hi = 24                          ;or $14.40/hr
+    VOT_Auto_Per_Lo = 7                           ;or $ 4.20/hr
+    VOT_Auto_Per_Hi = 19                          ;or $11.40/hr
+    AOC_Auto        = 21.7                        ;auto
+    AOC_LT          = 27.3                        ;light truck
+    AOC_MD          = 55.5                        ;medium truck
+    AOC_HV          = 74.3                        ;heavy truck
+    Cost_Toll_Pk    = 48                          ;same toll cost for all users of tollway
+    Cost_Toll_Ok    = 48
+    Cost_HOT_Pk     = 34                          ;Drive Alone
+    Cost_HOT_Ok     = 17
+    Cost_2HOT_Pk    =  0                          ;Shared Ride 2
+    Cost_2HOT_Ok    =  0
+    Cost_3HOT_Pk    =  0                          ;Shared Ride 3+
+    Cost_3HOT_Ok    =  0
+    Cost_REL_Pk     = 34                          ;Drive Alone
+    Cost_REL_Ok     = 17
+    Cost_2REL_Pk    =  0                          ;Shared Ride 2
+    Cost_2REL_Ok    =  0
+    Cost_3REL_Pk    =  0                          ;Shared Ride 3+
+    Cost_3REL_Ok    =  0
+    Cost_HOT_AM     = 1
+    Cost_HOT_PM     = 1
+    Cost_HOT_Ok     = 1
+    Cost_2HOT_AM    = 0
+    Cost_2HOT_PM    = 0
+    Cost_2HOT_Ok    = 0
+    Cost_3HOT_AM    = 0
+    Cost_3HOT_PM    = 0
+    Cost_3HOT_Ok    = 0
+    HOV_Policy      = 2                           ;2=2+, 3=3+
+    AM_1hr_Fac      = 0.456
+    PM_1hr_Fac      = 0.357
+    Schoolbus_VO    = 70
+    SchoolbusDist_PR = 1.5
+    SchoolbusDist_SC = 2.0
+    in_PR_Schoolbus = 0.00
+    in_PR_Drive     = 0.00
+    in_PR_DropOff   = 0.15
+    in_PR_Walk      = 0.67
+    in_PR_Bike      = 0.18
+    in_SC_Schoolbus = 0.00
+    in_SC_Drive     = 0.05
+    in_SC_DropOff   = 0.15
+    in_SC_Walk      = 0.60
+    in_SC_Bike      = 0.20
+    out_PR_Schoolbus = 0.85
+    out_PR_Drive     = 0.00
+    out_PR_DropOff   = 0.15
+    out_PR_Walk      = 0.00
+    out_PR_Bike      = 0.00
+    out_SC_Schoolbus = 0.77
+    out_SC_Drive     = 0.08
+    out_SC_DropOff   = 0.15
+    out_SC_Walk      = 0.00
+    out_SC_Bike      = 0.00
+    debug   = 0     ;set to 1 if you want to debug or 0 if not
+    debug_p = 526   ;production zone to use in debugging
+    debug_a = 470   ;attraction zone to use in debugging
+    calib              = 0    ;Calibration Flag - 1 if you want to calibrate, 0 if not
+    num_calib_HBW_HBO  = 23   ;number of constants being adjsuted that are within 1% of target (24 total)
+    num_calib_NHB_HBC  = 14   ;number of constants being adjsuted that are within 1% of target (15 total)
+    ADJ_CONST_UT     =  0 ;  10 ;  10-minute IVT constant to decrease transit in UT County
+    ADJ_CONST_CRT_UT = -5 ; -15 ; -15-minute IVT constant to encourge CRT in UT County
+    ADJ_CONST_CRT_DA =  5 ;  15 ;  15-minute IVT constant to discourage CRT in Davis County
+    ADJ_CONST_BRT    =  0
+    dc_MAX_time   = 90       ; Maximum travel time you're concerned about including in trip length freq
+    dc_MAX_dist   = 50       ; Maximum travel distance you're concerned about including in trip length freq
+    dc_SHIFT_lgsm = 20       ; Mimimum mode choice logsum, used for shifting the distribution to fit into TP+ arrays
+    dc_MAX_lgsm   = 10       ; Maximum mode choice logsum you're concerned about including in trip length freq
+    dc_bin_time = 1          ; size of time bins in minutes (i.e. 1 for 1 minute)
+    dc_bin_dist = 1          ; size of distance bins in miles (i.e. 1 for 1 mile)
+    dc_bin_lgsm = 0.25       ; size of logsum bins
+    dc_coefficients = 'coefficients_cal8.block' ;modify filename if a new coefficients file is developed
+    hbw_hbo_disutility_constant = -1
+    hbw_hbo_disutility_slope    = 0.5
+    nhb_hbc_disutility_constant = -1
+    nhb_hbc_disutility_slope    = 0.5
+    logsums      = 'AccessLogsum.tab'
+    highwaytimes = 'HighwayTimes.tab'
+    HPMSF_WE = 0.9961
+    HPMSA_WE = 1.0663
+    HPMSL_WE = 2.6451
+    HPMSF_DA = 1.0188
+    HPMSA_DA = 0.9866
+    HPMSL_DA = 2.6818
+    HPMSF_SL = 0.8993
+    HPMSA_SL = 0.9877
+    HPMSL_SL = 2.3944
+    HPMSF_UT = 1.0118
+    HPMSA_UT = 0.9946
+    HPMSL_UT = 2.5758
+    HPMSF_OC = 0.9988
+    HPMSA_OC = 0.9026
+    HPMSL_OC = 3.1308
+    HPMSF_SC = 0.6661
+    HPMSA_SC = 0.9565
+    HPMSL_SC = 2.4667
+    HPMSF_PC = 0.9159
+    HPMSA_PC = 0.9342
+    HPMSL_PC = 2.7151
+;*READ FILE = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\1ControlCenter.block'
+;****************************************************************************************
+;****************************************************************************************
+        ModelVersion          = 'WF TDM v9.0 - official'
+        UserName              = 'mcw'
+        UserCompany           = 'wfrc'
+        RID                   = 'v9_RTP_SE50_Net50'
+        ParentDir             = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\'
+        ScenarioDir           = 'Scenarios\RTP_2050\'
+        Description           = 'RTP_2050 run on cw desktop'
+        PythonPath            = 'C:\Python27\ArcGIS10.6\python.exe'             ;Python executable
+        Run_UpdateTAZID       = 1                                               ;run Update TAZID & Distance Python script
+        Run_TollZoneID        = 1                                               ;run Update toll zone ID on Master network script
+        Run_WalkBuffer        = 1                                               ;run Update Walk Buffer Python script
+        TAZ_DBF               = 'TAZ.dbf'
+          EcoEdPassZones      = 'ECOEDPASS'
+          FreeFareZones       = 'FREEFARE'
+        Lookup_BYAgePct       = 'Lookup - BYTAZAgePct - AllCo.csv'
+        DemographicYear       = 2050
+        BE_SEFile             = '1_BoxElder\SE_Box Elder_2050.csv'
+        WFRC_SEFile           = '2_WFRC\FiscallyConstrained\SE_2050.csv'
+        MAG_SEFile            = '3_MAG\SE_2050.csv'
+        NetworkYear           = 2050
+        UnloadedNetPrefix     = 'v9_RTP_SE50_Net50'                             ;prefix used for output net
+        MasterPrefix          = 'MasterNet_v9 - 2023-09-16'                     ;do not include the .net
+        MasterLinkShp         = 'GIS\MasterNet_v9 - 2023-09-16 - Link.shp'      ;include the .shp
+        DefaultProjFile       = 'GIS\_Default_Projection.prj'                   ;projection file for link and node shapefiels (UTM NAD83)
+          pnr_field           = 'PNR23_50'
+          CRT_Fare_Zone       = 'FARZN23_50'
+          AddNodeFields       = ';'                                             ;use semicolan if no fields are added
+          LNfield             = 'LN23_50'
+          FTfield             = 'FT23_50'
+          TranSpeedField      = 'TSPD23_50'
+          HOVmarker           = 'HOT23_50'
+          Rel_LN              = 'REL23_50'
+          TruckRestrict       = 'TRKRST2023'                                    ;values are TRKRST2015, TRKRST2023
+          SpdFactor           = 'SFAC_Fut'
+          CapFactor           = 'CFAC_Fut'
+          AddLinkFields       = ';'                                             ;use semicolan if no fields are added
+        tollz_shp             = 'GIS\Tollz_shp.shp'
+        HOTZoneID_Node        = 'HOTZN'
+        HOTZoneID_Link        = 'HOTZN'
+        HOT_Toll_Min          = 25
+        HOT_Toll_Max          = 400
+        Mlin                  = 'Lin_2050\'
+        trip_cutoff = 3
+        Ext_Vol_Count         = 'Ext_Vol_Control\external_year_vol.csv'
+        Ext_TripEndPattern    = '2050\WF_DY_PA_ExtTripEnds.csv'
+        Ext_TripTable         = '2050\WF_DY_PA_VehicleTrips.mtx'
+        SpeedCapLookupFile    = 'Lookup_Speed_Capacity.csv'
+        SpeedOverride         = 0                                               ;1 = run, 0 = do not run
+        SpeedOverrideField    = ' '                                             ;field on master network containing free flow speed
+        CapacityOverride      = 0                                               ;1 = run, 0 = do not run
+        CapacityOverrideField = ' '                                             ;field on master network containing capcity
+        Use_SelLinkGrp        = 0
+        SelLinkGrp_Field      = 'SEL_LINK'
+        SELECTGROUP_EQ1       = 'SELECTGROUP=21'
+        SELECTGROUP_EQ2       = 'SELECTGROUP=22'
+        Run_Op_Proj           = 0                                               ;1 = run, 0 = do not run
+        OpProj_Field          = 'OP23_50'
+    FromScenario              = 0                                               ;0 = begin with the loaded distribution network, 1 = begin with the unloaded scenario network
+    RunPM1hr                  = 0                                               ;1 = run 1-hr PM assignment, 0 = do not run 1-hr PM assignment
+    KeepTempFiles             = 0
+    UseCubeCluster = 1
+        CoresAvailable = 16                                                     ;if uncertain number of processors in machine, can set to 16
+        if (UseCubeCluster=1)
+            DISTRIBUTE MULTISTEP=T INTRASTEP=T                                  ;turn on global parameters for Cluster
+SYS=((Cluster.EXE  ClusterNodeID 2-16 START EXIT)                                                                                                                                                                             )
+        else
+            DISTRIBUTE MULTISTEP=F INTRASTEP=F                                  ;turn off global parameters for Cluster
+        endif
+    Get_data_for_REMM         = 0                                               ;1 = run, 0 = do not run
+    SendEmailModelFinish      = 1
+    SendEmailModelCrash       = 1
+    Factor_Telecommute = 1                                                      ;factor is a multiplier on the employment-based telecommute rate
+    eCommerce = 1                                                               ;1 = Base (default, no change to SH Goods trip rates)
+    CAV_MPR = 0                                                                 ;% market penetration (enter value between 0-100)
+;****************************************************************************************
+RUN PGM=MATRIX,27927  MSG='Prepare Travel Shed Tables'
+
+PILOT Stack Size = 15208 bytes.
+................................................................................
+
+
+--------------------------------------------------------------------------------
+
+SYS "(Cluster.EXE  ClusterNodeID 2-16 START EXIT) "
+
+SYS ReturnCode = 1 ???
+
+--------------------------------------------------------------------------------Page 2  (VOYAGER MATRIX) Model Run
+Wasatch Front Regional Council
+-----------------------------------
+MATRIX (v.08/13/2019 [6.4.5 x64])  Fri Jan 19 13:01:03 2024
+
+    FILEI ZDATI   = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\0_InputProcessing\SE_File_v9_RTP_SE50_Net50.dbf'
+    FILEI MATI[1] = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\5_AssignHwy\5_FinalNetSkims\Skm_PM.mtx'
+    FILEI MATI[2] = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\4_ModeChoice\1a_Skims\1Skm_TotTransitTime_Pk.mtx'
+    FILEO PRINTO[1] = 'intermediate\travelsheds\v9_RTP_SE50_Net50_TAZOpportunitySheds_Auto.csv'
+    FILEO PRINTO[2] = 'intermediate\travelsheds\v9_RTP_SE50_Net50_TAZOpportunitySheds_Tran.csv'
+    FILEO PRINTO[3] = 'intermediate\travelsheds\v9_RTP_SE50_Net50_TAZOpportunitySheds_Summary.csv'
+    ;general parameters
+    ZONEMSG = 50
+    ;define array
+    ARRAY HHs10min_Auto=3629
+    ARRAY HHs20min_Auto=3629
+    ARRAY HHs30min_Auto=3629
+    ARRAY EMP10min_Auto=3629
+    ARRAY EMP20min_Auto=3629
+    ARRAY EMP30min_Auto=3629
+    ARRAY HHs10min_Tran=3629
+    ARRAY HHs20min_Tran=3629
+    ARRAY HHs30min_Tran=3629
+    ARRAY EMP10min_Tran=3629
+    ARRAY EMP20min_Tran=3629
+    ARRAY EMP30min_Tran=3629
+    IF (I=1)
+        PRINT PRINTO=1, CSV=T,
+            FORM=8.0,
+            LIST='I','J','SHED'
+        PRINT PRINTO=2, CSV=T,
+            FORM=8.0,
+            LIST='I','J','SHED'
+    ENDIF
+    JLOOP
+        ;calculate employment within 30 min of transit array
+        IF (mi.1.GP_TotTime[J]<=10)
+            HHs10min_Auto[I] = HHs10min_Auto[I] + ZI.1.TOTHH[J]
+            EMP10min_Auto[I] = EMP10min_Auto[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=1, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 10
+        ELSEIF (mi.1.GP_TotTime[J]<=20)
+            HHs20min_Auto[I] = HHs20min_Auto[I] + ZI.1.TOTHH[J]
+            EMP20min_Auto[I] = EMP20min_Auto[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=1, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 20
+        ELSEIF (mi.1.GP_TotTime[J]<=30)
+            HHs30min_Auto[I] = HHs30min_Auto[I] + ZI.1.TOTHH[J]
+            EMP30min_Auto[I] = EMP30min_Auto[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=1, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 30
+        ENDIF
+        IF ((mi.2.w4time[J]>0 & mi.2.w4time[J]<=10) |
+            (mi.2.w5time[J]>0 & mi.2.w5time[J]<=10) |
+            (mi.2.w6time[J]>0 & mi.2.w6time[J]<=10) |
+            (mi.2.w7time[J]>0 & mi.2.w7time[J]<=10) |
+            (mi.2.w8time[J]>0 & mi.2.w8time[J]<=10) |
+            (mi.2.w9time[J]>0 & mi.2.w9time[J]<=10) |
+            (mi.2.d4time[J]>0 & mi.2.d4time[J]<=10) |
+            (mi.2.d5time[J]>0 & mi.2.d5time[J]<=10) |
+            (mi.2.d6time[J]>0 & mi.2.d6time[J]<=10) |
+            (mi.2.d7time[J]>0 & mi.2.d7time[J]<=10) |
+            (mi.2.d8time[J]>0 & mi.2.d8time[J]<=10) |
+            (mi.2.d9time[J]>0 & mi.2.d9time[J]<=10))
+            HHs10min_Tran[I] = HHs10min_Tran[I] + ZI.1.TOTHH[J]
+            EMP10min_Tran[I] = EMP10min_Tran[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=2, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 10
+        ELSEIF ((mi.2.w4time[J]>10 & mi.2.w4time[J]<=20) |
+                (mi.2.w5time[J]>10 & mi.2.w5time[J]<=20) |
+                (mi.2.w6time[J]>10 & mi.2.w6time[J]<=20) |
+                (mi.2.w7time[J]>10 & mi.2.w7time[J]<=20) |
+                (mi.2.w8time[J]>10 & mi.2.w8time[J]<=20) |
+                (mi.2.w9time[J]>10 & mi.2.w9time[J]<=20) |
+                (mi.2.d4time[J]>10 & mi.2.d4time[J]<=20) |
+                (mi.2.d5time[J]>10 & mi.2.d5time[J]<=20) |
+                (mi.2.d6time[J]>10 & mi.2.d6time[J]<=20) |
+                (mi.2.d7time[J]>10 & mi.2.d7time[J]<=20) |
+                (mi.2.d8time[J]>10 & mi.2.d8time[J]<=20) |
+                (mi.2.d9time[J]>10 & mi.2.d9time[J]<=20))
+            HHs20min_Tran[I] = HHs20min_Tran[I] + ZI.1.TOTHH[J]
+            EMP20min_Tran[I] = EMP20min_Tran[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=2, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 20
+        ELSEIF ((mi.2.w4time[J]>20 & mi.2.w4time[J]<=30) |
+                (mi.2.w5time[J]>20 & mi.2.w5time[J]<=30) |
+                (mi.2.w6time[J]>20 & mi.2.w6time[J]<=30) |
+                (mi.2.w7time[J]>20 & mi.2.w7time[J]<=30) |
+                (mi.2.w8time[J]>20 & mi.2.w8time[J]<=30) |
+                (mi.2.w9time[J]>20 & mi.2.w9time[J]<=30) |
+                (mi.2.d4time[J]>20 & mi.2.d4time[J]<=30) |
+                (mi.2.d5time[J]>20 & mi.2.d5time[J]<=30) |
+                (mi.2.d6time[J]>20 & mi.2.d6time[J]<=30) |
+                (mi.2.d7time[J]>20 & mi.2.d7time[J]<=30) |
+                (mi.2.d8time[J]>20 & mi.2.d8time[J]<=30) |
+                (mi.2.d9time[J]>20 & mi.2.d9time[J]<=30))
+            HHs30min_Tran[I] = HHs30min_Tran[I] + ZI.1.TOTHH[J]
+            EMP30min_Tran[I] = EMP30min_Tran[I] + ZI.1.TOTEMP[J]
+            PRINT PRINTO=2, CSV=T,
+                FORM=8.0,
+                LIST=I, J, 30
+        ENDIF
+    ENDJLOOP
+    IF (I=1)
+        PRINT PRINTO=3, CSV=T,
+            FORM=8.0,
+            LIST='Z',
+                 'HHs10Min_Auto',
+                 'HHs20Min_Auto',
+                 'HHs30Min_Auto',
+                 'EMP10Min_Auto',
+                 'EMP20Min_Auto',
+                 'EMP30Min_Auto',
+                 'HHs10Min_Tran',
+                 'HHs20Min_Tran',
+                 'HHs30Min_Tran',
+                 'EMP10Min_Tran',
+                 'EMP20Min_Tran',
+                 'EMP30Min_Tran'
+    ENDIF
+    PRINT PRINTO=3, CSV=T,
+        FORM=8.0,
+        LIST=I,
+             HHs10Min_Auto[I],
+             HHs20Min_Auto[I],
+             HHs30min_Auto[I],
+             EMP10min_Auto[I],
+             EMP20min_Auto[I],
+             EMP30min_Auto[I],
+             HHs10min_Tran[I],
+             HHs20min_Tran[I],
+             HHs30min_Tran[I],
+             EMP10min_Tran[I],
+             EMP20min_Tran[I],
+             EMP30min_Tran[I]
+
+MATRIX Stack Size = 6984 bytes.
+................................................................................
+
+
+FILEI ZDATI=A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\0_InputProcessing\SE_File_v9_RTP_SE50_Net50.dbf Opened: 3546 data records  36 Fields:
+Z(N)            CO_TAZID(N)     SUBAREAID(N)    TOTHH(N)        HHPOP(N)       
+HHSIZE(N)       TOTEMP(N)       RETEMP(N)       INDEMP(N)       OTHEMP(N)      
+ALLEMP(N)       RETL(N)         FOOD(N)         MANU(N)         WSLE(N)        
+OFFI(N)         GVED(N)         HLTH(N)         OTHR(N)         AGRI(N)        
+MING(N)         CONS(N)         HBJ(N)          AVGINCOME(N)    ENROL_ELEM(N)  
+ENROL_MIDL(N)   ENROL_HIGH(N)   CO_FIPS(N)      CO_NAME(C)      CITY_NAME(C)   
+DISTLRG(N)      DLRG_NAME(C)    DISTMED(N)      DMED_NAME(C)    DISTSML(N)     
+DSML_NAME(C)   
+
+
+MATI[1] TPP A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\5_AssignHwy\5_FinalNetSkims\Skm_PM.mtx Opened
+MAT PGM=HIGHWAY (v.08/13/2019 [6.4.5 x64]) DATE=Sun Sep 17 05:09:48 2023 
+ID=Model Run
+PAR Zones=3629 M=20
+  OVT  GP_TotTime  GP_IVT  GP_RmpPen  GP_Dist  GP_BTI_Time  MG_TotTime  MG_IVT  MG_RmpPen
+  MG_Dist  MG_BTI_Time  MG_Toll  MD_TotTime  MD_IVT  MD_RmpPen  MD_Dist  HV_TotTime  HV_IVT
+  HV_RmpPen  HV_Dist
+
+MATI[2] TPP A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\4_ModeChoice\1a_Skims\1Skm_TotTransitTime_Pk.mtx Opened
+MAT PGM=MATRIX (v.08/13/2019 [6.4.5 x64])  DATE=Sat Sep 16 20:39:28 2023 
+ID=Model Run
+PAR Zones=3629 M=12
+  w4time  w5time  w6time  w7time  w8time  w9time  d4time  d5time  d6time  d7time  d8time  d9time
+
+M(792): ARRAY HHS10MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY HHS20MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY HHS30MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY EMP10MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY EMP20MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY EMP30MIN_AUTO requires 29,040 bytes.
+
+M(792): ARRAY HHS10MIN_TRAN requires 29,040 bytes.
+
+M(792): ARRAY HHS20MIN_TRAN requires 29,040 bytes.
+
+M(792): ARRAY HHS30MIN_TRAN requires 29,040 bytes.
+
+M(792): ARRAY EMP10MIN_TRAN requires 29,040 bytes.
+
+M(792): ARRAY EMP20MIN_TRAN requires 29,040 bytes.
+
+M(792): ARRAY EMP30MIN_TRAN requires 29,040 bytes.
+
+Totals after Iteration 1 I loop:
+
+	MI.01.GP_TOTTIME: 9,117,221,726   @J=I:        13,750
+	MI.02.W4TIME    :    68,468,119
+	MI.02.W5TIME    :    79,503,407
+	MI.02.W6TIME    :    24,661,048
+	MI.02.W7TIME    :    58,840,105
+	MI.02.W8TIME    :   195,675,218
+	MI.02.W9TIME    :    85,612,969
+	MI.02.D4TIME    :    49,463,129
+	MI.02.D5TIME    :    63,391,903
+	MI.02.D6TIME    :    27,259,058
+	MI.02.D7TIME    :    52,371,666
+	MI.02.D8TIME    :   478,269,739
+	MI.02.D9TIME    :    30,837,072
+
+MATRIX   ReturnCode = 0  Elapsed Time = 00:01:22
+################################################################################
+
+
+VOYAGER  ReturnCode = 0  Elapsed Time = 00:01:28
