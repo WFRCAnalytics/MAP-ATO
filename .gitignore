@@ -1,1 +1,3 @@
-_dataprep/results/travelsheds/*
+input/Skm_PM.mtx
+intermediate/*
+results/travelsheds/*
