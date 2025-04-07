@@ -1,5 +1,5 @@
 
-; IMPORTANT!!! RUN FOR EACH SET OF MODELS
+; IMPORTANT!!! RUN FOR EACH SET OF MODE
 
 ;initialize by reading in scenario general and specific parameters
 READ FILE = 'A:\1 - TDM\3 - Model Dev\1 - WF\1 - Official Release\v9x\v9.0\WF TDM v9.0 - official\Scenarios\RTP_2050\0GeneralParameters.block'

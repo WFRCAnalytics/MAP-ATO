@@ -47,7 +47,7 @@ var dChartSeries = [
 var dChartLineTypes_TAZ  = [];
 var dChartLineTypes_Area = [];
 
-var fnTAZID = "CO_TAZID";
+var fnTAZID = "TAZID";
 
 //ATO Variables
 var curCategory   = '';
@@ -60,10 +60,10 @@ var lyrSheds_2023_AUTO;
 var lyrSheds_2023_TRAN;
 var lyrSheds_2050_AUTO;
 var lyrSheds_2050_TRAN;
-var sSheds_2023_AUTO = "TravelSheds_gdb - TAZSheds 2023 AUTO";
-var sSheds_2023_TRAN = "TravelSheds_gdb - TAZSheds 2023 TRAN";
-var sSheds_2050_AUTO = "TravelSheds_gdb - TAZSheds 2050 AUTO";
-var sSheds_2050_TRAN = "TravelSheds_gdb - TAZSheds 2050 TRAN";
+var sSheds_2023_AUTO = "TravelShed 2023 AUTO";
+var sSheds_2023_TRAN = "TravelShed 2023 TRAN";
+var sSheds_2050_AUTO = "TravelShed 2050 AUTO";
+var sSheds_2050_TRAN = "TravelShed 2050 TRAN";
 var sShed10       = "SampleShed10"     ;
 var sShed20       = "SampleShed20"     ;
 var sShed30       = "SampleShed30"     ;
@@ -976,10 +976,10 @@ function(declare, BaseWidget, LayerInfos, registry, dom, domStyle, dijit, Chart,
         dom.byId("travelShedTAZSubTitle_HHsAuto").style.display = 'none';
         dom.byId("travelShedTAZSubTitle_HHsTran").style.display = 'none';
 
-        if (curMode=='AUTO' && (curCategory=='JB' || curCategory=='COMP')) {
+        if (curMode=='AUTO' && (curCategory=='JOB' || curCategory=='COMP')) {
           dom.byId("travelShedTAZSubTitle_EMPAuto").style.display = 'inline';
         }
-        if (curMode=='TRAN' && (curCategory=='JB' || curCategory=='COMP')) {
+        if (curMode=='TRAN' && (curCategory=='JOB' || curCategory=='COMP')) {
           dom.byId("travelShedTAZSubTitle_EMPTran").style.display = 'inline';
         }
         if (curMode=='AUTO' && (curCategory=='HH' || curCategory=='COMP')) {
